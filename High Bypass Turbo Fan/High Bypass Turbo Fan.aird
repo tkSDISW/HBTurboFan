@@ -66,7 +66,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.la:LogicalComponentPkg" href="High%20Bypass%20Turbo%20Fan.capella#30b925ff-a187-4c6a-8837-ba2787d7b67a"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iNeWIHRuEfCqnNPawYxtew" name="[LAB] Stage 3  - HP Compression Stage" repPath="#_iNb54HRuEfCqnNPawYxtew" changeId="1754668234484">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iNeWIHRuEfCqnNPawYxtew" documentation="&lt;p>This diagram represents the ARCADIA model&amp;nbsp;elements for stage 3 of a High Bypass Turbo Fan Engine.&lt;/p>&#xA;" name="[LAB] Stage 3  - HP Compression Stage" repPath="#_iNb54HRuEfCqnNPawYxtew" changeId="1754668234484">
         <eAnnotations xmi:type="description:DAnnotation" uid="_iNbS0HRuEfCqnNPawYxtew" source="https://www.polarsys.org/capella/dannotation/DesactivatedFilters">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iNmR8HRuEfCqnNPawYxtew" key="hide.computed.component.exchanges.filter" value="true"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iNmR8XRuEfCqnNPawYxtew" key="hide.computed.physical.links.filter" value="true"/>
