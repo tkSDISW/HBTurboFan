@@ -778,7 +778,7 @@
                 sourceElement="#577b40fb-4d11-4c65-ab60-a802494a1c07"/>
           </ownedComponentExchanges>
           <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
-              id="d0963053-4a8b-49e8-9885-0950cec9d45a" name="HP Outlet Pressure"
+              id="d0963053-4a8b-49e8-9885-0950cec9d45a" name="E- HP Outlet Pressure"
               source="#e4202082-f8ea-4870-97b4-1871ddb165f4" target="#05d38416-082d-48f1-a3de-a2615ec5ed38"
               kind="FLOW">
             <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
@@ -786,7 +786,7 @@
                 sourceElement="#d0963053-4a8b-49e8-9885-0950cec9d45a"/>
           </ownedComponentExchanges>
           <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
-              id="fbecc2f5-706f-46a5-9cda-5de5bdb3e904" name="HP Outlet Pressure"
+              id="fbecc2f5-706f-46a5-9cda-5de5bdb3e904" name="I- HP Outlet Pressure"
               source="#6e564fec-2655-468a-9361-f5cbe11f3b3d" target="#b91e6555-e997-498c-ba8d-6b2e4020b257"
               kind="FLOW">
             <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"

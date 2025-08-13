@@ -66,7 +66,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.la:LogicalComponentPkg" href="High%20Bypass%20Turbo%20Fan.capella#30b925ff-a187-4c6a-8837-ba2787d7b67a"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iNeWIHRuEfCqnNPawYxtew" documentation="&lt;p>This diagram represents the ARCADIA model&amp;nbsp;elements for stage 3 of a High Bypass Turbo Fan Engine.&lt;/p>&#xA;" name="[LAB] Stage 3  - HP Compression Stage" repPath="#_iNb54HRuEfCqnNPawYxtew" changeId="1754943592118">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iNeWIHRuEfCqnNPawYxtew" documentation="&lt;p>This diagram represents the ARCADIA model&amp;nbsp;elements for stage 3 of a High Bypass Turbo Fan Engine.&lt;/p>&#xA;" name="[LAB] Stage 3  - HP Compression Stage" repPath="#_iNb54HRuEfCqnNPawYxtew" changeId="1755097151507">
         <eAnnotations xmi:type="description:DAnnotation" uid="_iNbS0HRuEfCqnNPawYxtew" source="https://www.polarsys.org/capella/dannotation/DesactivatedFilters">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iNmR8HRuEfCqnNPawYxtew" key="hide.computed.component.exchanges.filter" value="true"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iNmR8XRuEfCqnNPawYxtew" key="hide.computed.physical.links.filter" value="true"/>
@@ -11592,7 +11592,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNeXKXRuEfCqnNPawYxtew" x="-2" y="11" width="10" height="10"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_iNeXKnRuEfCqnNPawYxtew" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNeXK3RuEfCqnNPawYxtew" x="660" y="460" width="133" height="63"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNeXK3RuEfCqnNPawYxtew" x="680" y="549" width="133" height="63"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_iNeXLHRuEfCqnNPawYxtew" type="2002" element="_iNdIWXRuEfCqnNPawYxtew">
           <children xmi:type="notation:Node" xmi:id="_iNeXLXRuEfCqnNPawYxtew" type="5006"/>
@@ -12715,17 +12715,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_iNe-lnRuEfCqnNPawYxtew" type="4001" element="_iNdIpnRuEfCqnNPawYxtew" source="_iNeXGnRuEfCqnNPawYxtew" target="_iNeWL3RuEfCqnNPawYxtew">
           <children xmi:type="notation:Node" xmi:id="_iNe-l3RuEfCqnNPawYxtew" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-mHRuEfCqnNPawYxtew" x="55" y="-1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-mHRuEfCqnNPawYxtew" x="36"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_iNe-mXRuEfCqnNPawYxtew" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-mnRuEfCqnNPawYxtew" x="26" y="1"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-mnRuEfCqnNPawYxtew" x="18" y="2"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_iNe-m3RuEfCqnNPawYxtew" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-nHRuEfCqnNPawYxtew" x="20" y="-2"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-nHRuEfCqnNPawYxtew" x="13" y="-1"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_iNe-nXRuEfCqnNPawYxtew" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_iNe-nnRuEfCqnNPawYxtew" fontColor="9914954" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iNe-n3RuEfCqnNPawYxtew" points="[-1, 5, 9, -270]$[-10, 270, 0, -5]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iNe-n3RuEfCqnNPawYxtew" points="[-1, 5, 29, -181]$[-30, 181, 0, -5]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iNe-oHRuEfCqnNPawYxtew" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iNe-oXRuEfCqnNPawYxtew" id="(0.5,0.5)"/>
         </edges>
@@ -12811,17 +12811,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_iNe-3nRuEfCqnNPawYxtew" type="4001" element="_iNdIy3RuEfCqnNPawYxtew" source="_iNeWInRuEfCqnNPawYxtew" target="_iNeXFXRuEfCqnNPawYxtew">
           <children xmi:type="notation:Node" xmi:id="_iNe-33RuEfCqnNPawYxtew" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-4HRuEfCqnNPawYxtew" x="-1" y="-11"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-4HRuEfCqnNPawYxtew" x="-4" y="-11"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_iNe-4XRuEfCqnNPawYxtew" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-4nRuEfCqnNPawYxtew" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-4nRuEfCqnNPawYxtew" x="1" y="11"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_iNe-43RuEfCqnNPawYxtew" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-5HRuEfCqnNPawYxtew" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe-5HRuEfCqnNPawYxtew" x="4" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_iNe-5XRuEfCqnNPawYxtew" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_iNe-5nRuEfCqnNPawYxtew" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iNe-53RuEfCqnNPawYxtew" points="[0, -1, -158, -97]$[153, 93, -5, -3]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iNe-53RuEfCqnNPawYxtew" points="[0, 0, -178, -185]$[175, 182, -3, -3]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iNe-6HRuEfCqnNPawYxtew" id="(0.5461393596986818,1.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iNe-6XRuEfCqnNPawYxtew" id="(0.061068702290076333,0.04918032786885246)"/>
         </edges>
@@ -12875,17 +12875,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_iNe_DnRuEfCqnNPawYxtew" type="4001" element="_iNdI13RuEfCqnNPawYxtew" source="_iNeXInRuEfCqnNPawYxtew" target="_iNeWVnRuEfCqnNPawYxtew">
           <children xmi:type="notation:Node" xmi:id="_iNe_D3RuEfCqnNPawYxtew" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe_EHRuEfCqnNPawYxtew" x="9" y="-4"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe_EHRuEfCqnNPawYxtew" x="8" y="-3"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_iNe_EXRuEfCqnNPawYxtew" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe_EnRuEfCqnNPawYxtew" x="-4" y="7"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe_EnRuEfCqnNPawYxtew" x="-2" y="6"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_iNe_E3RuEfCqnNPawYxtew" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe_FHRuEfCqnNPawYxtew" x="-3" y="7"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iNe_FHRuEfCqnNPawYxtew" y="7"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_iNe_FXRuEfCqnNPawYxtew" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_iNe_FnRuEfCqnNPawYxtew" fontColor="9914954" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iNe_F3RuEfCqnNPawYxtew" points="[-5, 2, 280, -167]$[-280, 166, 5, -3]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iNe_F3RuEfCqnNPawYxtew" points="[-5, 1, 300, -79]$[-300, 78, 5, -2]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iNe_GHRuEfCqnNPawYxtew" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_iNe_GXRuEfCqnNPawYxtew" id="(0.5,0.5)"/>
         </edges>
@@ -15346,7 +15346,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@edgeMappings[name='LAB%20DataFlow%20between%20Function']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kWA-tHbZEfCqnNPawYxtew" name="HP Outlet Pressure" sourceNode="_kWAXoHbZEfCqnNPawYxtew" targetNode="_kWA-sHbZEfCqnNPawYxtew">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kWA-tHbZEfCqnNPawYxtew" name="E- HP Outlet Pressure" sourceNode="_kWAXoHbZEfCqnNPawYxtew" targetNode="_kWA-sHbZEfCqnNPawYxtew">
       <target xmi:type="org.polarsys.capella.core.data.fa:ComponentExchange" href="High%20Bypass%20Turbo%20Fan.capella#d0963053-4a8b-49e8-9885-0950cec9d45a"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.fa:ComponentExchange" href="High%20Bypass%20Turbo%20Fan.capella#d0963053-4a8b-49e8-9885-0950cec9d45a"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_kWA-tXbZEfCqnNPawYxtew" targetArrow="NoDecoration" centered="Both" strokeColor="74,74,151">
@@ -15373,7 +15373,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@edgeMappings[name='LAB%20PortRealization%20FlowPort%20to%20ComponentPort']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_vlquCHbZEfCqnNPawYxtew" name="HP Outlet Pressure" sourceNode="_vlquAHbZEfCqnNPawYxtew" targetNode="_vlquBHbZEfCqnNPawYxtew">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_vlquCHbZEfCqnNPawYxtew" name="I- HP Outlet Pressure" sourceNode="_vlquAHbZEfCqnNPawYxtew" targetNode="_vlquBHbZEfCqnNPawYxtew">
       <target xmi:type="org.polarsys.capella.core.data.fa:ComponentExchange" href="High%20Bypass%20Turbo%20Fan.capella#fbecc2f5-706f-46a5-9cda-5de5bdb3e904"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.fa:ComponentExchange" href="High%20Bypass%20Turbo%20Fan.capella#fbecc2f5-706f-46a5-9cda-5de5bdb3e904"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_vlrVEHbZEfCqnNPawYxtew" targetArrow="NoDecoration" centered="Both" strokeColor="74,74,151">
