@@ -755,9 +755,20 @@
               id="1a8a0fc5-e684-4435-886e-4192c33a0912" name="LPC Outut" source="#22fe04e9-5ca8-4c31-b8bc-6d175c83b32d"
               target="#2a875068-1974-4ebe-a9d5-704920371a76" kind="FLOW"/>
           <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
-              id="fab51c98-fa4a-4583-b525-ecb37126bcce" name="Compressor discharge pressure"
+              id="fab51c98-fa4a-4583-b525-ecb37126bcce" name="E- Compressor discharge pressure"
+              appliedPropertyValueGroups="#32d2df9e-e327-45a0-a079-d8165b479c33 #2c8a1f52-07c6-4a29-8baf-f34d405e399e"
               source="#9ab636a3-b4df-41a3-89db-37eec6bfdfa7" target="#b60e67ae-7a11-4a7b-9141-f92ec65fcc22"
               kind="FLOW">
+            <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                id="2c8a1f52-07c6-4a29-8baf-f34d405e399e" name="Interface Properties">
+              <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                  id="32d2df9e-e327-45a0-a079-d8165b479c33" name="Voltage Level">
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="f59a6ca0-e69a-4157-97bd-913374ab754e" name="Units" value="V"/>
+                <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:StringPropertyValue"
+                    id="83de3dd8-8086-4cec-a3fc-4eedadf52819" name="Value" value="5"/>
+              </ownedPropertyValueGroups>
+            </ownedPropertyValueGroups>
             <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
                 id="170434e4-aa35-42eb-b68e-87e6dbc1d652" targetElement="#58f3ee77-c282-4022-b314-625d96c1de1e"
                 sourceElement="#fab51c98-fa4a-4583-b525-ecb37126bcce"/>
