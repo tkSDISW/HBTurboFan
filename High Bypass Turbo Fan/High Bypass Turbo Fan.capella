@@ -346,6 +346,36 @@
             <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
                 id="edb11306-f196-4582-8504-0cd1cbb4eb6a" involved="#830b1ae3-0907-4425-8b8b-980b4cdc4750"/>
           </ownedFunctionalChains>
+          <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
+              id="a7b36c2d-8304-46b6-9ff4-af3318b75b17" name="Control Fuel">
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="80a7f390-e973-4d39-80a1-496e75350510" involved="#95d003e7-80b2-4bd4-be5c-c4197934f717"
+                source="#5d4b2b67-fd18-4064-adac-32ad85b7defa" target="#f65cc6c9-ef3a-43b3-ba47-c603556c8692"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="f65cc6c9-ef3a-43b3-ba47-c603556c8692" involved="#a3ad3615-407f-4dcd-bacd-96879e86c9c5"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="5d4b2b67-fd18-4064-adac-32ad85b7defa" involved="#c884dbd9-4225-4a33-b867-9e103760b107"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="1c955fc6-4b53-4a14-8d64-ecb86b49f385" involved="#66c98476-f91d-4d49-8070-75f81cfed404"
+                source="#f65cc6c9-ef3a-43b3-ba47-c603556c8692" target="#e0e0ab8c-45dc-40f8-b97d-146a26567217"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="e0e0ab8c-45dc-40f8-b97d-146a26567217" involved="#d30b8ff1-ce4c-4258-baef-06e13a3b9767"/>
+          </ownedFunctionalChains>
+          <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
+              id="63932112-45ff-4be2-976e-257aab331867" name="Combust Fuel">
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="d27dbcdc-4868-4edf-afb7-42ac80ff9c62" involved="#dd59f184-65e3-42c3-b022-1e9429e7b06e"
+                source="#8ccb9e42-0853-4a87-85d1-34ebbbfaeeb9" target="#4b660a49-2523-4ce6-9da5-b35c05401355"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="4b660a49-2523-4ce6-9da5-b35c05401355" involved="#d30b8ff1-ce4c-4258-baef-06e13a3b9767"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="8ccb9e42-0853-4a87-85d1-34ebbbfaeeb9" involved="#9d594040-bb36-498e-a8f1-ce9c14723e89"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementLink"
+                id="00927c04-21fb-4740-a0fa-7985e91021b5" involved="#02c9527d-8024-43d3-b24c-2fa00aa04cc0"
+                source="#4b660a49-2523-4ce6-9da5-b35c05401355" target="#796c1b58-3c2a-477c-8985-2763b40a8822"/>
+            <ownedFunctionalChainInvolvements xsi:type="org.polarsys.capella.core.data.fa:FunctionalChainInvolvementFunction"
+                id="796c1b58-3c2a-477c-8985-2763b40a8822" involved="#e208b463-6d8d-4821-b83d-2653dc5231d0"/>
+          </ownedFunctionalChains>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="7430612c-72c2-4e9a-886a-53485c0e7113" name="Generate Thrust"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
@@ -426,6 +456,10 @@
               id="d30b8ff1-ce4c-4258-baef-06e13a3b9767" name="Burn Fuel">
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
                 id="990c8303-c95b-410b-8fcf-7f9471cfb2b3" name="FIP 1"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="6e129de7-b3a4-478d-a91e-0bb4f89757ad" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="3729054a-f988-4c36-a3b2-b7b34fbe868a" name="FOP 1"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="063c930f-d0a2-493e-8764-302af770722e" name="Extract Energy">
@@ -451,10 +485,14 @@
                 id="11399a87-5e85-4338-b923-0bbcf60f3840" name="FIP 4"/>
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
                 id="a44619bd-a0d3-463a-8001-674f409e6561" name="FIP 5"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="fc02a16e-43e9-4948-9093-38c74b8085a9" name="FIP 6"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="0380c35c-fc37-4c28-9800-ab152885833a" name="FOP 1"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="35394e70-9701-4f7d-a884-85e3b5235319" name="FOP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="9b2d8648-ceea-4769-b2ad-5d7e1e9f9503" name="FOP 3"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="5c3fc6ba-797f-418c-ab67-e1bc9ae4be1e" name="Measure Inlet Air Temperatur">
@@ -546,6 +584,34 @@
                 id="7cfdc000-d707-46a2-8381-ddde1940a755" name="FIP 1"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="263a29c8-df01-414a-84d6-468644fb10d2" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="e208b463-6d8d-4821-b83d-2653dc5231d0" name="Direct Hot Gas to Turbine">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="ac41e469-e436-4be0-8b90-942e037540f2" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="55803c21-5564-4952-afa1-9500917f9072" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="ee4265f5-3a89-441b-b354-744cf4a71da2" name="Measure Exhaust Gas Temperature">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="24957f46-95f6-4f90-b643-236365b65e66" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="09c27fc9-0a4f-4d87-8b28-85f684b195e8" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="b2c1d43d-b5cc-4a5d-89a8-f101e0c3c1b5" name="Suppy Fuel">
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="efb0167b-4c63-4fc7-84cf-373de509babe" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="a3ad3615-407f-4dcd-bacd-96879e86c9c5" name="Control Fuel Flow">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="5411e520-f478-42dd-82be-bbc28e641791" name="FIP 1"/>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="0ef726b2-862f-4ce1-81c4-1809301a941b" name="FIP 2"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="d773b24b-660e-4082-b341-80675fbf0c43" name="FOP 1"/>
           </ownedFunctions>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="0b0cfc36-b5d9-4add-97e9-962d8816477d" targetElement="#0f953771-74fc-43b9-b27f-4d9404043806"
@@ -643,6 +709,24 @@
           <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
               id="eaa4c472-d34a-46ae-a8bc-f1a33de39bda" name="LP inlet Air" target="#69bbe885-1ead-4b55-918d-5917cb76d62d"
               source="#842006af-2bc7-4feb-951e-4e9cc6377f10"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="dd97bed3-708d-4f61-aa1f-3c4885c40e31" name="Exhaust Gas" target="#24957f46-95f6-4f90-b643-236365b65e66"
+              source="#55803c21-5564-4952-afa1-9500917f9072"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="9c68ea62-1832-41a0-bf05-97c15d585b25" name="EGT Temp" target="#fc02a16e-43e9-4948-9093-38c74b8085a9"
+              source="#09c27fc9-0a4f-4d87-8b28-85f684b195e8"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="95d003e7-80b2-4bd4-be5c-c4197934f717" name="Fuel Request" target="#5411e520-f478-42dd-82be-bbc28e641791"
+              source="#9b2d8648-ceea-4769-b2ad-5d7e1e9f9503"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="8e028087-9961-44d5-8c33-02ef922a7ff6" name="Fuel" target="#0ef726b2-862f-4ce1-81c4-1809301a941b"
+              source="#efb0167b-4c63-4fc7-84cf-373de509babe"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="66c98476-f91d-4d49-8070-75f81cfed404" name="Fuel" target="#6e129de7-b3a4-478d-a91e-0bb4f89757ad"
+              source="#d773b24b-660e-4082-b341-80675fbf0c43"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="02c9527d-8024-43d3-b24c-2fa00aa04cc0" name="EG" target="#ac41e469-e436-4be0-8b90-942e037540f2"
+              source="#3729054a-f988-4c36-a3b2-b7b34fbe868a"/>
         </ownedLogicalFunctions>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
@@ -756,9 +840,8 @@
               target="#2a875068-1974-4ebe-a9d5-704920371a76" kind="FLOW"/>
           <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
               id="fab51c98-fa4a-4583-b525-ecb37126bcce" name="E- Compressor discharge pressure"
-              appliedPropertyValueGroups="#32d2df9e-e327-45a0-a079-d8165b479c33 #2c8a1f52-07c6-4a29-8baf-f34d405e399e"
-              source="#9ab636a3-b4df-41a3-89db-37eec6bfdfa7" target="#b60e67ae-7a11-4a7b-9141-f92ec65fcc22"
-              kind="FLOW">
+              appliedPropertyValueGroups="#2c8a1f52-07c6-4a29-8baf-f34d405e399e" source="#9ab636a3-b4df-41a3-89db-37eec6bfdfa7"
+              target="#b60e67ae-7a11-4a7b-9141-f92ec65fcc22" kind="FLOW">
             <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
                 id="2c8a1f52-07c6-4a29-8baf-f34d405e399e" name="Interface Properties">
               <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
@@ -832,6 +915,23 @@
                 id="7186903f-a8a9-42f0-a575-fc26d91491ec" targetElement="#8ee986d5-18b6-46ad-82f3-d02fb3c78258"
                 sourceElement="#53da880d-c34a-4767-8fe9-d37abdd91206"/>
           </ownedComponentExchanges>
+          <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+              id="c16485eb-4cc8-471c-81bb-035f85293313" name="E-EGT" source="#91947408-38a3-45b4-a389-f164db61e105"
+              target="#560e256c-184a-4a88-b8b7-41f84d345c45" kind="FLOW">
+            <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
+                id="3c677a1e-c956-40be-82ab-f081643bbb9b" targetElement="#dd97bed3-708d-4f61-aa1f-3c4885c40e31"
+                sourceElement="#c16485eb-4cc8-471c-81bb-035f85293313"/>
+          </ownedComponentExchanges>
+          <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+              id="d157c51e-2890-47b6-b78d-ae3fa0a2292c" name="I-EGT" source="#5f3d10a8-44a3-41b6-9da1-fc6d3b9a5a1f"
+              target="#8803e97f-c0e1-41fc-be6a-6d2b695a2b64" kind="FLOW"/>
+          <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+              id="d0a35cc6-13b9-4d9f-b063-d6d9e33f9f95" name="I -Fuel " source="#cd8a9a1d-83d2-437d-97cd-d73c161b7106"
+              target="#42bac124-f205-4320-8005-cce1072f6c7a" kind="FLOW">
+            <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
+                id="e7a48a08-5227-4b8a-bc35-f6a9da485375" targetElement="#95d003e7-80b2-4bd4-be5c-c4197934f717"
+                sourceElement="#d0a35cc6-13b9-4d9f-b063-d6d9e33f9f95"/>
+          </ownedComponentExchanges>
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="ed5e0328-d284-4e41-b1ec-64fd4dda4500"
               name="Fan" abstractType="#abfe9554-b63f-4bc3-852f-ac8167d666b8"/>
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="19986235-99b4-4b3a-aa79-a6af190f47cb"
@@ -876,6 +976,12 @@
               name="HP Stator Vane Actuator" abstractType="#6ecf8aa2-01bb-425d-ad96-bffb611f9f11"/>
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="5a02df51-f73d-44e2-9e57-b489634c6a81"
               name="LP Stator Vanes Actuator" abstractType="#646ff8ed-858b-4496-8c1f-84285bc57e91"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="2dbe8352-b673-46f3-82cb-e16dea3e9106"
+              name="Combustion Outlet" abstractType="#3919d94d-cc83-46fb-a09e-f0362648bdb4"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="926e1f0b-0cca-4545-8892-0f4a69d64e51"
+              name="EGT" abstractType="#cf12308c-9b81-4523-a39b-f9f59d4c19e9"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="266fd2b7-9b72-4da3-82da-1ea6d176d4b3"
+              name="Fuel Meter Valve (FMV)" abstractType="#906a607c-a985-45a9-95c0-e618a8950355"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="f19b4761-4ad9-4cb9-a463-2f20aec7b583" targetElement="#f975c87c-4be2-4b86-8a13-d129f7c17ec3"
               sourceElement="#c22f220a-34ad-4e28-baa9-ded79bce183a"/>
@@ -1076,6 +1182,16 @@
               <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
                   id="c6139bda-203b-4cdd-838c-64a552ee4b49" targetElement="#0380c35c-fc37-4c28-9800-ab152885833a"
                   sourceElement="#3a188c74-dde9-4767-ba24-e05c0b9ade24"/>
+            </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="8803e97f-c0e1-41fc-be6a-6d2b695a2b64" name="CP 6" orientation="IN"
+                kind="FLOW"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="cd8a9a1d-83d2-437d-97cd-d73c161b7106" name="CP 7" orientation="OUT"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="e4a8306a-a3db-4659-82c6-e75c50a5b786" targetElement="#9b2d8648-ceea-4769-b2ad-5d7e1e9f9503"
+                  sourceElement="#cd8a9a1d-83d2-437d-97cd-d73c161b7106"/>
             </ownedFeatures>
           </ownedLogicalComponents>
           <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
@@ -1295,6 +1411,48 @@
                 id="45016b24-41ac-483d-af04-eb199d9266b7" targetElement="#9e5431d6-82c8-4c7f-83bd-e95b5d9d6056"
                 sourceElement="#646ff8ed-858b-4496-8c1f-84285bc57e91"/>
           </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="3919d94d-cc83-46fb-a09e-f0362648bdb4" name="Combustion Outlet">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="e13d356d-a9bc-4ee2-8ebb-e535a04fa5e1" targetElement="#e208b463-6d8d-4821-b83d-2653dc5231d0"
+                sourceElement="#3919d94d-cc83-46fb-a09e-f0362648bdb4"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="91947408-38a3-45b4-a389-f164db61e105" name="CP 4" orientation="OUT"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="a3aa1f03-facd-4ac7-9ae2-1065ac5da4fd" targetElement="#55803c21-5564-4952-afa1-9500917f9072"
+                  sourceElement="#91947408-38a3-45b4-a389-f164db61e105"/>
+            </ownedFeatures>
+          </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="cf12308c-9b81-4523-a39b-f9f59d4c19e9" name="EGT" summary="Exhaust Gas Temperature Sensor">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="b194fdc0-2cb0-40f5-af8a-90c0bb5bcec4" targetElement="#ee4265f5-3a89-441b-b354-744cf4a71da2"
+                sourceElement="#cf12308c-9b81-4523-a39b-f9f59d4c19e9"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="560e256c-184a-4a88-b8b7-41f84d345c45" name="CP 1" orientation="IN"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="10c6f509-4387-431a-8a83-b966288aab31" targetElement="#24957f46-95f6-4f90-b643-236365b65e66"
+                  sourceElement="#560e256c-184a-4a88-b8b7-41f84d345c45"/>
+            </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="5f3d10a8-44a3-41b6-9da1-fc6d3b9a5a1f" name="CP 2" orientation="OUT"
+                kind="FLOW"/>
+          </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="906a607c-a985-45a9-95c0-e618a8950355" name="Fuel Meter Valve (FMV)">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="6c2f51de-32f4-4ee7-b2e3-883d01e73a00" targetElement="#a3ad3615-407f-4dcd-bacd-96879e86c9c5"
+                sourceElement="#906a607c-a985-45a9-95c0-e618a8950355"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="42bac124-f205-4320-8005-cce1072f6c7a" name="CP 1" orientation="IN"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="2509d998-82af-4f9d-bd17-1ca100abddb9" targetElement="#5411e520-f478-42dd-82be-bbc28e641791"
+                  sourceElement="#42bac124-f205-4320-8005-cce1072f6c7a"/>
+            </ownedFeatures>
+          </ownedLogicalComponents>
         </ownedLogicalComponents>
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
             id="bd0dd1fa-5b72-4ed1-83bb-5d2f57721bb2" name="Environment" actor="true">
@@ -1335,6 +1493,9 @@
         </ownedLogicalComponents>
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
             id="cfe45dfd-2643-4b3c-a0ae-826936b5e3e3" name="Fuel System" actor="true">
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="ce989e59-47e3-487f-bc5c-f8e0651965a4" targetElement="#b2c1d43d-b5cc-4a5d-89a8-f101e0c3c1b5"
+              sourceElement="#cfe45dfd-2643-4b3c-a0ae-826936b5e3e3"/>
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
               id="198a0bee-8c8e-4517-a484-907aab76241a" name="CP 1" orientation="OUT"
               kind="FLOW"/>
