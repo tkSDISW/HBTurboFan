@@ -1024,6 +1024,8 @@
               <ownedExtensions xsi:type="smw:TcItemRevision" id="2a2a4edb-43bc-46d7-a95e-05c9bed40bf7"
                   tcuid="gTphKfYWJ_cL6A" occTcuid="zkthKfYWJ_cL6A"/>
             </inputs>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="7aacf774-907d-49ec-b7f3-4c84c8fc9264" name="FIP 13"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="0380c35c-fc37-4c28-9800-ab152885833a" name="FOP 1">
               <ownedExtensions xsi:type="smw:TcItemRevision" id="8e328c01-b742-4667-8e8a-966da252e927"
@@ -1039,6 +1041,8 @@
               <ownedExtensions xsi:type="smw:TcItemRevision" id="8e69b963-c807-4709-93ed-38123b2b686a"
                   tcuid="A7lhKfYWJ_cL6A" occTcuid="zcphKfYWJ_cL6A"/>
             </outputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="49fa5328-b0cc-4cb9-9f01-a7e9898af6b5" name="FOP 4"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="5c3fc6ba-797f-418c-ab67-e1bc9ae4be1e" name="Measure Inlet Air Temperatur">
@@ -1057,7 +1061,8 @@
             </outputs>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
-              id="591cc2eb-d18e-4fba-a949-1489cfad791d" name="Channel Fan Air to Turbine">
+              id="591cc2eb-d18e-4fba-a949-1489cfad791d" name="Channel Fan Air to Turbine"
+              description="&lt;p>A&amp;nbsp; Input Fan&amp;nbsp;Air is channeled to LP Inlet or the Bleed Air System based on the setting of the&amp;nbsp;Bleed&amp;nbsp;&amp;nbsp;Valve input.&lt;/p>&#xA;">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="36de0e2e-3056-4c0d-ad37-1675dd29f313"
                 tcuid="wkjhKfYWJ_cL6A" stableTcId="Q4rhKfYWJ_cL6A" occTcuid="UqihKfYWJ_cL6A"
                 itemId="037073" revisionId="A"/>
@@ -1066,6 +1071,8 @@
               <ownedExtensions xsi:type="smw:TcItemRevision" id="463f13bf-d6e5-47af-a407-5148764ee24c"
                   tcuid="A$hhKfYWJ_cL6A" occTcuid="zyuhKfYWJ_cL6A"/>
             </inputs>
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="eb5e1e70-f1a2-4e25-98a8-267a0c5f8314" name="FIP 2"/>
             <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
                 id="ee83a3b1-1d47-4760-ac4d-14ac33d8227c" name="FOP 1">
               <ownedExtensions xsi:type="smw:TcItemRevision" id="fae98e47-3ccf-4852-afdf-f6c99a62960b"
@@ -1081,6 +1088,8 @@
               <ownedExtensions xsi:type="smw:TcItemRevision" id="74a5aa07-8d8a-47b0-b517-d4e286634a53"
                   tcuid="QrnhKfYWJ_cL6A" occTcuid="zyohKfYWJ_cL6A"/>
             </outputs>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="bd8e0ea1-a730-48aa-aba0-019008c09f9c" name="FOP 5"/>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
               id="ee94b8d9-ca74-49b4-a805-59f75298c93a" name="Channel Air to HPC">
@@ -1474,6 +1483,30 @@
                   tcuid="gDjhKfYWJ_cL6A" occTcuid="zAhhKfYWJ_cL6A"/>
             </outputs>
           </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="15d8942e-73d2-488a-afd2-f1a5d76bceb6" name="Accept TLA">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="f864a2e8-a175-4ec2-8e8c-2dec74acec05" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="9ea8b58f-9df9-4b45-9fdb-5acb2108e99e" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="5d9f1e9e-c24f-4995-9fb9-f3dc257bffdf" name="Provide Throttle Input">
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="24a59810-b5a4-4f93-b239-f0311e38d335" name="FOP 1"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="7ae85fd6-6f63-4010-9959-7d7c15a94344" name="Consume Air">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="d159593f-c952-4b41-ba6b-b8b8ed7abec1" name="Air"/>
+          </ownedFunctions>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
+              id="d1dbfcf0-0ddb-4b71-9d8b-875678ed24b0" name="Set Bleed Air Postion">
+            <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
+                id="23fc1dd5-92a3-4326-9bdb-aefeb60a2ae8" name="FIP 1"/>
+            <outputs xsi:type="org.polarsys.capella.core.data.fa:FunctionOutputPort"
+                id="eb5e8bf6-0698-4da3-8ab8-60779f32a2fe" name="FOP 1"/>
+          </ownedFunctions>
           <ownedFunctionRealizations xsi:type="org.polarsys.capella.core.data.fa:FunctionRealization"
               id="0b0cfc36-b5d9-4add-97e9-962d8816477d" targetElement="#0f953771-74fc-43b9-b27f-4d9404043806"
               sourceElement="#f82481b8-e5b0-444c-a69a-74d14b4e194f"/>
@@ -1848,6 +1881,21 @@
                 tcuid="AyrhKfYWJ_cL6A" stableTcId="wJrhKfYWJ_cL6A" occTcuid="ksihKfYWJ_cL6A"
                 itemId="037183" revisionId="A"/>
           </ownedFunctionalExchanges>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="ac4e3bb3-dd39-40b0-a637-51cbf229520b" name="TLA Angle" target="#f864a2e8-a175-4ec2-8e8c-2dec74acec05"
+              source="#24a59810-b5a4-4f93-b239-f0311e38d335"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="d761a29d-75a8-4067-a921-836986c40dd2" name="TLA Angle" target="#7aacf774-907d-49ec-b7f3-4c84c8fc9264"
+              source="#9ea8b58f-9df9-4b45-9fdb-5acb2108e99e"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="707d4125-6bc1-49cf-b9b0-e97cd34b798a" name="Bleed Air" target="#d159593f-c952-4b41-ba6b-b8b8ed7abec1"
+              source="#bd8e0ea1-a730-48aa-aba0-019008c09f9c"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="fddba676-404f-4ad5-b6c6-32a72a100584" name="Bleed Air Position"
+              target="#23fc1dd5-92a3-4326-9bdb-aefeb60a2ae8" source="#49fa5328-b0cc-4cb9-9f01-a7e9898af6b5"/>
+          <ownedFunctionalExchanges xsi:type="org.polarsys.capella.core.data.fa:FunctionalExchange"
+              id="5f715b20-4600-4a0b-993f-ff7e07a56328" name="Bleed Air Valve Percentage"
+              target="#eb5e1e70-f1a2-4e25-98a8-267a0c5f8314" source="#eb5e8bf6-0698-4da3-8ab8-60779f32a2fe"/>
         </ownedLogicalFunctions>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.la:CapabilityRealizationPkg"
@@ -1893,6 +1941,10 @@
           <ownedExtensions xsi:type="smw:TcItemRevision" id="bc8c59ae-4e9d-4d6f-92b5-0fa8445ba874"
               tcuid="zRthKfYWJ_cL6A" stableTcId="zRvhKfYWJ_cL6A"/>
         </ownedParts>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="296191e8-24de-49c4-96b5-837a00cbe6c7"
+            name="Pilot" abstractType="#91616fbf-506d-4dc8-9c69-e1eddae70754"/>
+        <ownedParts xsi:type="org.polarsys.capella.core.data.cs:Part" id="2ae7fae0-ce3a-4b6d-bddf-b617a3e1b119"
+            name="Bleed Air System" abstractType="#e18fdd6a-cb30-4dce-98ca-8d95e294dde5"/>
         <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
             id="61ef9125-d6a2-444b-996a-96e0f8338d4d" name="C 1" source="#198a0bee-8c8e-4517-a484-907aab76241a"
             target="#b3c1111f-de28-478d-9a1c-78a65bd01a5f" kind="FLOW">
@@ -1960,6 +2012,20 @@
             <ownedExtensions xsi:type="smw:TcItemRevision" id="5d0e02fc-6f53-4fc1-9a28-b775caadd7d6"
                 tcuid="jQlhKfYWJ_cL6A" stableTcId="jQlhKfYWJ_cL6A"/>
           </ownedComponentExchangeFunctionalExchangeAllocations>
+        </ownedComponentExchanges>
+        <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+            id="b73e80a3-be76-44c2-a7f7-b30792d43127" name="M-TLA" source="#2019727b-761c-46c6-a3d6-d260965439fe"
+            target="#ad6edf75-4d99-4a5d-9335-5e9977d35bc2" kind="FLOW">
+          <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
+              id="a817dc50-e24c-4966-b826-a732880fa59b" targetElement="#ac4e3bb3-dd39-40b0-a637-51cbf229520b"
+              sourceElement="#b73e80a3-be76-44c2-a7f7-b30792d43127"/>
+        </ownedComponentExchanges>
+        <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+            id="76d70416-9e20-4860-988b-3f5f7718df1d" name="H-Bleed Air" source="#88699d79-7ad4-47c5-83b8-e6e634dab765"
+            target="#44f95512-dce8-4903-9e14-683816166b70" kind="FLOW">
+          <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
+              id="c8da07da-9798-42dd-865f-b54e297ba6ab" targetElement="#707d4125-6bc1-49cf-b9b0-e97cd34b798a"
+              sourceElement="#76d70416-9e20-4860-988b-3f5f7718df1d"/>
         </ownedComponentExchanges>
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
             id="c22f220a-34ad-4e28-baa9-ded79bce183a" name="High Bypass Turbo Fan">
@@ -2492,6 +2558,27 @@
                   tcuid="zKkhKfYWJ_cL6A" stableTcId="zKkhKfYWJ_cL6A"/>
             </ownedComponentExchangeFunctionalExchangeAllocations>
           </ownedComponentExchanges>
+          <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+              id="719020d3-0aaa-4cd7-ac71-e2352ef88dc8" name="E-TLA" source="#3ca5e77d-8428-48cf-b21d-c3d116765f51"
+              target="#4cb52b0c-50b8-4a9b-8486-d38e1aec0de5" kind="FLOW">
+            <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
+                id="28145334-03ae-4fca-92f0-4484a72b1229" targetElement="#d761a29d-75a8-4067-a921-836986c40dd2"
+                sourceElement="#719020d3-0aaa-4cd7-ac71-e2352ef88dc8"/>
+          </ownedComponentExchanges>
+          <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+              id="56fa856d-8503-4e0d-a856-b5c68b918b80" name="M-Bleed Air" source="#3327df97-ada5-4059-b8e0-491c73456733"
+              target="#1a334fca-655c-4874-9686-9661e3333e2a" kind="FLOW">
+            <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
+                id="5260852a-cd91-4642-a0ff-8539a2cbb7e4" targetElement="#5f715b20-4600-4a0b-993f-ff7e07a56328"
+                sourceElement="#56fa856d-8503-4e0d-a856-b5c68b918b80"/>
+          </ownedComponentExchanges>
+          <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.fa:ComponentExchange"
+              id="1b38b041-3496-4dd0-9069-49543995e5b9" name="E-Bleed AIr" source="#7fc07c31-4195-4e08-abf0-ad156be84be5"
+              target="#4b82fd84-58c0-4958-bad5-597418912f81" kind="FLOW">
+            <ownedComponentExchangeFunctionalExchangeAllocations xsi:type="org.polarsys.capella.core.data.fa:ComponentExchangeFunctionalExchangeAllocation"
+                id="5ce08686-c5d0-4a94-9f46-99f041e67eaf" targetElement="#fddba676-404f-4ad5-b6c6-32a72a100584"
+                sourceElement="#1b38b041-3496-4dd0-9069-49543995e5b9"/>
+          </ownedComponentExchanges>
           <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="ed5e0328-d284-4e41-b1ec-64fd4dda4500"
               name="Fan" abstractType="#abfe9554-b63f-4bc3-852f-ac8167d666b8">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="36b7e5fc-c6e0-4718-8bd8-08d287c7c073"
@@ -2652,6 +2739,10 @@
             <ownedExtensions xsi:type="smw:TcItemRevision" id="2ab6a1e7-7d85-473f-84d2-782c4eebf7d3"
                 tcuid="irihKfYWJ_cL6A" stableTcId="irkhKfYWJ_cL6A"/>
           </ownedFeatures>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="8188e998-88b8-4101-80f9-f3468e567c31"
+              name="Throttle Lever Angle" abstractType="#cc733789-f9ba-4b61-8290-e2bb2f37948b"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="96bb16d3-bfb1-4e0b-b882-c9113124f683"
+              name="Bleed Air Valve" abstractType="#cc5289a9-b888-4296-b2f8-8d97aba76138"/>
           <ownedComponentRealizations xsi:type="org.polarsys.capella.core.data.cs:ComponentRealization"
               id="f19b4761-4ad9-4cb9-a463-2f20aec7b583" targetElement="#f975c87c-4be2-4b86-8a13-d129f7c17ec3"
               sourceElement="#c22f220a-34ad-4e28-baa9-ded79bce183a"/>
@@ -3208,6 +3299,20 @@
                     tcuid="DyqhKfYWJ_cL6A" stableTcId="DyqhKfYWJ_cL6A"/>
               </ownedPortAllocations>
             </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="4cb52b0c-50b8-4a9b-8486-d38e1aec0de5" name="CP 16" orientation="IN"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="0defadb3-fce3-45cf-be5c-6aab1a1a6c36" targetElement="#7aacf774-907d-49ec-b7f3-4c84c8fc9264"
+                  sourceElement="#4cb52b0c-50b8-4a9b-8486-d38e1aec0de5"/>
+            </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="7fc07c31-4195-4e08-abf0-ad156be84be5" name="CP 17" orientation="OUT"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="994ff825-9a98-47c1-92c9-bf9bdd1cfa33" targetElement="#49fa5328-b0cc-4cb9-9f01-a7e9898af6b5"
+                  sourceElement="#7fc07c31-4195-4e08-abf0-ad156be84be5"/>
+            </ownedFeatures>
           </ownedLogicalComponents>
           <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
               id="1c43780e-8d60-47d4-8eeb-c65c737e172f" name="Turbine Intet Temperature (P2)">
@@ -3233,7 +3338,7 @@
               </ownedPortAllocations>
             </ownedFeatures>
             <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
-                id="4892f4ee-946f-4c0d-a75c-b6c197861a8e" name="CP 2" orientation="OUT"
+                id="4892f4ee-946f-4c0d-a75c-b6c197861a8e" name="CP 2" orientation="IN"
                 kind="FLOW">
               <ownedExtensions xsi:type="smw:TcItemRevision" id="dd3bbebb-6da0-4dc8-bf69-66e409b48e6f"
                   tcuid="QPlhKfYWJ_cL6A" occTcuid="VRlhKfYWJ_cL6A"/>
@@ -3299,7 +3404,7 @@
               </ownedPortAllocations>
             </ownedFeatures>
             <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
-                id="f7f62b08-fecf-4050-addf-ddfa59b598d5" name="CP 3" orientation="IN"
+                id="f7f62b08-fecf-4050-addf-ddfa59b598d5" name="CP 3" orientation="OUT"
                 kind="FLOW">
               <ownedExtensions xsi:type="smw:TcItemRevision" id="06d0a2cc-b969-41db-9dee-5c597452d4d3"
                   tcuid="QPthKfYWJ_cL6A" occTcuid="1plhKfYWJ_cL6A"/>
@@ -3321,6 +3426,20 @@
                 <ownedExtensions xsi:type="smw:TcItemRevision" id="2f44699e-d38d-42ea-bdd9-cba42e833fed"
                     tcuid="RHlhKfYWJ_cL6A" stableTcId="RHlhKfYWJ_cL6A"/>
               </ownedPortAllocations>
+            </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="88699d79-7ad4-47c5-83b8-e6e634dab765" name="CP 6" orientation="OUT"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="f7f6c44d-6003-4368-8559-4da590f97196" targetElement="#bd8e0ea1-a730-48aa-aba0-019008c09f9c"
+                  sourceElement="#88699d79-7ad4-47c5-83b8-e6e634dab765"/>
+            </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="1a334fca-655c-4874-9686-9661e3333e2a" name="CP 7" orientation="IN"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="2bcc64dd-2db2-4603-97ce-cb09bd164fec" targetElement="#eb5e1e70-f1a2-4e25-98a8-267a0c5f8314"
+                  sourceElement="#1a334fca-655c-4874-9686-9661e3333e2a"/>
             </ownedFeatures>
           </ownedLogicalComponents>
           <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
@@ -4067,6 +4186,46 @@
               </ownedPortAllocations>
             </ownedFeatures>
           </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="cc733789-f9ba-4b61-8290-e2bb2f37948b" name="Throttle Lever Angle">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="e8bb43e7-55aa-43ce-bf23-f93f5da401a0" targetElement="#15d8942e-73d2-488a-afd2-f1a5d76bceb6"
+                sourceElement="#cc733789-f9ba-4b61-8290-e2bb2f37948b"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="3ca5e77d-8428-48cf-b21d-c3d116765f51" name="CP 1" orientation="OUT"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="806220b5-f674-49b4-a2ea-dba1b5006cae" targetElement="#9ea8b58f-9df9-4b45-9fdb-5acb2108e99e"
+                  sourceElement="#3ca5e77d-8428-48cf-b21d-c3d116765f51"/>
+            </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="ad6edf75-4d99-4a5d-9335-5e9977d35bc2" name="CP 2" orientation="IN"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="c3cb94ed-39f0-4d1f-bf6d-d4abb2f63b1d" targetElement="#f864a2e8-a175-4ec2-8e8c-2dec74acec05"
+                  sourceElement="#ad6edf75-4d99-4a5d-9335-5e9977d35bc2"/>
+            </ownedFeatures>
+          </ownedLogicalComponents>
+          <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+              id="cc5289a9-b888-4296-b2f8-8d97aba76138" name="Bleed Air Valve">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="efec4856-c573-4b5d-a396-3ea23e03b2d1" targetElement="#d1dbfcf0-0ddb-4b71-9d8b-875678ed24b0"
+                sourceElement="#cc5289a9-b888-4296-b2f8-8d97aba76138"/>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="3327df97-ada5-4059-b8e0-491c73456733" name="CP 1" orientation="OUT"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="267e41d0-2b82-44c5-a2e6-174d4e93b058" targetElement="#eb5e8bf6-0698-4da3-8ab8-60779f32a2fe"
+                  sourceElement="#3327df97-ada5-4059-b8e0-491c73456733"/>
+            </ownedFeatures>
+            <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+                id="4b82fd84-58c0-4958-bad5-597418912f81" name="CP 2" orientation="IN"
+                kind="FLOW">
+              <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                  id="f04b9f9c-746e-4815-9e28-a49f18291fcd" targetElement="#23fc1dd5-92a3-4326-9bdb-aefeb60a2ae8"
+                  sourceElement="#4b82fd84-58c0-4958-bad5-597418912f81"/>
+            </ownedFeatures>
+          </ownedLogicalComponents>
         </ownedLogicalComponents>
         <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
             id="bd0dd1fa-5b72-4ed1-83bb-5d2f57721bb2" name="Environment" actor="true">
@@ -4165,6 +4324,32 @@
               <ownedExtensions xsi:type="smw:TcItemRevision" id="59647ad9-438b-4aae-890e-e8944005cd04"
                   tcuid="TqrhKfYWJ_cL6A" stableTcId="TqrhKfYWJ_cL6A"/>
             </ownedPortAllocations>
+          </ownedFeatures>
+        </ownedLogicalComponents>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="91616fbf-506d-4dc8-9c69-e1eddae70754" name="Pilot" actor="true">
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="8eaa05e8-eda8-4711-b5cb-49db9fac5495" targetElement="#5d9f1e9e-c24f-4995-9fb9-f3dc257bffdf"
+              sourceElement="#91616fbf-506d-4dc8-9c69-e1eddae70754"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+              id="2019727b-761c-46c6-a3d6-d260965439fe" name="CP 1" orientation="OUT"
+              kind="FLOW">
+            <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                id="45b60811-7fd7-4f22-b1e6-1baf0e28637e" targetElement="#24a59810-b5a4-4f93-b239-f0311e38d335"
+                sourceElement="#2019727b-761c-46c6-a3d6-d260965439fe"/>
+          </ownedFeatures>
+        </ownedLogicalComponents>
+        <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
+            id="e18fdd6a-cb30-4dce-98ca-8d95e294dde5" name="Bleed Air System" actor="true">
+          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+              id="45bc191e-9e52-4a44-bf01-b4851b0cbd71" targetElement="#7ae85fd6-6f63-4010-9959-7d7c15a94344"
+              sourceElement="#e18fdd6a-cb30-4dce-98ca-8d95e294dde5"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.fa:ComponentPort"
+              id="44f95512-dce8-4903-9e14-683816166b70" name="CP 1" orientation="IN"
+              kind="FLOW">
+            <ownedPortAllocations xsi:type="org.polarsys.capella.core.data.information:PortAllocation"
+                id="9bbc5612-ce71-4cdc-a88e-431bb77873e4" targetElement="#d159593f-c952-4b41-ba6b-b8b8ed7abec1"
+                sourceElement="#44f95512-dce8-4903-9e14-683816166b70"/>
           </ownedFeatures>
         </ownedLogicalComponents>
       </ownedLogicalComponentPkg>
