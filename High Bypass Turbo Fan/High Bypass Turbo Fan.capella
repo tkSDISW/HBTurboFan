@@ -38,6 +38,64 @@
         targetCapellaId="0255369e-8762-4185-a980-f6761c01ce1b" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Actuate LP Stator Vanes Capability&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164167&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>This capability involves the adjustment and control of Low-Pressure Stator Vanes, which are crucial for directing airflow through the engine's compressor sections. Proper vane angles ensure optimal airflow, enhancing engine efficiency and preventing unwanted aerodynamic losses that could affect engine performance.&lt;/span>&lt;/p>&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>Functional Chain: Actuate LP Stator Vanes&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;0255369e-8762-4185-a980-f6761c01ce1b&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;0255369e-8762-4185-a980-f6761c01ce1b&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;g4ihLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QEkhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
     <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="cd98b215-5388-4d9d-a08a-15758917e060"
         targetCapellaId="e220b608-0a8b-4f61-b351-351bea2cbdec" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Perform LP Compression Capability&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164149&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>This capability is concerned with the compression of incoming air at low pressure, a fundamental process that enhances the density of air entering the combustion chamber. This step is crucial for achieving the desired pressure conditions that improve combustion efficiency.&lt;/span>&lt;/p>&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>Functional Chain: Perform LP Compression&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;e220b608-0a8b-4f61-b351-351bea2cbdec&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;e220b608-0a8b-4f61-b351-351bea2cbdec&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gsuhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A8ghLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="34f49f55-dd8e-4d27-aff4-3992f6fea50a"
+        targetCapellaId="4fcbcc0e-7557-419f-a90d-9a3b09bcb3c7" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Quito Airport High Altitude&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164138&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At an altitude of approximately [2,806 meters] and temperature of [15°C], the engine shall deliver maximum thrust to ensure takeoff under reduced air pressure conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;4fcbcc0e-7557-419f-a90d-9a3b09bcb3c7&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;4fcbcc0e-7557-419f-a90d-9a3b09bcb3c7&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;goohLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A0qhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="a6a31c9a-edd0-48e4-b546-4f30043f4a6b"
+        targetCapellaId="6f8413b3-7b55-4459-91df-9f317a6a43d6" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Mumbai Airport Monsoon Climate&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164197&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At sea level with high ambient humidity and temperatures of approximately [35°C], the engine shall support maximum thrust for takeoff amid wet conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;6f8413b3-7b55-4459-91df-9f317a6a43d6&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;6f8413b3-7b55-4459-91df-9f317a6a43d6&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wEuhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QUghLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="ef2a6c02-c6c4-475f-94df-d41b835e9383"
+        targetCapellaId="e61d9f05-5c56-4414-b2e0-2fa2a87a91fd" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Antarctica Airport Low Temperature&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164129&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At an approximate altitude of [50 meters] and temperature of [−40°C], the engine shall provide maximum thrust, accounting for icy conditions and low temperatures.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;e61d9f05-5c56-4414-b2e0-2fa2a87a91fd&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;e61d9f05-5c56-4414-b2e0-2fa2a87a91fd&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gkmhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;AwohLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="7a076c02-9c27-460f-9710-bf7c654837d1"
+        targetCapellaId="c934bf45-dc8c-423e-82ab-16a7c5127e1a" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Dubai Airport High Temperature&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164176&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At sea level with an ambient temperature of approximately [45°C], the engine shall deliver maximum thrust to ensure efficient takeoff in extreme heat conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;c934bf45-dc8c-423e-82ab-16a7c5127e1a&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;c934bf45-dc8c-423e-82ab-16a7c5127e1a&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;g8khLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QImhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="65c9a394-93fd-4260-851f-c05a97358576"
+        targetCapellaId="1bde0440-5b26-42b9-9b40-eb4b568f17e7" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;La Paz Airport Extreme Altitude&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164183&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At an altitude of approximately [4,061 meters] and temperature of [7°C], the engine shall achieve maximum thrust output necessary for thin atmospheric conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;1bde0440-5b26-42b9-9b40-eb4b568f17e7&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;1bde0440-5b26-42b9-9b40-eb4b568f17e7&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wAihLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QMkhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="88454bf3-f8e4-44c7-8830-086dcea62bef"
+        targetCapellaId="97454ac3-9bd6-4cd6-ab92-d651e551fd46" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Madrid Airport High Temperature&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164153&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At an altitude of around [609 meters] with ambient temperatures reaching [40°C] during summer, the engine shall generate maximum thrust to overcome heat constraints.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;97454ac3-9bd6-4cd6-ab92-d651e551fd46&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;97454ac3-9bd6-4cd6-ab92-d651e551fd46&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gwmhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A8ohLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="9f907d4b-1a26-4172-a3cf-939adda21048"
+        targetCapellaId="ea1438df-2448-445e-ba73-9590d53c9da6" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Buenos Aires Buenos Aires Airport Variable Climate&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164180&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:6pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At an altitude of [25 meters] with potential for sudden temperature shifts between [5°C to 25°C], the engine shall deliver maximum thrust to adapt to rapid climate variations during takeoff.&lt;/span>&lt;/p>&lt;p style=\&quot;margin-top:0pt;  margin-bottom:0pt;  font-size:10px; \&quot;>&lt;br style=\&quot;page-break-before:always; clear:both\&quot; />&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;ea1438df-2448-445e-ba73-9590d53c9da6&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;ea1438df-2448-445e-ba73-9590d53c9da6&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;g8shLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QIuhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="2796c7f5-f0da-47ee-bc26-9af363e1c090"
+        targetCapellaId="a111d54f-f7bc-4ebd-bd1e-84d9ceed860e" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Zurich Airport Cold Weather&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164150&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At an altitude of approximately [412 meters] and temperature of [−10°C], the engine shall maintain maximum thrust for takeoff in cold, dense air environments.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;a111d54f-f7bc-4ebd-bd1e-84d9ceed860e&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;a111d54f-f7bc-4ebd-bd1e-84d9ceed860e&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gwghLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A8ihLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="f2f023cb-9866-495b-b669-d8576fb1b250"
+        targetCapellaId="cfaec228-8755-479e-89d4-bb2ce24e74bd" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Denver Airport Elevated Altitude&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164155&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At an altitude of approximately [1,655 meters] and temperature of [25°C], the engine shall produce maximum thrust to support takeoff in thin air conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;cfaec228-8755-479e-89d4-bb2ce24e74bd&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;cfaec228-8755-479e-89d4-bb2ce24e74bd&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gwqhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A8shLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="7c7eab28-4170-434e-8073-31b0f74dd18b"
+        targetCapellaId="de4cd29b-93c6-416e-a1e4-af43cebcb440" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Singapore Changi Tropical Climate&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164196&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>At sea level with an ambient temperature of approximately [30°C] and high humidity, the engine shall deliver maximum thrust to facilitate efficient takeoff performance.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;de4cd29b-93c6-416e-a1e4-af43cebcb440&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;de4cd29b-93c6-416e-a1e4-af43cebcb440&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wEshLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QQuhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="de0f51f2-bdfd-481d-b248-1528842b1a06"
+        targetCapellaId="1c19ee02-1146-40d8-870d-435a922fdd50" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Minimize Noise Levels&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164201&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall limit noise emissions to no more than [F] dB during takeoff and landing phases.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;1c19ee02-1146-40d8-870d-435a922fdd50&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;1c19ee02-1146-40d8-870d-435a922fdd50&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wImhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QUohLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="2d9be0fd-04cc-497f-afe9-1d38c3af8be7"
+        targetCapellaId="59f3293f-ea8c-41b9-996e-1aea5456f938" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Operate Within RPM Limits&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164172&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The fan and compressor shall operate at speeds not greater than [Z] RPM under maximum thrust settings.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;59f3293f-ea8c-41b9-996e-1aea5456f938&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;59f3293f-ea8c-41b9-996e-1aea5456f938&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;g4shLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QEuhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="8868a248-e586-489b-83ce-8ece0d8c3fec"
+        targetCapellaId="bf6b9c47-e0b8-4ce0-a454-6463b48cb69f" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Ensure Quick Transient Response&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164186&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall achieve &lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>required&lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;> thrust transitions within [R] seconds to accommodate rapid changes in flight demand.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;bf6b9c47-e0b8-4ce0-a454-6463b48cb69f&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;bf6b9c47-e0b8-4ce0-a454-6463b48cb69f&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wAohLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QMqhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="b25d2670-94ce-4fd9-a36f-9399b5e05a4c"
+        targetCapellaId="6cbde04f-d09a-400b-8226-c425149b7b24" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Support Surge Margin&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164184&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The compressor shall maintain a surge margin of no less than [P]% to ensure pressure stability.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;6cbde04f-d09a-400b-8226-c425149b7b24&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;6cbde04f-d09a-400b-8226-c425149b7b24&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wAkhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QMmhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="d6aea7a0-24c0-4897-b822-f86ab55b2d34"
+        targetCapellaId="da7b480b-bc20-47d3-884c-02131d0c9a54" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Control Vibration Levels&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164143&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall operate with vibration levels not exceeding [G] mm/s to ensure structural integrity.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;da7b480b-bc20-47d3-884c-02131d0c9a54&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;da7b480b-bc20-47d3-884c-02131d0c9a54&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gsihLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A4khLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="a48ec949-6397-48bd-99da-9ddf9feba463"
+        targetCapellaId="df11bcd8-d852-458a-a4a8-83a0334cddfa" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Provide Efficient Compression Ratio&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164158&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The compressor &lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>shall&lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;> maintain a compression ratio of [B]:1 to ensure efficient airflow management.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;df11bcd8-d852-458a-a4a8-83a0334cddfa&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;df11bcd8-d852-458a-a4a8-83a0334cddfa&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;g0ghLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QAihLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="12fe0199-c576-4130-995f-6336337de8ec"
+        targetCapellaId="5cdfecea-6cc0-4d01-92c0-cc7017ac9674" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Limit Emission Levels&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164157&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall not produce emissions exceeding [H] grams per kilowatt-hour to meet environmental standards.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;5cdfecea-6cc0-4d01-92c0-cc7017ac9674&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;5cdfecea-6cc0-4d01-92c0-cc7017ac9674&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gwuhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QAghLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="53c2f7ab-9a0b-4c46-83b1-a8c8cf1b400f"
+        targetCapellaId="576ccc02-330b-4ca7-a42d-46c30976e6d7" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Allow for Temperature Range Operation&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164144&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall function effectively in ambient temperatures ranging from [N]°C to [O]°C.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;576ccc02-330b-4ca7-a42d-46c30976e6d7&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;576ccc02-330b-4ca7-a42d-46c30976e6d7&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gskhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A4mhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="f738b19a-8a60-4da2-ae57-3248c1a8a59a"
+        targetCapellaId="78ef9862-8082-4819-9161-69d3828247fa" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Ensure Turbine Efficiency&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164152&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The turbine shall achieve an efficiency of no less than [E]% to maximize energy conversion.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;78ef9862-8082-4819-9161-69d3828247fa&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;78ef9862-8082-4819-9161-69d3828247fa&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gwkhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A8mhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="f0328027-78e5-4c74-a53c-707577fd559e"
+        targetCapellaId="e285e128-d9c7-4000-9533-f6fd80a83bdf" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Regulate Fuel Flow Precision&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164178&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The fuel system shall maintain flow precision within [L]% to ensure consistent thrust output.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;e285e128-d9c7-4000-9533-f6fd80a83bdf&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;e285e128-d9c7-4000-9533-f6fd80a83bdf&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;g8ohLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QIqhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="5b8c8f8d-26f4-4d49-9716-cc134d142e05"
+        targetCapellaId="4a88cbf2-5d84-48b4-9d93-27c24e1a7210" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Ensure Engine Restart Capability&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164191&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall be capable of being restarted successfully within [J] seconds after shutdown under all approved conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;4a88cbf2-5d84-48b4-9d93-27c24e1a7210&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;4a88cbf2-5d84-48b4-9d93-27c24e1a7210&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wEihLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QQkhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="4ff55bbd-e532-4dd3-9f16-a8c3a3ad1387"
+        targetCapellaId="ee80864c-272b-4a42-856c-04ae816198d3" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Sustain Reliable Operation&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164154&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall achieve a minimum &lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>mean time&lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;> between failures (MTBF) of [I] hours under normal conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;ee80864c-272b-4a42-856c-04ae816198d3&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;ee80864c-272b-4a42-856c-04ae816198d3&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gwohLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A8qhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="79499fc7-67ff-4e67-bee4-bf11bcfaac3d"
+        targetCapellaId="08a0a309-3a96-4eaa-bb55-7ee554c66f05" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Maintain Component Durability&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164130&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:6pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>All major engine components shall withstand operational stressors for a lifespan of no less than [S] cycles before requiring replacement.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;08a0a309-3a96-4eaa-bb55-7ee554c66f05&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;08a0a309-3a96-4eaa-bb55-7ee554c66f05&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gkohLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;AwqhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="6f6c6816-dda6-4e57-b171-0cd061e2adb6"
+        targetCapellaId="0b46ccc4-643f-4e22-9873-a4ff4577889a" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Support Altitude Operation Limits&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164182&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall maintain performance within [C]° of optimal thrust at altitudes of up to [D] feet.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;0b46ccc4-643f-4e22-9873-a4ff4577889a&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;0b46ccc4-643f-4e22-9873-a4ff4577889a&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wAghLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QMihLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="209b9950-b776-4a3e-966b-3fdd6f11f0f4"
+        targetCapellaId="6e77327b-ea5f-4ae9-90aa-1386e68e7503" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Achieve Required Thrust Output&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164194&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall deliver a thrust output not less than [X] Newtons under standard operational conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;6e77327b-ea5f-4ae9-90aa-1386e68e7503&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;6e77327b-ea5f-4ae9-90aa-1386e68e7503&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wEohLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QQqhLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="7a0f67bb-7220-40ed-a300-e2863ad2f229"
+        targetCapellaId="58d218b4-833f-435c-88a6-63ddd02f999a" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Maintain Thrust Reverser Functionality&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164171&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The thrust reverser system shall activate within [K] seconds upon command to ensure effective landing deceleration.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;58d218b4-833f-435c-88a6-63ddd02f999a&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;58d218b4-833f-435c-88a6-63ddd02f999a&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;g4qhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QEshLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="4505b9dd-2800-4b07-9a19-a60eeaf23817"
+        targetCapellaId="2baa9173-c3e8-4916-b7f8-4165b107992f" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Guarantee Response Time&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164139&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall respond to throttle input changes within [M] milliseconds for pilot and system commands.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;2baa9173-c3e8-4916-b7f8-4165b107992f&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;2baa9173-c3e8-4916-b7f8-4165b107992f&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;goqhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A0shLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="dbe1b1dc-c21f-47c5-96c2-ef30386855fa"
+        targetCapellaId="9cc49a09-6a1a-4665-a36c-bade3b3f2dd0" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Maintain Fuel Efficiency&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164147&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The engine shall operate with a fuel consumption rate not exceeding [Y] kg/&lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>hr&lt;/span>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;> at cruise conditions.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;9cc49a09-6a1a-4665-a36c-bade3b3f2dd0&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;9cc49a09-6a1a-4665-a36c-bade3b3f2dd0&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;gsqhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;A4shLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
+    <ownedSnapshots xsi:type="smw:TcItemRevisionSnapshot" id="3a93c7f9-85d2-4bd1-bdd8-2f2c9c17e480"
+        targetCapellaId="a86e0ef5-19dc-4ac2-9008-23796ce11799" snapshot="{&#xA;  &quot;files&quot;: [],&#xA;  &quot;properties&quot;: {&#xA;    &quot;type&quot;: &quot;PlmRequirement&quot;,&#xA;    &quot;Name&quot;: &quot;Ensure Temperature Stability&quot;,&#xA;    &quot;ItemID&quot;: &quot;REQ-164189&quot;,&#xA;    &quot;ItemRevId&quot;: &quot;A&quot;,&#xA;    &quot;userSpecificInput:ReqContents&quot;: &quot;&lt;p style=\&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; \&quot;>&lt;span style=\&quot;font-family:'Segoe UI'\&quot;>The exhaust gas temperature shall not exceed [A] °C to ensure optimal engine performance.&lt;/span>&lt;/p>&quot;&#xA;  },&#xA;  &quot;umlID&quot;: &quot;a86e0ef5-19dc-4ac2-9008-23796ce11799&quot;,&#xA;  &quot;fullUmlID&quot;: &quot;a86e0ef5-19dc-4ac2-9008-23796ce11799&quot;,&#xA;  &quot;plmPk&quot;: {&#xA;    &quot;tcuid&quot;: &quot;wAuhLEegJ_cL6A&quot;,&#xA;    &quot;stableTcId&quot;: &quot;QQghLEegJ_cL6A&quot;&#xA;  }&#xA;}"/>
   </ownedExtensions>
   <ownedEnumerationPropertyTypes xsi:type="org.polarsys.capella.core.data.capellacore:EnumerationPropertyType"
       id="8a9892cf-0817-433d-aa7b-746521ff6740" name="ProgressStatus">
@@ -253,6 +311,326 @@
           <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="aae79981-65d3-4a6b-adde-6ea55b1b434b"
               relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
               source="#39e26f5f-9e35-41aa-a19e-f74570fada58" target="#e220b608-0a8b-4f61-b351-351bea2cbdec"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="4fcbcc0e-7557-419f-a90d-9a3b09bcb3c7"
+            ReqIFLongName="Quito Airport High Altitude" ReqIFPrefix="REQ-164138/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At an altitude of approximately [2,806 meters] and temperature of [15°C], the engine shall deliver maximum thrust to ensure takeoff under reduced air pressure conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="c292b15a-d6d1-4027-a016-10f9a8291247"
+              tcuid="goohLEegJ_cL6A" stableTcId="A0qhLEegJ_cL6A" itemId="REQ-164138"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="c4193ac0-f347-4f91-a776-d3408ed16b84"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#4fcbcc0e-7557-419f-a90d-9a3b09bcb3c7"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="0582df03-1c8b-47cd-b1c5-3ce5480f1927"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#4fcbcc0e-7557-419f-a90d-9a3b09bcb3c7"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="6f8413b3-7b55-4459-91df-9f317a6a43d6"
+            ReqIFLongName="Mumbai Airport Monsoon Climate" ReqIFPrefix="REQ-164197/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At sea level with high ambient humidity and temperatures of approximately [35°C], the engine shall support maximum thrust for takeoff amid wet conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="8f727f43-dd90-41d5-9de8-f0412c8b10c6"
+              tcuid="wEuhLEegJ_cL6A" stableTcId="QUghLEegJ_cL6A" itemId="REQ-164197"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="4220e64e-b11b-4cf8-9e17-1754bdc2abbd"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#6f8413b3-7b55-4459-91df-9f317a6a43d6"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="2502dd39-b612-4a3d-b1c7-210c88168ed2"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#6f8413b3-7b55-4459-91df-9f317a6a43d6"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="e61d9f05-5c56-4414-b2e0-2fa2a87a91fd"
+            ReqIFLongName="Antarctica Airport Low Temperature" ReqIFPrefix="REQ-164129/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At an approximate altitude of [50 meters] and temperature of [−40°C], the engine shall provide maximum thrust, accounting for icy conditions and low temperatures.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="ff1c40b2-ffbb-455c-9c37-33963251c40a"
+              tcuid="gkmhLEegJ_cL6A" stableTcId="AwohLEegJ_cL6A" itemId="REQ-164129"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="6aa1be73-3835-4db8-894e-7bc3f21b759e"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#e61d9f05-5c56-4414-b2e0-2fa2a87a91fd"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="ae0fc06a-9eb2-4e35-808a-87b9ce68a865"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#e61d9f05-5c56-4414-b2e0-2fa2a87a91fd"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="c934bf45-dc8c-423e-82ab-16a7c5127e1a"
+            ReqIFLongName="Dubai Airport High Temperature" ReqIFPrefix="REQ-164176/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At sea level with an ambient temperature of approximately [45°C], the engine shall deliver maximum thrust to ensure efficient takeoff in extreme heat conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="6750e121-ac17-4b69-a3c6-4ea5d80b63a5"
+              tcuid="g8khLEegJ_cL6A" stableTcId="QImhLEegJ_cL6A" itemId="REQ-164176"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="adfee6b1-2dc9-4aad-a567-d6efb7e83e43"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#c934bf45-dc8c-423e-82ab-16a7c5127e1a"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="2a570a53-8739-4935-8b86-f71405fadf25"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#c934bf45-dc8c-423e-82ab-16a7c5127e1a"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="1bde0440-5b26-42b9-9b40-eb4b568f17e7"
+            ReqIFLongName="La Paz Airport Extreme Altitude" ReqIFPrefix="REQ-164183/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At an altitude of approximately [4,061 meters] and temperature of [7°C], the engine shall achieve maximum thrust output necessary for thin atmospheric conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="1435945b-cae5-44c0-8f06-8473d9fb2c2c"
+              tcuid="wAihLEegJ_cL6A" stableTcId="QMkhLEegJ_cL6A" itemId="REQ-164183"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="d6ced809-8bc9-42fb-acd7-b037cc77c4e0"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#1bde0440-5b26-42b9-9b40-eb4b568f17e7"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="1e479199-f9ca-4f49-b0dc-bc2349c1fec4"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#1bde0440-5b26-42b9-9b40-eb4b568f17e7"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="97454ac3-9bd6-4cd6-ab92-d651e551fd46"
+            ReqIFLongName="Madrid Airport High Temperature" ReqIFPrefix="REQ-164153/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At an altitude of around [609 meters] with ambient temperatures reaching [40°C] during summer, the engine shall generate maximum thrust to overcome heat constraints.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="d917bc5f-02e9-4e97-91c6-daef3783b506"
+              tcuid="gwmhLEegJ_cL6A" stableTcId="A8ohLEegJ_cL6A" itemId="REQ-164153"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="4267c841-fcd4-4376-934a-accb1089543e"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#97454ac3-9bd6-4cd6-ab92-d651e551fd46"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="f7a57296-ded0-40a3-bda8-08c2dc9025f5"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#97454ac3-9bd6-4cd6-ab92-d651e551fd46"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="ea1438df-2448-445e-ba73-9590d53c9da6"
+            ReqIFLongName="Buenos Aires Buenos Aires Airport Variable Climate" ReqIFPrefix="REQ-164180/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:6pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At an altitude of [25 meters] with potential for sudden temperature shifts between [5°C to 25°C], the engine shall deliver maximum thrust to adapt to rapid climate variations during takeoff.&lt;/span>&lt;/p>&lt;p style=&quot;margin-top:0pt;  margin-bottom:0pt;  font-size:10px; &quot;>&lt;br style=&quot;page-break-before:always; clear:both&quot; />&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="38741aef-7dbc-4996-936b-9e10d47767f4"
+              tcuid="g8shLEegJ_cL6A" stableTcId="QIuhLEegJ_cL6A" itemId="REQ-164180"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="cb3575f5-adea-40ee-ad1d-77982ae42aef"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#ea1438df-2448-445e-ba73-9590d53c9da6"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="630b9ed9-7838-499e-806f-d46b1e226381"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#ea1438df-2448-445e-ba73-9590d53c9da6"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="a111d54f-f7bc-4ebd-bd1e-84d9ceed860e"
+            ReqIFLongName="Zurich Airport Cold Weather" ReqIFPrefix="REQ-164150/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At an altitude of approximately [412 meters] and temperature of [−10°C], the engine shall maintain maximum thrust for takeoff in cold, dense air environments.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="c583bd1b-1968-4f6b-b077-587977ad96ac"
+              tcuid="gwghLEegJ_cL6A" stableTcId="A8ihLEegJ_cL6A" itemId="REQ-164150"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="5f431a7a-6e0b-4325-9971-aac59d9655b1"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#a111d54f-f7bc-4ebd-bd1e-84d9ceed860e"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="3b876721-27ea-453d-a61a-b25f52915179"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#a111d54f-f7bc-4ebd-bd1e-84d9ceed860e"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="cfaec228-8755-479e-89d4-bb2ce24e74bd"
+            ReqIFLongName="Denver Airport Elevated Altitude" ReqIFPrefix="REQ-164155/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At an altitude of approximately [1,655 meters] and temperature of [25°C], the engine shall produce maximum thrust to support takeoff in thin air conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="a9f2c4e4-0cfb-44fc-b0f2-a917c0c5fb76"
+              tcuid="gwqhLEegJ_cL6A" stableTcId="A8shLEegJ_cL6A" itemId="REQ-164155"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="72f4d828-c38f-4843-9b71-2b6e095c2c48"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#cfaec228-8755-479e-89d4-bb2ce24e74bd"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="57f1bfb6-7071-484b-876a-12d66891a199"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#cfaec228-8755-479e-89d4-bb2ce24e74bd"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="de4cd29b-93c6-416e-a1e4-af43cebcb440"
+            ReqIFLongName="Singapore Changi Tropical Climate" ReqIFPrefix="REQ-164196/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>At sea level with an ambient temperature of approximately [30°C] and high humidity, the engine shall deliver maximum thrust to facilitate efficient takeoff performance.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="bbda3b97-6a2e-4359-8bad-5114f4383036"
+              tcuid="wEshLEegJ_cL6A" stableTcId="QQuhLEegJ_cL6A" itemId="REQ-164196"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="05208911-5521-41e3-bc22-54b331d0ea5b"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#30b925ff-a187-4c6a-8837-ba2787d7b67a" target="#de4cd29b-93c6-416e-a1e4-af43cebcb440"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="1dc58353-bb55-4d34-9c24-2501b8bdb309"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#a878bccb-fdd5-4d79-b711-3a84e4395f87" target="#de4cd29b-93c6-416e-a1e4-af43cebcb440"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="1c19ee02-1146-40d8-870d-435a922fdd50"
+            ReqIFLongName="Minimize Noise Levels" ReqIFPrefix="REQ-164201/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall limit noise emissions to no more than [F] dB during takeoff and landing phases.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="79fce1ef-c7e7-42a8-9b6d-2718135da38c"
+              tcuid="wImhLEegJ_cL6A" stableTcId="QUohLEegJ_cL6A" itemId="REQ-164201"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="1a48111f-80df-4f46-b7e6-bc7a8f9b5aa1"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#1c19ee02-1146-40d8-870d-435a922fdd50"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="59f3293f-ea8c-41b9-996e-1aea5456f938"
+            ReqIFLongName="Operate Within RPM Limits" ReqIFPrefix="REQ-164172/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The fan and compressor shall operate at speeds not greater than [Z] RPM under maximum thrust settings.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="23e27637-7233-4843-8ee5-427fcb2fdabe"
+              tcuid="g4shLEegJ_cL6A" stableTcId="QEuhLEegJ_cL6A" itemId="REQ-164172"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="cd6111fd-1fd6-49ac-b1ed-e3dc7a00e76b"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#59f3293f-ea8c-41b9-996e-1aea5456f938"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="bf6b9c47-e0b8-4ce0-a454-6463b48cb69f"
+            ReqIFLongName="Ensure Quick Transient Response" ReqIFPrefix="REQ-164186/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall achieve &lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;>required&lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;> thrust transitions within [R] seconds to accommodate rapid changes in flight demand.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="c315f6cb-b6a2-445c-8a87-7c042cbd0fec"
+              tcuid="wAohLEegJ_cL6A" stableTcId="QMqhLEegJ_cL6A" itemId="REQ-164186"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="47601bca-f7cb-4b8c-a32e-1ed32ec188f6"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#bf6b9c47-e0b8-4ce0-a454-6463b48cb69f"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="6cbde04f-d09a-400b-8226-c425149b7b24"
+            ReqIFLongName="Support Surge Margin" ReqIFPrefix="REQ-164184/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The compressor shall maintain a surge margin of no less than [P]% to ensure pressure stability.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="2ae0be4d-2a8a-40ee-a120-38ffde966cce"
+              tcuid="wAkhLEegJ_cL6A" stableTcId="QMmhLEegJ_cL6A" itemId="REQ-164184"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="9b002917-aab9-4b3a-8859-7f3b7cea63d0"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#6cbde04f-d09a-400b-8226-c425149b7b24"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="da7b480b-bc20-47d3-884c-02131d0c9a54"
+            ReqIFLongName="Control Vibration Levels" ReqIFPrefix="REQ-164143/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall operate with vibration levels not exceeding [G] mm/s to ensure structural integrity.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="72e51dc8-24b7-487c-b99b-7ad069180d62"
+              tcuid="gsihLEegJ_cL6A" stableTcId="A4khLEegJ_cL6A" itemId="REQ-164143"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="2420ee1d-9c10-4a89-8d82-ef1ba3fd1b86"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#da7b480b-bc20-47d3-884c-02131d0c9a54"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="df11bcd8-d852-458a-a4a8-83a0334cddfa"
+            ReqIFLongName="Provide Efficient Compression Ratio" ReqIFPrefix="REQ-164158/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The compressor &lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;>shall&lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;> maintain a compression ratio of [B]:1 to ensure efficient airflow management.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="ba8ccde0-c060-40aa-bb58-bee031f81b72"
+              tcuid="g0ghLEegJ_cL6A" stableTcId="QAihLEegJ_cL6A" itemId="REQ-164158"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="ca869503-bf6e-425e-acf8-ffc641ad5f79"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#df11bcd8-d852-458a-a4a8-83a0334cddfa"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="5cdfecea-6cc0-4d01-92c0-cc7017ac9674"
+            ReqIFLongName="Limit Emission Levels" ReqIFPrefix="REQ-164157/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall not produce emissions exceeding [H] grams per kilowatt-hour to meet environmental standards.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="aa58fdbb-feac-4bd8-bd49-4cf8a875d0e9"
+              tcuid="gwuhLEegJ_cL6A" stableTcId="QAghLEegJ_cL6A" itemId="REQ-164157"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="cee0ad55-b14a-417e-a449-8616a53a05f8"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#5cdfecea-6cc0-4d01-92c0-cc7017ac9674"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="576ccc02-330b-4ca7-a42d-46c30976e6d7"
+            ReqIFLongName="Allow for Temperature Range Operation" ReqIFPrefix="REQ-164144/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall function effectively in ambient temperatures ranging from [N]°C to [O]°C.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="75ce4518-9fb2-4ed6-9cae-c77f95a9e723"
+              tcuid="gskhLEegJ_cL6A" stableTcId="A4mhLEegJ_cL6A" itemId="REQ-164144"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="432909e9-560d-4dfd-bd58-79ac633a50cd"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#576ccc02-330b-4ca7-a42d-46c30976e6d7"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="78ef9862-8082-4819-9161-69d3828247fa"
+            ReqIFLongName="Ensure Turbine Efficiency" ReqIFPrefix="REQ-164152/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The turbine shall achieve an efficiency of no less than [E]% to maximize energy conversion.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="2ca807f9-ce40-426b-961a-244d5b35ba86"
+              tcuid="gwkhLEegJ_cL6A" stableTcId="A8mhLEegJ_cL6A" itemId="REQ-164152"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="2f257bd5-fd7b-4e8f-8e7a-4a72732b08d9"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#78ef9862-8082-4819-9161-69d3828247fa"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="e285e128-d9c7-4000-9533-f6fd80a83bdf"
+            ReqIFLongName="Regulate Fuel Flow Precision" ReqIFPrefix="REQ-164178/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The fuel system shall maintain flow precision within [L]% to ensure consistent thrust output.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="ca25217c-6a31-4a32-9a1e-0b162ad9e7ef"
+              tcuid="g8ohLEegJ_cL6A" stableTcId="QIqhLEegJ_cL6A" itemId="REQ-164178"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="d0b30977-1c56-42fa-a13f-c0826150c439"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#e285e128-d9c7-4000-9533-f6fd80a83bdf"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="4a88cbf2-5d84-48b4-9d93-27c24e1a7210"
+            ReqIFLongName="Ensure Engine Restart Capability" ReqIFPrefix="REQ-164191/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall be capable of being restarted successfully within [J] seconds after shutdown under all approved conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="612c9a0e-3f42-4b7d-9f3f-0b46cf61c99f"
+              tcuid="wEihLEegJ_cL6A" stableTcId="QQkhLEegJ_cL6A" itemId="REQ-164191"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="0a4ce952-2338-4cda-8633-8a194e27707e"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#4a88cbf2-5d84-48b4-9d93-27c24e1a7210"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="ee80864c-272b-4a42-856c-04ae816198d3"
+            ReqIFLongName="Sustain Reliable Operation" ReqIFPrefix="REQ-164154/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall achieve a minimum &lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;>mean time&lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;> between failures (MTBF) of [I] hours under normal conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="01037e81-7df4-4c7c-80a8-0921b977e7cd"
+              tcuid="gwohLEegJ_cL6A" stableTcId="A8qhLEegJ_cL6A" itemId="REQ-164154"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="0117e6fc-788d-4ccb-849c-70f03773eb45"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#ee80864c-272b-4a42-856c-04ae816198d3"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="08a0a309-3a96-4eaa-bb55-7ee554c66f05"
+            ReqIFLongName="Maintain Component Durability" ReqIFPrefix="REQ-164130/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:6pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>All major engine components shall withstand operational stressors for a lifespan of no less than [S] cycles before requiring replacement.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="529e73f0-d8f8-4cc1-8f7f-955020512a1b"
+              tcuid="gkohLEegJ_cL6A" stableTcId="AwqhLEegJ_cL6A" itemId="REQ-164130"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="b3980dc8-8bc8-4f91-ba1f-020d6e08714d"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#08a0a309-3a96-4eaa-bb55-7ee554c66f05"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="0b46ccc4-643f-4e22-9873-a4ff4577889a"
+            ReqIFLongName="Support Altitude Operation Limits" ReqIFPrefix="REQ-164182/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall maintain performance within [C]° of optimal thrust at altitudes of up to [D] feet.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="a07e2eb9-e923-4e71-8cd3-10127a94442c"
+              tcuid="wAghLEegJ_cL6A" stableTcId="QMihLEegJ_cL6A" itemId="REQ-164182"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="a9537b9f-85f1-484a-947f-36047bb79329"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#0b46ccc4-643f-4e22-9873-a4ff4577889a"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="6e77327b-ea5f-4ae9-90aa-1386e68e7503"
+            ReqIFLongName="Achieve Required Thrust Output" ReqIFPrefix="REQ-164194/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall deliver a thrust output not less than [X] Newtons under standard operational conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="74418590-1776-49c6-acc2-3e759f49ea66"
+              tcuid="wEohLEegJ_cL6A" stableTcId="QQqhLEegJ_cL6A" itemId="REQ-164194"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="7b8ada5e-0a93-4fa9-a4a8-c54fee20823e"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#6e77327b-ea5f-4ae9-90aa-1386e68e7503"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="58d218b4-833f-435c-88a6-63ddd02f999a"
+            ReqIFLongName="Maintain Thrust Reverser Functionality" ReqIFPrefix="REQ-164171/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The thrust reverser system shall activate within [K] seconds upon command to ensure effective landing deceleration.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="74ea7de8-ca3c-4270-a6b9-2e34eac0733b"
+              tcuid="g4qhLEegJ_cL6A" stableTcId="QEshLEegJ_cL6A" itemId="REQ-164171"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="44922b63-dae0-43c7-80d3-6529962c3577"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#58d218b4-833f-435c-88a6-63ddd02f999a"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="2baa9173-c3e8-4916-b7f8-4165b107992f"
+            ReqIFLongName="Guarantee Response Time" ReqIFPrefix="REQ-164139/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall respond to throttle input changes within [M] milliseconds for pilot and system commands.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="e5749611-b3e8-4396-a52a-ccaeb260076f"
+              tcuid="goqhLEegJ_cL6A" stableTcId="A0shLEegJ_cL6A" itemId="REQ-164139"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="bf96cb01-cc57-4a8d-89b3-e4e36581eb16"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#2baa9173-c3e8-4916-b7f8-4165b107992f"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="9cc49a09-6a1a-4665-a36c-bade3b3f2dd0"
+            ReqIFLongName="Maintain Fuel Efficiency" ReqIFPrefix="REQ-164147/A" requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b"
+            ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The engine shall operate with a fuel consumption rate not exceeding [Y] kg/&lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;>hr&lt;/span>&lt;span style=&quot;font-family:'Segoe UI'&quot;> at cruise conditions.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="52b2b14e-30a1-439e-8b0e-25cf77d9873c"
+              tcuid="gsqhLEegJ_cL6A" stableTcId="A4shLEegJ_cL6A" itemId="REQ-164147"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="13aa88c6-9a2e-40cf-a31d-85d0ff0d285c"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#9cc49a09-6a1a-4665-a36c-bade3b3f2dd0"/>
+        </ownedRequirements>
+        <ownedRequirements xsi:type="Requirements:Requirement" id="a86e0ef5-19dc-4ac2-9008-23796ce11799"
+            ReqIFLongName="Ensure Temperature Stability" ReqIFPrefix="REQ-164189/A"
+            requirementType="#d94d58c1-3bbd-4a22-beb8-aaf2284e322b" ReqIFText="&lt;p style=&quot;margin-top:0pt;  margin-bottom:12pt;  font-size:10.5px;  background-color:#ffffff; &quot;>&lt;span style=&quot;font-family:'Segoe UI'&quot;>The exhaust gas temperature shall not exceed [A] °C to ensure optimal engine performance.&lt;/span>&lt;/p>">
+          <ownedExtensions xsi:type="smw:TcItemRevision" id="175b2799-350e-4b17-9c87-e2c79cdf7c71"
+              tcuid="wAuhLEegJ_cL6A" stableTcId="QQghLEegJ_cL6A" itemId="REQ-164189"
+              revisionId="A"/>
+          <ownedRelations xsi:type="CapellaRequirements:CapellaOutgoingRelation" id="f2981351-57cb-44c8-9b72-17505a1fb2d8"
+              relationType="#c45e3109-3b40-4cfc-9fae-ace225f49840" relationTypeProxy="Satisfy"
+              source="#c22f220a-34ad-4e28-baa9-ded79bce183a" target="#a86e0ef5-19dc-4ac2-9008-23796ce11799"/>
         </ownedRequirements>
       </ownedExtensions>
     </ownedExtensions>
