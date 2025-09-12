@@ -3,7 +3,7 @@
   <options key="uml0Type" value="Capella Library"/>
   <options key="tcitemId" value="037016"/>
   <options key="staging.area.path" value="C:\staging\sysml\High Bypass Turbo Fan_037016_A"/>
-  <options key="timestamp" value="gUnhrmzSJ_cL6A"/>
+  <options key="timestamp" value="gwlh84_JJ_cL6A"/>
   <model semanticIdentifier="c68bd28e-0218-48d8-9c7e-f08f7dd9c108" name="platform:/resource/High%20Bypass%20Turbo%20Fan/High%20Bypass%20Turbo%20Fan.aird">
     <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_soOQAHRpEfCqnNPawYxtew" plmIdentifier="AsthKbchJ_cL6A" name="_soOQAHRpEfCqnNPawYxtew" hash="0dc32cfb4552f7ba5c357346edb4fb0aa19a6082" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Functional Chain Description" changeId="1756138023886">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__soOQAHRpEfCqnNPawYxtew" value="Aggh6DfrJ_cL6A"/>
@@ -50,7 +50,7 @@
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__I8BucH0eEfCylMioUSe-fQ" value="DykhKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="80746594-cb46-4ee9-918d-963bd7bd5668__I8BucH0eEfCylMioUSe-fQ" value="DynhKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_-OwQAIKaEfCGoeqTLxuWzQ" plmIdentifier="AgjharnIJ_cL6A" name="_-OwQAIKaEfCGoeqTLxuWzQ" hash="ed83bfb909147b1e0d519e8da51fba522e12d0d2" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Functional Chain Description" changeId="1756319195232">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_-OwQAIKaEfCGoeqTLxuWzQ" plmIdentifier="AgjharnIJ_cL6A" name="_-OwQAIKaEfCGoeqTLxuWzQ" hash="6c390643af144fd8c529e90cc5b86d5b761651ad" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Functional Chain Description" changeId="1756319195232">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__-OwQAIKaEfCGoeqTLxuWzQ" value="Agnh6DfrJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__-OwQAIKaEfCGoeqTLxuWzQ" value="QcuharnIJ_cL6A"/>
       <plmOccurrenceIdentifiers key="a878bccb-fdd5-4d79-b711-3a84e4395f87__-OwQAIKaEfCGoeqTLxuWzQ" value="QghharnIJ_cL6A"/>
@@ -78,22 +78,22 @@
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__DLm2EHOpEfCeeNdhvzlsDg" value="DemhKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__DLm2EHOpEfCeeNdhvzlsDg" value="DephKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_hA874XOuEfCeeNdhvzlsDg" plmIdentifier="AovhKbchJ_cL6A" name="_hA874XOuEfCeeNdhvzlsDg" hash="f92ea01072b7c9d5a36136f23423f2d6a0c5519a" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_hA874XOuEfCeeNdhvzlsDg" plmIdentifier="AovhKbchJ_cL6A" name="_hA874XOuEfCeeNdhvzlsDg" hash="c038b147ee4e860f70c8b6159f8f4aace306107c" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__hA874XOuEfCeeNdhvzlsDg" value="Acvh6DfrJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__hA874XOuEfCeeNdhvzlsDg" value="DqghKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__hA874XOuEfCeeNdhvzlsDg" value="DqjhKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_H6-OkXOxEfCeeNdhvzlsDg" plmIdentifier="AslhKbchJ_cL6A" name="_H6-OkXOxEfCeeNdhvzlsDg" hash="5a3316161809a5dd8c5a45d659ff7263469dd14b" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756997524316">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_H6-OkXOxEfCeeNdhvzlsDg" plmIdentifier="AslhKbchJ_cL6A" name="_H6-OkXOxEfCeeNdhvzlsDg" hash="26d47c72e77d1e7d6356082e4f8ca54438af0435" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756997524316">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__H6-OkXOxEfCeeNdhvzlsDg" value="Agsh6DfrJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__H6-OkXOxEfCeeNdhvzlsDg" value="DaqhKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__H6-OkXOxEfCeeNdhvzlsDg" value="DathKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_pvjRcXOzEfCeeNdhvzlsDg" plmIdentifier="AojhKbchJ_cL6A" name="_pvjRcXOzEfCeeNdhvzlsDg" hash="ae30b0ee1ace59e32fcfcd88755d4794546f3d55" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1757077239945">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_pvjRcXOzEfCeeNdhvzlsDg" plmIdentifier="AojhKbchJ_cL6A" name="_pvjRcXOzEfCeeNdhvzlsDg" hash="861657970a1726bf6b6e4a9bd42d9316bf372498" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1757077239945">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__pvjRcXOzEfCeeNdhvzlsDg" value="Aghh6DfrJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__pvjRcXOzEfCeeNdhvzlsDg" value="DmqhKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__pvjRcXOzEfCeeNdhvzlsDg" value="DmthKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_iNb54HRuEfCqnNPawYxtew" plmIdentifier="AkvhKbchJ_cL6A" name="_iNb54HRuEfCqnNPawYxtew" hash="48325cab079b3007be001b7125b37305d4ec577f" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_iNb54HRuEfCqnNPawYxtew" plmIdentifier="AkvhKbchJ_cL6A" name="_iNb54HRuEfCqnNPawYxtew" hash="124a1cb241f3d88453f95c139faff619fcec5fed" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__iNb54HRuEfCqnNPawYxtew" value="Agvh6DfrJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__iNb54HRuEfCqnNPawYxtew" value="DuuhKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__iNb54HRuEfCqnNPawYxtew" value="DyhhKfYWJ_cL6A"/>
@@ -103,7 +103,7 @@
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__NI7WkHR0EfCqnNPawYxtew" value="DiohKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__NI7WkHR0EfCqnNPawYxtew" value="DirhKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_kZKtUXhuEfCaB_7AO4b5JQ" plmIdentifier="AsrhKbchJ_cL6A" name="_kZKtUXhuEfCaB_7AO4b5JQ" hash="796479c45005775892797848ac69a09f2ca8185e" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_kZKtUXhuEfCaB_7AO4b5JQ" plmIdentifier="AsrhKbchJ_cL6A" name="_kZKtUXhuEfCaB_7AO4b5JQ" hash="a302a878608bfc55038265efc4e0401992fdb33f" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__kZKtUXhuEfCaB_7AO4b5JQ" value="Agkh6DfrJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__kZKtUXhuEfCaB_7AO4b5JQ" value="DWohKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__kZKtUXhuEfCaB_7AO4b5JQ" value="DWrhKfYWJ_cL6A"/>
@@ -113,7 +113,7 @@
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__XXccEXhxEfCaB_7AO4b5JQ" value="DuihKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__XXccEXhxEfCaB_7AO4b5JQ" value="DulhKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_EPCV4XhzEfCaB_7AO4b5JQ" plmIdentifier="AothKbchJ_cL6A" name="_EPCV4XhzEfCaB_7AO4b5JQ" hash="d446defc5e8e5309a722d5b3c937ee7186a0ef4f" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_EPCV4XhzEfCaB_7AO4b5JQ" plmIdentifier="AothKbchJ_cL6A" name="_EPCV4XhzEfCaB_7AO4b5JQ" hash="8512e0c4f85d8b223baac113e58810a0b85ebac1" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756992071566">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__EPCV4XhzEfCaB_7AO4b5JQ" value="Acrh6DfrJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__EPCV4XhzEfCaB_7AO4b5JQ" value="DiuhKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__EPCV4XhzEfCaB_7AO4b5JQ" value="DmhhKfYWJ_cL6A"/>
@@ -128,7 +128,7 @@
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__93IIUIHYEfCGoeqTLxuWzQ" value="G3rhKfYWJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__93IIUIHYEfCGoeqTLxuWzQ" value="G3uhKfYWJ_cL6A"/>
     </images>
-    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_i-Yg8INcEfCGoeqTLxuWzQ" plmIdentifier="guth6DHDJ_cL6A" name="_i-Yg8INcEfCGoeqTLxuWzQ" hash="459b5e62c9c2c4e347ebe5cbc161ca83d6d300a1" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1756479194585">
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_i-Yg8INcEfCGoeqTLxuWzQ" plmIdentifier="guth6DHDJ_cL6A" name="_i-Yg8INcEfCGoeqTLxuWzQ" hash="74c89285ede61e8f03f1594c2ad9f9b3e6613497" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1757676921862">
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__i-Yg8INcEfCGoeqTLxuWzQ" value="xZmh6DHDJ_cL6A"/>
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__i-Yg8INcEfCGoeqTLxuWzQ" value="hUih6DHDJ_cL6A"/>
       <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__i-Yg8INcEfCGoeqTLxuWzQ" value="hUlh6DHDJ_cL6A"/>
@@ -148,16 +148,38 @@
       <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__1N4eUImeEfCGoeqTLxuWzQ" value="QAghrmzSJ_cL6A"/>
       <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__1N4eUImeEfCGoeqTLxuWzQ" value="QAohrmzSJ_cL6A"/>
     </images>
+    <images xsi:type="plmpivot:RepresentationImage" semanticIdentifier="_jpStQI_gEfC7SYUnY5l20Q" plmIdentifier="QAth84_JJ_cL6A" name="_jpStQI_gEfC7SYUnY5l20Q" hash="5de88b353322266844bc886affc0d3bcda14c4b3" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A" imageFormat="JPG" type="Logical Architecture Blank" changeId="1757685595155">
+      <plmOccurrenceIdentifiers key="30b925ff-a187-4c6a-8837-ba2787d7b67a__jpStQI_gEfC7SYUnY5l20Q" value="Qcjh84_JJ_cL6A"/>
+      <plmOccurrenceIdentifiers key="2d556eef-c0d0-4557-aa8f-efc67e4acc7d__jpStQI_gEfC7SYUnY5l20Q" value="Qcgh84_JJ_cL6A"/>
+      <plmOccurrenceIdentifiers key="c68bd28e-0218-48d8-9c7e-f08f7dd9c108__jpStQI_gEfC7SYUnY5l20Q" value="Qcmh84_JJ_cL6A"/>
+    </images>
   </model>
-  <archive semanticIdentifier="High Bypass Turbo Fan.zip" plmIdentifier="AwhhKbchJ_cL6A" name="High Bypass Turbo Fan.zip" hash="fa6c1a4ff0c8b37a4b1847bcc47f12f7968dc381" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A">
+  <archive semanticIdentifier="High Bypass Turbo Fan.zip" plmIdentifier="AwhhKbchJ_cL6A" name="High Bypass Turbo Fan.zip" hash="9196e8a4546835f45919f6ec594325fe8a7f217e" path="C:\staging\sysml\High Bypass Turbo Fan_037016_A">
     <plmOccurrenceIdentifiers key="Design_High Bypass Turbo Fan.zip" value="QArhrmzSJ_cL6A"/>
     <files hash="e7384a0d2a2db9ea93987bee2dd494adf1d72bc1" path="High Bypass Turbo Fan/.project"/>
     <files hash="18061d036b8c4ff1fc2b5e1a5b731daed530a0a2" path="High Bypass Turbo Fan/High Bypass Turbo Fan.afm"/>
-    <files hash="6625a4e83f4612412db86a0a5d42b796afde3b54" path="High Bypass Turbo Fan/High Bypass Turbo Fan.aird"/>
-    <files hash="14a91fe99cf56d36d7e64ec2dc9ebd070c7755e0" path="High Bypass Turbo Fan/High Bypass Turbo Fan.capella"/>
+    <files hash="ea3ae8c91fd2bbb1f0886123b1f69c768053e25c" path="High Bypass Turbo Fan/High Bypass Turbo Fan.aird"/>
+    <files hash="f50afedabc7888b514f393f20b149da742924ca8" path="High Bypass Turbo Fan/High Bypass Turbo Fan.capella"/>
     <files hash="cf26fafa1722ff57b712e7355124b90f4d1ccf80" path="High Bypass Turbo Fan/Images/PMEIFH.png"/>
     <files hash="98e89dc5d67f21ddc7b282cebe3828055040a4c4" path="High Bypass Turbo Fan/Images/Turbofan.png"/>
     <files hash="0a5b2d8cf4165f6deda6d62ba26d8fb7103374ca" path="High Bypass Turbo Fan/Images/[LAB] High Bypass Turbo Fan - Context .jpg"/>
     <files hash="88e018bc915dad1c4ed6f058dc65f932288e4966" path="High Bypass Turbo Fan/Images/[LAB] High Bypass Turbo Fan - Context .svg"/>
+    <files hash="7513ec2bdbc903cd6cce5686216bb75f4b0a497e" path="High Bypass Turbo Fan/Notebooks/Capabilities.docx"/>
+    <files hash="2c84bdda9eb4a79323652eaa9934035ce48437e0" path="High Bypass Turbo Fan/Notebooks/Demo DSM Generation.ipynb"/>
+    <files hash="9180c5b231aace808e2aa9e3804fc8b0b338a628" path="High Bypass Turbo Fan/Notebooks/Demo Engine Properties from Sim.ipynb"/>
+    <files hash="d2e056d5f253f8c395b38c0f180a75ba17776674" path="High Bypass Turbo Fan/Notebooks/Demo ICD Generation.ipynb"/>
+    <files hash="c66eebfc6a30257286ff9228725a5e933096ee7e" path="High Bypass Turbo Fan/Notebooks/Demo Requirement  ETA Generation.ipynb"/>
+    <files hash="f4ad97fb1096e59f6ff84ec5b1b44218ab0de2d7" path="High Bypass Turbo Fan/Notebooks/Demo Requirement Generation.ipynb"/>
+    <files hash="2de6c7875bb6cf8fb233c3f6fe4b92736a4f0400" path="High Bypass Turbo Fan/Notebooks/Demo Requirement Report Generation.ipynb"/>
+    <files hash="c07085a9a044d16e826b9273e8aee4b36072ca34" path="High Bypass Turbo Fan/Notebooks/Demo Two Spool Minimal.ipynb"/>
+    <files hash="20748f9b37b823a1a0df90f418537a507b761bc3" path="High Bypass Turbo Fan/Notebooks/Demo_TwinComp_Fuel.ipynb"/>
+    <files hash="f1b25252af846aacefcc0a6f829b264b44bef148" path="High Bypass Turbo Fan/Notebooks/Demo_TwinComp_Fuel.txt"/>
+    <files hash="834e070d863f84761697fcf0bda4d3130dfe8051" path="High Bypass Turbo Fan/Notebooks/Element on Diagram Report.ipynb"/>
+    <files hash="cef9e25048334dd0f2749bdbc10e95c7d3816a5b" path="High Bypass Turbo Fan/Notebooks/Generate Capabilities.ipynb"/>
+    <files hash="d8547138ee778626c1cc79143cf9812f9a13a7e5" path="High Bypass Turbo Fan/Notebooks/Generate Functional Chain Requirement.ipynb"/>
+    <files hash="761977ef182f4e5b5254286745e2a15052c7145a" path="High Bypass Turbo Fan/Notebooks/MBSE Analyzer-Stage 3.ipynb"/>
+    <files hash="2660e40163d542db8031174069e94b466414a59f" path="High Bypass Turbo Fan/Notebooks/MBSE Analyzer.ipynb"/>
+    <files hash="f6a79ca920d304cb099f6ed2a51928e2bfb48391" path="High Bypass Turbo Fan/Notebooks/MBSE Assistant.ipynb"/>
+    <files hash="a92d762fd025f1548214991cb67335a8bfad4881" path="High Bypass Turbo Fan/Notebooks/MBSE Logical Interface Assistant TOML.ipynb"/>
   </archive>
 </plmpivot:PlmProject>
