@@ -1,0 +1,15 @@
+
+    "    bpr=9.6,\n",
+    "    pi_fan=1.54, eta_fan=0.92,\n",
+    "    pi_lpc=1.54, eta_lpc=0.89,\n",
+    "    pi_hpc=9.86,    eta_hpc=0.89,\n",
+    "    pi_comb = 0.98,  eta_comb = 0.965,\n",
+    "    eta_inlet=0.998,\n",
+    "    eta_hpt=0.89,\n",
+    "    eta_lpt=0.89,\n",
+    "    eta_noz=1,\n",
+    "    mf= 0,\n",
+    "    M  = 0.0, \n",
+    "    t  = 281.65,\n",
+    "    p  = 89874\n",
+
