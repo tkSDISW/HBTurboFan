@@ -4,6 +4,9 @@ library package 'High_Bypass_Turbo_Fan Library' {
         type = "Library";
     } 
     @CapellaID { eid = "c68bd28e-0218-48d8-9c7e-f08f7dd9c108"; } 
+    item '8d18d604-2bfb-4fe9-9892-2451514f8f1a' : ModelInformation  { 
+        @CapellaID { eid = "8d18d604-2bfb-4fe9-9892-2451514f8f1a"; } 
+    }  
     package 'High Bypass Turbo Fan' {
         @PackageMeta {
             type = "SystemEngineering";
@@ -14,6 +17,12 @@ library package 'High_Bypass_Turbo_Fan Library' {
                 type = "OperationalAnalysis";
             } 
             @CapellaID { eid = "aec460a1-8812-4f9a-a0c4-c86ce19a252e"; } 
+            package 'Operational Capabilities' {
+                @PackageMeta {
+                    type = "OperationalCapabilityPkg";
+                } 
+                @CapellaID { eid = "986c4c79-031d-4a87-a160-2bdf937704ae"; } 
+            } 
             package 'Operational Activities' {
                 @PackageMeta {
                     type = "OperationalActivityPkg";
@@ -59,18 +68,18 @@ library package 'High_Bypass_Turbo_Fan Library' {
                 } 
                 @CapellaID { eid = "9f1c97fc-343f-4410-a688-8522bb8443a6"; } 
             } 
-            package 'Operational Capabilities' {
-                @PackageMeta {
-                    type = "OperationalCapabilityPkg";
-                } 
-                @CapellaID { eid = "986c4c79-031d-4a87-a160-2bdf937704ae"; } 
-            } 
         } 
         package 'System Analysis' {
             @PackageMeta {
                 type = "SystemAnalysis";
             } 
             @CapellaID { eid = "53b4c0ed-da0b-4dba-803e-094e8f67cab1"; } 
+            package 'Capabilities' {
+                @PackageMeta {
+                    type = "CapabilityPkg";
+                } 
+                @CapellaID { eid = "4d86b0ac-2483-47b3-82d4-3a553dcd686f"; } 
+            } 
             package 'System Functions' {
                 @PackageMeta {
                     type = "SystemFunctionPkg";
@@ -116,6 +125,18 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     type = "SystemComponentPkg";
                 } 
                 @CapellaID { eid = "b4667625-8705-4ae3-8dfd-f0638dc506ae"; } 
+                part 'System' : SystemComponent { 
+                    @CapellaID { eid = "f975c87c-4be2-4b86-8a13-d129f7c17ec3"; } 
+                    attribute :>> isAbstract = false; 
+                    attribute :>> isActor = false; 
+                    attribute :>> isDataComponent = false; 
+                    attribute :>> isHuman = false; 
+                    state 'System State Machine' : StateMachine  { 
+                        @CapellaID { eid = "33475480-83d7-46b4-b586-cdf1f0458846"; } 
+                        attribute :>> isControlOperator = false; 
+                    }  
+                    ref :>> ownedStateMachines =  ('System State Machine'); 
+                }  
                 part '815e32a7-a8b4-4c84-a3d6-64d6324ae1a2' : CPart :> 'System'  { 
                     @CapellaID { eid = "815e32a7-a8b4-4c84-a3d6-64d6324ae1a2"; } 
                     attribute :>> aggregationKind = AggregationKind::UNSET; 
@@ -130,18 +151,6 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     attribute :>> isOrdered = false; 
                     attribute :>> isUnique = false; 
                 }  
-                part 'System' : SystemComponent { 
-                    @CapellaID { eid = "f975c87c-4be2-4b86-8a13-d129f7c17ec3"; } 
-                    attribute :>> isAbstract = false; 
-                    attribute :>> isActor = false; 
-                    attribute :>> isDataComponent = false; 
-                    attribute :>> isHuman = false; 
-                    state 'System State Machine' : StateMachine  { 
-                        @CapellaID { eid = "33475480-83d7-46b4-b586-cdf1f0458846"; } 
-                        attribute :>> isControlOperator = false; 
-                    }  
-                    ref :>> ownedStateMachines =  ('System State Machine'); 
-                }  
             } 
             package 'Missions' {
                 @PackageMeta {
@@ -149,3784 +158,129 @@ library package 'High_Bypass_Turbo_Fan Library' {
                 } 
                 @CapellaID { eid = "7d5f46aa-ec2b-4ba7-a400-5205c53e8fd8"; } 
             } 
-            package 'Capabilities' {
-                @PackageMeta {
-                    type = "CapabilityPkg";
-                } 
-                @CapellaID { eid = "4d86b0ac-2483-47b3-82d4-3a553dcd686f"; } 
-            } 
         } 
         package 'Logical Architecture' {
             @PackageMeta {
                 type = "LogicalArchitecture";
             } 
             @CapellaID { eid = "2d556eef-c0d0-4557-aa8f-efc67e4acc7d"; } 
-            package 'Logical Functions' {
-                @PackageMeta {
-                    type = "LogicalFunctionPkg";
-                } 
-                @CapellaID { eid = "f07d73ed-8208-4d71-9776-43febd86194e"; } 
-                action 'Root Logical Function' : LogicalFunction  { 
-                    @CapellaID { eid = "f82481b8-e5b0-444c-a69a-74d14b4e194f"; } 
-                    attribute :>> aggregationKind = AggregationKind::UNSET; 
-                    attribute :>> isFinal = false; 
-                    attribute :>> isAbstract = false; 
-                    attribute :>> isDerived = false; 
-                    attribute :>> isPartOfKey = false; 
-                    attribute :>> isReadOnly = false; 
-                    attribute :>> isStatic = false; 
-                    attribute :>> kind = FunctionKind::FUNCTION; 
-                    attribute :>> isMaxInclusive = false; 
-                    attribute :>> isMinInclusive = false; 
-                    attribute :>> isOrdered = false; 
-                    attribute :>> isUnique = false; 
-                    interface '0257347a-2a89-4fe4-a302-10cae2f02bb3' : FunctionalExchange 
-                        connect source ::> 'Provide Air'.'FOP 1'
-                        to target ::> 'Receive Air'.'FIP 1' { 
-                        @CapellaID { eid = "0257347a-2a89-4fe4-a302-10cae2f02bb3"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Air from Environment"; 
-                         
-                    }  
-                    interface 'b3b42c74-f43e-478c-bed4-03ae1cfb8c83' : FunctionalExchange 
-                        connect source ::> 'Receive Air'.'FOP 1'
-                        to target ::> 'Increase Air Mass Flow'.'FIP 1' { 
-                        @CapellaID { eid = "b3b42c74-f43e-478c-bed4-03ae1cfb8c83"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Air"; 
-                         
-                    }  
-                    interface 'ac24a803-17bc-4a51-9c74-d28fb15ead21' : FunctionalExchange 
-                        connect source ::> 'Expel Bypass AIr'.'FOP 1'
-                        to target ::> 'Receive Nozzle Thrust'.'FIP 1' { 
-                        @CapellaID { eid = "ac24a803-17bc-4a51-9c74-d28fb15ead21"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bypass Thrust"; 
-                         
-                    }  
-                    interface '3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49' : FunctionalExchange 
-                        connect source ::> 'Expel Bypass AIr'.'FOP 2'
-                        to target ::> 'Receive Bypass Air'.'FIP 1' { 
-                        @CapellaID { eid = "3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bypass Air"; 
-                         
-                    }  
-                    interface '39e80b06-d704-4398-ae5b-fa73cd902189' : FunctionalExchange 
-                        connect source ::> 'Increase Air Mass Flow'.'FOP 1'
-                        to target ::> 'Expel Bypass AIr'.'FIP 1' { 
-                        @CapellaID { eid = "39e80b06-d704-4398-ae5b-fa73cd902189"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Fan Air"; 
-                         
-                    }  
-                    interface 'b2c0a7ca-077d-40b0-8327-082c60c037e2' : FunctionalExchange 
-                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 1'
-                        to target ::> 'Increase Air Mass Flow'.'FIP 2' { 
-                        @CapellaID { eid = "b2c0a7ca-077d-40b0-8327-082c60c037e2"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Torque to Fan"; 
-                         
-                    }  
-                    interface 'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a' : FunctionalExchange 
-                        connect source ::> 'Receive Nozzle Thrust'.'FOP 1'
-                        to target ::> 'Receive Thrust'.'FIP 1' { 
-                        @CapellaID { eid = "e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    interface '41f1bde3-03c4-4332-870f-19f32b9009e5' : FunctionalExchange 
-                        connect source ::> 'Increase Air Mass Flow'.'FOP 2'
-                        to target ::> 'Channel Fan Air to Turbine'.'FIP 1' { 
-                        @CapellaID { eid = "41f1bde3-03c4-4332-870f-19f32b9009e5"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Fan Air"; 
-                         
-                    }  
-                    interface '152a6432-3c81-426b-948e-89e8ccd8ee15' : FunctionalExchange 
-                        connect source ::> 'Compress Air'.'FOP 1'
-                        to target ::> 'Channel Air to HPC'.'FIP 1' { 
-                        @CapellaID { eid = "152a6432-3c81-426b-948e-89e8ccd8ee15"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "LP Air"; 
-                         
-                    }  
-                    interface '90ecbd9b-1814-4a3e-a99c-6589ade50a87' : FunctionalExchange 
-                        connect source ::> 'Compres LP Air'.'FOP 1'
-                        to target ::> 'Channel HP Outlet Air'.'FIP 1' { 
-                        @CapellaID { eid = "90ecbd9b-1814-4a3e-a99c-6589ade50a87"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "HP Air"; 
-                         
-                    }  
-                    interface 'af04101a-93b0-4ad3-a428-f70688268dd9' : FunctionalExchange 
-                        connect source ::> 'Extract Energy'.'FOP 1'
-                        to target ::> 'Tranfer Torque'.'FIP 2' { 
-                        @CapellaID { eid = "af04101a-93b0-4ad3-a428-f70688268dd9"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "HP Compressor Torque"; 
-                         
-                    }  
-                    interface 'de38cdd4-0239-4048-a299-4e04d836de71' : FunctionalExchange 
-                        connect source ::> 'Measure inlet Temperature (T2)'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 1' { 
-                        @CapellaID { eid = "de38cdd4-0239-4048-a299-4e04d836de71"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "TIT"; 
-                         
-                    }  
-                    interface '8f5f029f-85d0-4510-bc67-9743b358b61b' : FunctionalExchange 
-                        connect source ::> 'Receive Air'.'FOP 2'
-                        to target ::> 'Measure Inlet Air Temperatur'.'FIP 1' { 
-                        @CapellaID { eid = "8f5f029f-85d0-4510-bc67-9743b358b61b"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Air"; 
-                         
-                    }  
-                    interface 'fb11d111-28b9-4d9c-af3f-49b71330c27c' : FunctionalExchange 
-                        connect source ::> 'Measure Inlet Air Temperatur'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 2' { 
-                        @CapellaID { eid = "fb11d111-28b9-4d9c-af3f-49b71330c27c"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Inlet Air Temp"; 
-                         
-                    }  
-                    interface '046a8771-7d28-4d6b-93c2-1b0b53cddbe3' : FunctionalExchange 
-                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 1'
-                        to target ::> 'Compress Air'.'FIP 1' { 
-                        @CapellaID { eid = "046a8771-7d28-4d6b-93c2-1b0b53cddbe3"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Turbine Inlet Air"; 
-                         
-                    }  
-                    interface '889c3cce-7981-46d7-b082-24ab331e258b' : FunctionalExchange 
-                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 2'
-                        to target ::> 'Measure inlet Temperature (T2)'.'FIP 1' { 
-                        @CapellaID { eid = "889c3cce-7981-46d7-b082-24ab331e258b"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Turbin Inlet Temp"; 
-                         
-                    }  
-                    interface '58f3ee77-c282-4022-b314-625d96c1de1e' : FunctionalExchange 
-                        connect source ::> 'Channel Air to HPC'.'FOP 1'
-                        to target ::> 'Meassure LP DIscharge Pressure'.'FIP 1' { 
-                        @CapellaID { eid = "58f3ee77-c282-4022-b314-625d96c1de1e"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "LPT Discharge Air Pressure"; 
-                         
-                    }  
-                    interface '5e745df4-0070-44fc-85ab-67d1a9189d7b' : FunctionalExchange 
-                        connect source ::> 'Meassure LP DIscharge Pressure'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 4' { 
-                        @CapellaID { eid = "5e745df4-0070-44fc-85ab-67d1a9189d7b"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "LPT Discharge Temp"; 
-                         
-                    }  
-                    interface 'dd59f184-65e3-42c3-b022-1e9429e7b06e' : FunctionalExchange 
-                        connect source ::> 'Channel HP Outlet Air'.'FOP 1'
-                        to target ::> 'Burn Fuel'.'FIP 1' { 
-                        @CapellaID { eid = "dd59f184-65e3-42c3-b022-1e9429e7b06e"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Outlet Air"; 
-                         
-                    }  
-                    interface '7e2199b0-d113-4057-9de3-d8e5a5394846' : FunctionalExchange 
-                        connect source ::> 'Channel HP Outlet Air'.'FOP 2'
-                        to target ::> 'Measure HP Outlet Pressure'.'FIP 1' { 
-                        @CapellaID { eid = "7e2199b0-d113-4057-9de3-d8e5a5394846"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "HP Outlet Pressure"; 
-                         
-                    }  
-                    interface 'afcd9a36-9fab-4606-82b4-17c26ab5ac58' : FunctionalExchange 
-                        connect source ::> 'Measure HP Outlet Pressure'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 5' { 
-                        @CapellaID { eid = "afcd9a36-9fab-4606-82b4-17c26ab5ac58"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "HP Outlet Pressure"; 
-                         
-                    }  
-                    interface '1a6b2da4-d217-40da-88f4-109ab788c26b' : FunctionalExchange 
-                        connect source ::> 'Channel Air to HPC'.'FOP 2'
-                        to target ::> 'Contribut to Compession'.'FIP 1' { 
-                        @CapellaID { eid = "1a6b2da4-d217-40da-88f4-109ab788c26b"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Compressed Air"; 
-                         
-                    }  
-                    interface '47892821-ae1a-40f8-bf93-bca460a27e2e' : FunctionalExchange 
-                        connect source ::> 'Contribut to Compession'.'FOP 1'
-                        to target ::> 'Compres LP Air'.'FIP 2' { 
-                        @CapellaID { eid = "47892821-ae1a-40f8-bf93-bca460a27e2e"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Vane Pressure"; 
-                         
-                    }  
-                    interface '4a7ad229-da53-499f-be20-f1c323e7e6a2' : FunctionalExchange 
-                        connect source ::> 'Control Engine'.'FOP 1'
-                        to target ::> 'Adjust Vanes'.'FIP 1' { 
-                        @CapellaID { eid = "4a7ad229-da53-499f-be20-f1c323e7e6a2"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Hp Stator Vane"; 
-                         
-                    }  
-                    interface '8ee986d5-18b6-46ad-82f3-d02fb3c78258' : FunctionalExchange 
-                        connect source ::> 'Adjust Vanes'.'FOP 1'
-                        to target ::> 'Contribut to Compession'.'FIP 2' { 
-                        @CapellaID { eid = "8ee986d5-18b6-46ad-82f3-d02fb3c78258"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Vane position"; 
-                         
-                    }  
-                    interface '99bf85cd-8d72-4c44-acb8-0c06db11ddeb' : FunctionalExchange 
-                        connect source ::> 'Contribut to LP Compression'.'FOP 1'
-                        to target ::> 'Compress Air'.'FIP 2' { 
-                        @CapellaID { eid = "99bf85cd-8d72-4c44-acb8-0c06db11ddeb"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Compressed Air"; 
-                         
-                    }  
-                    interface '15f03c3f-00f1-4fb8-9834-2965148500c9' : FunctionalExchange 
-                        connect source ::> 'Control Engine'.'FOP 2'
-                        to target ::> 'Move LP Stator Vanes'.'FIP 1' { 
-                        @CapellaID { eid = "15f03c3f-00f1-4fb8-9834-2965148500c9"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "LP Stator Vanes"; 
-                         
-                    }  
-                    interface '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85' : FunctionalExchange 
-                        connect source ::> 'Move LP Stator Vanes'.'FOP 1'
-                        to target ::> 'Contribut to LP Compression'.'FIP 1' { 
-                        @CapellaID { eid = "46a8f61a-3a35-4b8b-8dcc-bafcab55fa85"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "FunctionalExchange 30"; 
-                         
-                    }  
-                    interface 'eaa4c472-d34a-46ae-a8bc-f1a33de39bda' : FunctionalExchange 
-                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 4'
-                        to target ::> 'Contribut to LP Compression'.'FIP 2' { 
-                        @CapellaID { eid = "eaa4c472-d34a-46ae-a8bc-f1a33de39bda"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "LP inlet Air"; 
-                         
-                    }  
-                    interface '95d003e7-80b2-4bd4-be5c-c4197934f717' : FunctionalExchange 
-                        connect source ::> 'Control Engine'.'FOP 3'
-                        to target ::> 'Control Fuel Flow'.'FIP 1' { 
-                        @CapellaID { eid = "95d003e7-80b2-4bd4-be5c-c4197934f717"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Fuel Request"; 
-                         
-                    }  
-                    interface '8e028087-9961-44d5-8c33-02ef922a7ff6' : FunctionalExchange 
-                        connect source ::> 'Suppy Fuel'.'FOP 1'
-                        to target ::> 'Control Fuel Flow'.'FIP 2' { 
-                        @CapellaID { eid = "8e028087-9961-44d5-8c33-02ef922a7ff6"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Fuel"; 
-                         
-                    }  
-                    interface '66c98476-f91d-4d49-8070-75f81cfed404' : FunctionalExchange 
-                        connect source ::> 'Control Fuel Flow'.'FOP 1'
-                        to target ::> 'Burn Fuel'.'FIP 2' { 
-                        @CapellaID { eid = "66c98476-f91d-4d49-8070-75f81cfed404"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Fuel"; 
-                         
-                    }  
-                    interface '02c9527d-8024-43d3-b24c-2fa00aa04cc0' : FunctionalExchange 
-                        connect source ::> 'Burn Fuel'.'FOP 1'
-                        to target ::> 'Direct Hot Gas to Turbine'.'FIP 1' { 
-                        @CapellaID { eid = "02c9527d-8024-43d3-b24c-2fa00aa04cc0"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "EG"; 
-                         
-                    }  
-                    interface '5f417526-62bc-4e73-9783-ff32914c3b88' : FunctionalExchange 
-                        connect source ::> 'Direct Hot Gas to Turbine'.'FOP 2'
-                        to target ::> 'Extract Energy'.'FIP 1' { 
-                        @CapellaID { eid = "5f417526-62bc-4e73-9783-ff32914c3b88"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Hot Exhaust Gas"; 
-                         
-                    }  
-                    interface 'f36e68fd-3dba-451f-acb8-af210ae6d0c7' : FunctionalExchange 
-                        connect source ::> 'Extract Energy'.'FOP 2'
-                        to target ::> 'Channel to LP Turbine'.'FIP 1' { 
-                        @CapellaID { eid = "f36e68fd-3dba-451f-acb8-af210ae6d0c7"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Combusted Air"; 
-                         
-                    }  
-                    interface 'd32877de-8f90-4c97-8528-1358ce28b3d9' : FunctionalExchange 
-                        connect source ::> 'Channel to LP Turbine'.'FOP 1'
-                        to target ::> 'Measure Turbine Outlet Pressure'.'FIP 1' { 
-                        @CapellaID { eid = "d32877de-8f90-4c97-8528-1358ce28b3d9"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "P- HP Turbine Outlet Pressure"; 
-                         
-                    }  
-                    interface 'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0' : FunctionalExchange 
-                        connect source ::> 'Measure Turbine Outlet Pressure'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 7' { 
-                        @CapellaID { eid = "d2bb457c-8b54-42c3-bf56-1cd0a8f700b0"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "E- HP Turbine Outlet Pressue"; 
-                         
-                    }  
-                    interface '7a0ed679-84af-4fa0-b50e-40966b05814a' : FunctionalExchange 
-                        connect source ::> 'Channel to LP Turbine'.'FOP 2'
-                        to target ::> 'Drive Fan and LP Compressor'.'FIP 1' { 
-                        @CapellaID { eid = "7a0ed679-84af-4fa0-b50e-40966b05814a"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Torque"; 
-                         
-                    }  
-                    interface 'bbb5bc36-287f-4037-89dd-577c222bec86' : FunctionalExchange 
-                        connect source ::> 'Drive Fan and LP Compressor'.'FOP 1'
-                        to target ::> 'Rotate Fan and LP Compressor'.'FIP 1' { 
-                        @CapellaID { eid = "bbb5bc36-287f-4037-89dd-577c222bec86"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "LP Turbine Torque"; 
-                         
-                    }  
-                    interface 'd0181a94-0d0b-4f21-a111-a70a6915f5a0' : FunctionalExchange 
-                        connect source ::> 'Tranfer Torque'.'FOP 1'
-                        to target ::> 'Compres LP Air'.'FIP 2' { 
-                        @CapellaID { eid = "d0181a94-0d0b-4f21-a111-a70a6915f5a0"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "HP Shaft Torque"; 
-                         
-                    }  
-                    interface '98e62ed6-4223-4839-ad5a-3e5b725d65d7' : FunctionalExchange 
-                        connect source ::> 'Burn Fuel'.'FOP 2'
-                        to target ::> 'Measure Pressure'.'FIP 1' { 
-                        @CapellaID { eid = "98e62ed6-4223-4839-ad5a-3e5b725d65d7"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Combustion Pressure"; 
-                         
-                    }  
-                    interface 'ee95b174-e67a-446d-acab-7b7421029ab9' : FunctionalExchange 
-                        connect source ::> 'Measure Pressure'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 8' { 
-                        @CapellaID { eid = "ee95b174-e67a-446d-acab-7b7421029ab9"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Combustion Pressire"; 
-                         
-                    }  
-                    interface '672503df-1b75-4d68-96ec-673e24f7e635' : FunctionalExchange 
-                        connect source ::> 'Direct Turbine Exhaust'.'FOP 1'
-                        to target ::> 'Measure  Exhaust Gas Temp'.'FIP 1' { 
-                        @CapellaID { eid = "672503df-1b75-4d68-96ec-673e24f7e635"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "EGT"; 
-                         
-                    }  
-                    interface 'e4ef588d-9824-4310-a97d-da082f4902aa' : FunctionalExchange 
-                        connect source ::> 'Drive Fan and LP Compressor'.'FOP 2'
-                        to target ::> 'Direct Turbine Exhaust'.'FIP 1' { 
-                        @CapellaID { eid = "e4ef588d-9824-4310-a97d-da082f4902aa"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    interface '2e5af410-7699-45db-a3cd-d1c97fa52a38' : FunctionalExchange 
-                        connect source ::> 'Measure  Exhaust Gas Temp'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 9' { 
-                        @CapellaID { eid = "2e5af410-7699-45db-a3cd-d1c97fa52a38"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "EGT"; 
-                         
-                    }  
-                    interface '4c27511b-2046-4491-900f-442a530e9d34' : FunctionalExchange 
-                        connect source ::> 'Channel Air to HPC'.'FOP 3'
-                        to target ::> 'Compres LP Air'.'FIP 3' { 
-                        @CapellaID { eid = "4c27511b-2046-4491-900f-442a530e9d34"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Inlet HP Air"; 
-                         
-                    }  
-                    interface 'f356e536-ed67-40b1-aae6-c16e17a4dbfc' : FunctionalExchange 
-                        connect source ::> 'Measure N2'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 10' { 
-                        @CapellaID { eid = "f356e536-ed67-40b1-aae6-c16e17a4dbfc"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "N2 Speed"; 
-                         
-                    }  
-                    interface 'f5dd6000-d95d-4add-8222-c8094dcaf515' : FunctionalExchange 
-                        connect source ::> 'Tranfer Torque'.'FOP 2'
-                        to target ::> 'Measure N2'.'FIP 1' { 
-                        @CapellaID { eid = "f5dd6000-d95d-4add-8222-c8094dcaf515"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "N2 Speed"; 
-                         
-                    }  
-                    interface '07237295-f3a8-46de-b4eb-445004270f04' : FunctionalExchange 
-                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 3'
-                        to target ::> 'Measure N1 Speed'.'FIP 1' { 
-                        @CapellaID { eid = "07237295-f3a8-46de-b4eb-445004270f04"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "FunctionalExchange 53"; 
-                         
-                    }  
-                    interface '8ecfee11-7429-49c2-ba2b-0cc2814959db' : FunctionalExchange 
-                        connect source ::> 'Measure N1 Speed'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 11' { 
-                        @CapellaID { eid = "8ecfee11-7429-49c2-ba2b-0cc2814959db"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "N1 Speed"; 
-                         
-                    }  
-                    interface '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c' : FunctionalExchange 
-                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 4'
-                        to target ::> 'Compress Air'.'FIP 3' { 
-                        @CapellaID { eid = "8a8b37a6-1e68-4b99-91f7-c95bcd207a6c"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Shaft Torque"; 
-                         
-                    }  
-                    interface 'ec00c7e2-2bf0-4d75-8470-dd08fae8fb24' : FunctionalExchange 
-                        connect source ::> 'Control Fuel Flow'.'FOP 2'
-                        to target ::> 'Sense Position'.'FIP 1' { 
-                        @CapellaID { eid = "ec00c7e2-2bf0-4d75-8470-dd08fae8fb24"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Position"; 
-                         
-                    }  
-                    interface 'a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c' : FunctionalExchange 
-                        connect source ::> 'Sense Position'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 12' { 
-                        @CapellaID { eid = "a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "FMV Position"; 
-                         
-                    }  
-                    interface 'ac4e3bb3-dd39-40b0-a637-51cbf229520b' : FunctionalExchange 
-                        connect source ::> 'Provide Throttle Input'.'FOP 1'
-                        to target ::> 'Accept TLA'.'FIP 1' { 
-                        @CapellaID { eid = "ac4e3bb3-dd39-40b0-a637-51cbf229520b"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "TLA Angle"; 
-                         
-                    }  
-                    interface 'd761a29d-75a8-4067-a921-836986c40dd2' : FunctionalExchange 
-                        connect source ::> 'Accept TLA'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 13' { 
-                        @CapellaID { eid = "d761a29d-75a8-4067-a921-836986c40dd2"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "TLA Angle"; 
-                         
-                    }  
-                    interface '707d4125-6bc1-49cf-b9b0-e97cd34b798a' : FunctionalExchange 
-                        connect source ::> 'Channel Bleed Air'.'FOP 5'
-                        to target ::> 'Consume Air'.'Air' { 
-                        @CapellaID { eid = "707d4125-6bc1-49cf-b9b0-e97cd34b798a"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bleed Air"; 
-                         
-                    }  
-                    interface 'fddba676-404f-4ad5-b6c6-32a72a100584' : FunctionalExchange 
-                        connect source ::> 'Control Engine'.'FOP 4'
-                        to target ::> 'Set Bleed Air Postion'.'FIP 1' { 
-                        @CapellaID { eid = "fddba676-404f-4ad5-b6c6-32a72a100584"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bleed Air Position"; 
-                         
-                    }  
-                    interface '5f715b20-4600-4a0b-993f-ff7e07a56328' : FunctionalExchange 
-                        connect source ::> 'Set Bleed Air Postion'.'FOP 1'
-                        to target ::> 'Channel Bleed Air'.'FIP 2' { 
-                        @CapellaID { eid = "5f715b20-4600-4a0b-993f-ff7e07a56328"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bleed Air Valve Percentage"; 
-                         
-                    }  
-                    interface 'c9809ac2-550a-452c-969f-843ae5c659d2' : FunctionalExchange 
-                        connect source ::> 'Contribut to LP Compression'.'FOP 2'
-                        to target ::> 'Measure Position'.'FIP 1' { 
-                        @CapellaID { eid = "c9809ac2-550a-452c-969f-843ae5c659d2"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Position "; 
-                         
-                    }  
-                    interface 'fc852416-3199-4415-8c3f-1bbc2fb84deb' : FunctionalExchange 
-                        connect source ::> 'Measure Position'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 14' { 
-                        @CapellaID { eid = "fc852416-3199-4415-8c3f-1bbc2fb84deb"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Postion"; 
-                         
-                    }  
-                    interface '486601ad-a608-4815-b409-38481daf99e6' : FunctionalExchange 
-                        connect source ::> 'Channel Bleed Air'.'FOP 6'
-                        to target ::> 'Measure Bleed Air Valve Poistion'.'FIP 1' { 
-                        @CapellaID { eid = "486601ad-a608-4815-b409-38481daf99e6"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bleed Air Valve Position"; 
-                         
-                    }  
-                    interface '36d037d1-f577-4c8b-8b31-0ab2358f1df4' : FunctionalExchange 
-                        connect source ::> 'Measure Bleed Air Valve Poistion'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 15' { 
-                        @CapellaID { eid = "36d037d1-f577-4c8b-8b31-0ab2358f1df4"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bleed Air Position"; 
-                         
-                    }  
-                    interface '6857e0e2-511b-4c96-9042-358138b39e2e' : FunctionalExchange 
-                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 6'
-                        to target ::> 'Channel Bleed Air'.'FIP 3' { 
-                        @CapellaID { eid = "6857e0e2-511b-4c96-9042-358138b39e2e"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Bleed Air"; 
-                         
-                    }  
-                    interface '49b68c29-d119-472e-aa4a-d64a0cae24bc' : FunctionalExchange 
-                        connect source ::> 'Contribut to Compession'.'FOP 2'
-                        to target ::> 'Sense HP Stator Vane Position'.'FIP 1' { 
-                        @CapellaID { eid = "49b68c29-d119-472e-aa4a-d64a0cae24bc"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Vane Position"; 
-                         
-                    }  
-                    interface '4668a416-3451-46ce-9b7f-89f129783786' : FunctionalExchange 
-                        connect source ::> 'Sense HP Stator Vane Position'.'FOP 1'
-                        to target ::> 'Control Engine'.'FIP 16' { 
-                        @CapellaID { eid = "4668a416-3451-46ce-9b7f-89f129783786"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "HP Vane Position"; 
-                         
-                    }  
-                    interface '22ebf707-0b92-4a61-8955-9957c90751d6' : FunctionalExchange 
-                        connect source ::> 'Tranfer Torque'.'FOP 3'
-                        to target ::> 'Deliver Thrust'.'FIP 1' { 
-                        @CapellaID { eid = "22ebf707-0b92-4a61-8955-9957c90751d6"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    interface '6558b95b-b05b-4544-960d-ee21871e89ff' : FunctionalExchange 
-                        connect source ::> 'Deliver Thrust'.'FOP 1'
-                        to target ::> 'Provide Support Transfer Thrust'.'FIP 1' { 
-                        @CapellaID { eid = "6558b95b-b05b-4544-960d-ee21871e89ff"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    interface '901a4898-9193-4dab-a301-b81033da56c0' : FunctionalExchange 
-                        connect source ::> 'Provide Support Transfer Thrust'.'FOP 1'
-                        to target ::> 'Receive Engine Cowling Thrust'.'FIP 1' { 
-                        @CapellaID { eid = "901a4898-9193-4dab-a301-b81033da56c0"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    interface 'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0' : FunctionalExchange 
-                        connect source ::> 'Receive Engine Cowling Thrust'.'FOP 1'
-                        to target ::> 'Receive Thrust'.'FIP 2' { 
-                        @CapellaID { eid = "a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    interface '0ceb62c4-2a70-4da9-8dd1-b7b50bb85a94' : FunctionalExchange 
-                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 5'
-                        to target ::> 'Deliver Thrust'.'FIP 1' { 
-                        @CapellaID { eid = "0ceb62c4-2a70-4da9-8dd1-b7b50bb85a94"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    interface '3b3090ba-d017-4073-b7f5-95f953d89083' : FunctionalExchange 
-                        connect source ::> 'Deliver Thrust'.'FOP 1'
-                        to target ::> 'Provide Support Transfer Thrust'.'FIP 2' { 
-                        @CapellaID { eid = "3b3090ba-d017-4073-b7f5-95f953d89083"; } 
-                        attribute :>> isMulticast = false; 
-                        attribute :>> isMultireceive = false; 
-                        attribute :>> kindOfRate = RateKind::Unspecified; 
-                        attribute :>> interfaceName = "Thrust"; 
-                         
-                    }  
-                    action 'Receive Air' : FunctionalChain  { 
-                        @CapellaID { eid = "81c7f931-541b-4651-b409-6d6cbf352092"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '99d1f64c-832a-4c21-8674-a798e165c2cb' : FunctionalChainInvolvementLink 
-                            connect source ::> 'e95b26db-bdda-4071-bde3-62312f3213fa'
-                            to  target ::> '107b1113-0e86-45dc-904f-3ecd8bbb6303' {
-
-                                ref :>> involved = '0257347a-2a89-4fe4-a302-10cae2f02bb3';
-
-                            } 
-                        ref action '107b1113-0e86-45dc-904f-3ecd8bbb6303' = 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Receive Air'; 
-                        ref action 'e95b26db-bdda-4071-bde3-62312f3213fa' = 'Provide Air'; 
-                         
-                    }  
-                    action 'Monitor Tubine Air' : FunctionalChain  { 
-                        @CapellaID { eid = "7c01a44e-8ecd-4fac-9cd1-c5ed0e811fab"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '5a31a7dd-c946-4b61-ac17-1957da549e67' : FunctionalChainInvolvementLink 
-                            connect source ::> '342f2381-7e1b-4008-a74a-9be257bd8228'
-                            to  target ::> 'df5c657e-8650-47b2-a9a2-01e44c27e521' {
-
-                                ref :>> involved = 'de38cdd4-0239-4048-a299-4e04d836de71';
-
-                            } 
-                        ref action 'df5c657e-8650-47b2-a9a2-01e44c27e521' = 'Control Engine'; 
-                        ref action '342f2381-7e1b-4008-a74a-9be257bd8228' = 'Measure inlet Temperature (T2)'; 
-                         
-                    }  
-                    action 'Deliver Engine Thrust' : FunctionalChain  { 
-                        @CapellaID { eid = "2112bde6-e777-4e85-8332-c0ec69c99eb3"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'c35ccf85-edca-4796-9407-4f040bd8f13e' : FunctionalChainInvolvementLink 
-                            connect source ::> 'd8d31990-4f35-42d7-8bc0-6850dea28d46'
-                            to  target ::> 'c0da7805-9ef3-4790-af3f-ad4858854549' {
-
-                                ref :>> involved = 'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a';
-
-                            } 
-                        ref action 'c0da7805-9ef3-4790-af3f-ad4858854549' = 'Receive Thrust'; 
-                        ref action 'd8d31990-4f35-42d7-8bc0-6850dea28d46' = 'Receive Nozzle Thrust'; 
-                         
-                    }  
-                    action 'Monitor Inlet Air' : FunctionalChain  { 
-                        @CapellaID { eid = "ef61b2e6-08ea-4eed-94e2-85045189a02a"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '46b213f6-e3fd-4968-a34c-cb081fae2d00' : FunctionalChainInvolvementLink 
-                            connect source ::> 'e2be0b6d-a6fc-4810-b12a-0f8022b4afe5'
-                            to  target ::> 'a5504e1e-1e9f-4c93-a798-d7cded9b13b8' {
-
-                                ref :>> involved = 'fb11d111-28b9-4d9c-af3f-49b71330c27c';
-
-                            } 
-                        ref action 'a5504e1e-1e9f-4c93-a798-d7cded9b13b8' = 'Control Engine'; 
-                        ref action 'e2be0b6d-a6fc-4810-b12a-0f8022b4afe5' = 'Measure Inlet Air Temperatur'; 
-                        connection '25560de4-f173-440d-9b22-a4f05f20cdc5' : FunctionalChainInvolvementLink 
-                            connect source ::> '2eb297c5-0d9d-4f9d-920c-e1c629556e67'
-                            to  target ::> 'e2be0b6d-a6fc-4810-b12a-0f8022b4afe5' {
-
-                                ref :>> involved = '8f5f029f-85d0-4510-bc67-9743b358b61b';
-
-                            } 
-                        ref action '2eb297c5-0d9d-4f9d-920c-e1c629556e67' = 'Receive Air'; 
-                         
-                    }  
-                    action 'Deliver Fan Thrust' : FunctionalChain  { 
-                        @CapellaID { eid = "64e512ff-f6f1-42f1-a92c-1d65e8b9b4fd"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'de45aec8-7527-4bb2-bf31-a9cc0cd19d6d' : FunctionalChainInvolvementLink 
-                            connect source ::> '8a681d6b-9fd7-44f1-98d7-4cf368d24e23'
-                            to  target ::> '451db0fd-64fe-465e-a9fc-5b8c28ba91b7' {
-
-                                ref :>> involved = 'b2c0a7ca-077d-40b0-8327-082c60c037e2';
-
-                            } 
-                        ref action '451db0fd-64fe-465e-a9fc-5b8c28ba91b7' = 'Increase Air Mass Flow'; 
-                        connection '3c95dc3d-7449-4dec-bf25-d989c171a7a6' : FunctionalChainInvolvementLink 
-                            connect source ::> '451db0fd-64fe-465e-a9fc-5b8c28ba91b7'
-                            to  target ::> 'd2e31ff5-b018-42f2-b11f-365613a55da3' {
-
-                                ref :>> involved = '39e80b06-d704-4398-ae5b-fa73cd902189';
-
-                            } 
-                        ref action 'd2e31ff5-b018-42f2-b11f-365613a55da3' = 'Expel Bypass AIr'; 
-                        connection 'd65534d3-216f-49df-937b-7c76943969ed' : FunctionalChainInvolvementLink 
-                            connect source ::> '9cbb486b-15ef-4e75-9a27-ad33bae3b062'
-                            to  target ::> '451db0fd-64fe-465e-a9fc-5b8c28ba91b7' {
-
-                                ref :>> involved = 'b3b42c74-f43e-478c-bed4-03ae1cfb8c83';
-
-                            } 
-                        ref action '9cbb486b-15ef-4e75-9a27-ad33bae3b062' = 'Receive Air'; 
-                        connection '056b083c-f774-4cce-9721-10acab58851a' : FunctionalChainInvolvementLink 
-                            connect source ::> 'd2e31ff5-b018-42f2-b11f-365613a55da3'
-                            to  target ::> '21451783-7785-4d24-acaa-f398658fb8cf' {
-
-                                ref :>> involved = 'ac24a803-17bc-4a51-9c74-d28fb15ead21';
-
-                            } 
-                        ref action '21451783-7785-4d24-acaa-f398658fb8cf' = 'Receive Nozzle Thrust'; 
-                        connection '35fb6444-c4be-4410-a817-005ab6f7a760' : FunctionalChainInvolvementLink 
-                            connect source ::> '21451783-7785-4d24-acaa-f398658fb8cf'
-                            to  target ::> 'e774ecf0-ded1-4b5d-91d8-d6809fdf17d9' {
-
-                                ref :>> involved = 'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a';
-
-                            } 
-                        ref action 'e774ecf0-ded1-4b5d-91d8-d6809fdf17d9' = 'Receive Thrust'; 
-                        ref action '8a681d6b-9fd7-44f1-98d7-4cf368d24e23' = 'Rotate Fan and LP Compressor'; 
-                         
-                    }  
-                    action 'Monitor Inlet Pressure' : FunctionalChain  { 
-                        @CapellaID { eid = "56460e13-55e2-4cb4-b691-f9dd472bc596"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        ref action '1a72c2c3-f0f8-42bf-97e6-3656825584ca' = 'Measure inlet Temperature (T2)'; 
-                        ref action 'a71b69a5-a695-4161-8736-a2cade4a5685' = 'Channel Fan Air to Turbine'; 
-                        connection '8f5534c1-7a8d-474e-8211-033371ab809d' : FunctionalChainInvolvementLink 
-                            connect source ::> 'a71b69a5-a695-4161-8736-a2cade4a5685'
-                            to  target ::> '1a72c2c3-f0f8-42bf-97e6-3656825584ca' {
-
-                                ref :>> involved = '889c3cce-7981-46d7-b082-24ab331e258b';
-
-                            } 
-                         
-                    }  
-                    action 'Monitor LPC Discharge Pressure' : FunctionalChain  { 
-                        @CapellaID { eid = "cfeeeab8-35e7-4d10-b347-f6365c4e8f99"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'c61dbd34-84d1-400f-86f1-30ad209b34b0' : FunctionalChainInvolvementLink 
-                            connect source ::> '7ae9b310-12b0-403c-92ac-498cf2e768f1'
-                            to  target ::> '3b42e767-cd7f-465c-a55c-5b04462285d3' {
-
-                                ref :>> involved = '58f3ee77-c282-4022-b314-625d96c1de1e';
-
-                            } 
-                        ref action '3b42e767-cd7f-465c-a55c-5b04462285d3' = 'Meassure LP DIscharge Pressure'; 
-                        ref action '7ae9b310-12b0-403c-92ac-498cf2e768f1' = 'Channel Air to HPC'; 
-                        connection '578a037c-2ae1-483a-89c5-b926de6f2e63' : FunctionalChainInvolvementLink 
-                            connect source ::> '3b42e767-cd7f-465c-a55c-5b04462285d3'
-                            to  target ::> '9289c2f0-f82b-4693-9807-2032154eb32f' {
-
-                                ref :>> involved = '5e745df4-0070-44fc-85ab-67d1a9189d7b';
-
-                            } 
-                        ref action '9289c2f0-f82b-4693-9807-2032154eb32f' = 'Control Engine'; 
-                         
-                    }  
-                    action 'Monitor HPC Discharge Pressure' : FunctionalChain  { 
-                        @CapellaID { eid = "2eb72a0a-89e7-4f9e-8d86-eed638abaf44"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'b453b57a-2da8-4808-9d75-167ce6068f3b' : FunctionalChainInvolvementLink 
-                            connect source ::> '970d7b27-53ad-4b57-bc7d-64dbb4da6cfc'
-                            to  target ::> '11a22d40-6067-43d9-b43c-38f59ddcf6b0' {
-
-                                ref :>> involved = 'afcd9a36-9fab-4606-82b4-17c26ab5ac58';
-
-                            } 
-                        ref action '11a22d40-6067-43d9-b43c-38f59ddcf6b0' = 'Control Engine'; 
-                        ref action '970d7b27-53ad-4b57-bc7d-64dbb4da6cfc' = 'Measure HP Outlet Pressure'; 
-                        connection '370b55f6-5a59-438a-b720-efd38719e5a4' : FunctionalChainInvolvementLink 
-                            connect source ::> '1092e769-74f8-4572-b4a2-35555ea5b016'
-                            to  target ::> '970d7b27-53ad-4b57-bc7d-64dbb4da6cfc' {
-
-                                ref :>> involved = '7e2199b0-d113-4057-9de3-d8e5a5394846';
-
-                            } 
-                        ref action '1092e769-74f8-4572-b4a2-35555ea5b016' = 'Channel HP Outlet Air'; 
-                         
-                    }  
-                    action 'Actuate LP Stator Vanes' : FunctionalChain  { 
-                        @CapellaID { eid = "b7d8db78-5f21-4e73-b860-0930de24e9a5"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'cbc25c66-a2ee-4da8-ad7a-1722dead8e24' : FunctionalChainInvolvementLink 
-                            connect source ::> 'c64ac656-985f-446e-aaef-24a08a39d3e9'
-                            to  target ::> 'a85127aa-8bd6-4931-bf6c-ca88401db40c' {
-
-                                ref :>> involved = '15f03c3f-00f1-4fb8-9834-2965148500c9';
-
-                            } 
-                        ref action 'a85127aa-8bd6-4931-bf6c-ca88401db40c' = 'Move LP Stator Vanes'; 
-                        ref action 'c64ac656-985f-446e-aaef-24a08a39d3e9' = 'Control Engine'; 
-                        connection '874e307b-845c-4d53-8906-3b51e19c8999' : FunctionalChainInvolvementLink 
-                            connect source ::> 'a85127aa-8bd6-4931-bf6c-ca88401db40c'
-                            to  target ::> '5f5853c7-eeb2-4288-9b59-3107ffa28d5a' {
-
-                                ref :>> involved = '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85';
-
-                            } 
-                        ref action '5f5853c7-eeb2-4288-9b59-3107ffa28d5a' = 'Contribut to LP Compression'; 
-                         
-                    }  
-                    action 'Actuate HP Stator Vanes' : FunctionalChain  { 
-                        @CapellaID { eid = "af913d40-f26b-41fb-bc29-160f78e1523c"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'b21e9751-cb4e-41d7-ac14-3a6f375e0008' : FunctionalChainInvolvementLink 
-                            connect source ::> 'cf52e960-b506-4fe8-a4a4-6a8aa07ccc1b'
-                            to  target ::> '83d0916d-c6a7-4194-ac40-8d36428983a5' {
-
-                                ref :>> involved = '4a7ad229-da53-499f-be20-f1c323e7e6a2';
-
-                            } 
-                        ref action '83d0916d-c6a7-4194-ac40-8d36428983a5' = 'Adjust Vanes'; 
-                        ref action 'cf52e960-b506-4fe8-a4a4-6a8aa07ccc1b' = 'Control Engine'; 
-                        connection '1bfe106f-eb6c-4c5f-bbff-ac72546f39a2' : FunctionalChainInvolvementLink 
-                            connect source ::> '83d0916d-c6a7-4194-ac40-8d36428983a5'
-                            to  target ::> 'edb11306-f196-4582-8504-0cd1cbb4eb6a' {
-
-                                ref :>> involved = '8ee986d5-18b6-46ad-82f3-d02fb3c78258';
-
-                            } 
-                        ref action 'edb11306-f196-4582-8504-0cd1cbb4eb6a' = 'Contribut to Compession'; 
-                         
-                    }  
-                    action 'Control Fuel' : FunctionalChain  { 
-                        @CapellaID { eid = "a7b36c2d-8304-46b6-9ff4-af3318b75b17"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '80a7f390-e973-4d39-80a1-496e75350510' : FunctionalChainInvolvementLink 
-                            connect source ::> '5d4b2b67-fd18-4064-adac-32ad85b7defa'
-                            to  target ::> 'f65cc6c9-ef3a-43b3-ba47-c603556c8692' {
-
-                                ref :>> involved = '95d003e7-80b2-4bd4-be5c-c4197934f717';
-
-                            } 
-                        ref action 'f65cc6c9-ef3a-43b3-ba47-c603556c8692' = 'Control Fuel Flow'; 
-                        ref action '5d4b2b67-fd18-4064-adac-32ad85b7defa' = 'Control Engine'; 
-                        connection '1c955fc6-4b53-4a14-8d64-ecb86b49f385' : FunctionalChainInvolvementLink 
-                            connect source ::> 'f65cc6c9-ef3a-43b3-ba47-c603556c8692'
-                            to  target ::> 'e0e0ab8c-45dc-40f8-b97d-146a26567217' {
-
-                                ref :>> involved = '66c98476-f91d-4d49-8070-75f81cfed404';
-
-                            } 
-                        ref action 'e0e0ab8c-45dc-40f8-b97d-146a26567217' = 'Burn Fuel'; 
-                         
-                    }  
-                    action 'Combust Fuel' : FunctionalChain  { 
-                        @CapellaID { eid = "63932112-45ff-4be2-976e-257aab331867"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'd27dbcdc-4868-4edf-afb7-42ac80ff9c62' : FunctionalChainInvolvementLink 
-                            connect source ::> '8ccb9e42-0853-4a87-85d1-34ebbbfaeeb9'
-                            to  target ::> '4b660a49-2523-4ce6-9da5-b35c05401355' {
-
-                                ref :>> involved = 'dd59f184-65e3-42c3-b022-1e9429e7b06e';
-
-                            } 
-                        ref action '4b660a49-2523-4ce6-9da5-b35c05401355' = 'Burn Fuel'; 
-                        ref action '8ccb9e42-0853-4a87-85d1-34ebbbfaeeb9' = 'Channel HP Outlet Air'; 
-                        connection '00927c04-21fb-4740-a0fa-7985e91021b5' : FunctionalChainInvolvementLink 
-                            connect source ::> '4b660a49-2523-4ce6-9da5-b35c05401355'
-                            to  target ::> '796c1b58-3c2a-477c-8985-2763b40a8822' {
-
-                                ref :>> involved = '02c9527d-8024-43d3-b24c-2fa00aa04cc0';
-
-                            } 
-                        ref action '796c1b58-3c2a-477c-8985-2763b40a8822' = 'Direct Hot Gas to Turbine'; 
-                         
-                    }  
-                    action 'Perform LP Compression' : FunctionalChain  { 
-                        @CapellaID { eid = "39e26f5f-9e35-41aa-a19e-f74570fada58"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '9f372e1b-59de-4826-9e91-ba82231b124f' : FunctionalChainInvolvementLink 
-                            connect source ::> '1342f2a5-508f-41db-ae05-43b0a73e81a4'
-                            to  target ::> 'e7d66a07-2e26-4dda-b07f-a95318354ffc' {
-
-                                ref :>> involved = 'eaa4c472-d34a-46ae-a8bc-f1a33de39bda';
-
-                            } 
-                        ref action 'e7d66a07-2e26-4dda-b07f-a95318354ffc' = 'Contribut to LP Compression'; 
-                        ref action '1342f2a5-508f-41db-ae05-43b0a73e81a4' = 'Channel Fan Air to Turbine'; 
-                        connection '49b0ef60-13f9-4d6b-8e0d-54c91917697e' : FunctionalChainInvolvementLink 
-                            connect source ::> 'e7d66a07-2e26-4dda-b07f-a95318354ffc'
-                            to  target ::> '5e1c2043-9ba1-4749-b367-66288750701c' {
-
-                                ref :>> involved = '99bf85cd-8d72-4c44-acb8-0c06db11ddeb';
-
-                            } 
-                        ref action '5e1c2043-9ba1-4749-b367-66288750701c' = 'Compress Air'; 
-                        ref action 'b5bc0a3e-6e33-4724-8e51-188bac0a871c' = 'Rotate Fan and LP Compressor'; 
-                        connection 'cee44ca1-f07b-4582-9027-1663f81244df' : FunctionalChainInvolvementLink 
-                            connect source ::> 'b5bc0a3e-6e33-4724-8e51-188bac0a871c'
-                            to  target ::> '5e1c2043-9ba1-4749-b367-66288750701c' {
-
-                                ref :>> involved = '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c';
-
-                            } 
-                        connection 'f6829cc5-eb55-46a2-8e0d-0f59caa505bd' : FunctionalChainInvolvementLink 
-                            connect source ::> '1342f2a5-508f-41db-ae05-43b0a73e81a4'
-                            to  target ::> '5e1c2043-9ba1-4749-b367-66288750701c' {
-
-                                ref :>> involved = '046a8771-7d28-4d6b-93c2-1b0b53cddbe3';
-
-                            } 
-                         
-                    }  
-                    action 'Perform HP Compression' : FunctionalChain  { 
-                        @CapellaID { eid = "7a3c1a20-c7ff-43d6-bb52-8d26483898df"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'ce2f8422-6b96-43a4-80f4-f59c688b2d3c' : FunctionalChainInvolvementLink 
-                            connect source ::> '47b4575d-8429-4478-a772-37e8bc38a05a'
-                            to  target ::> 'f96f5d63-a330-4fd5-9707-2a055a35b5e0' {
-
-                                ref :>> involved = '152a6432-3c81-426b-948e-89e8ccd8ee15';
-
-                            } 
-                        ref action 'f96f5d63-a330-4fd5-9707-2a055a35b5e0' = 'Channel Air to HPC'; 
-                        ref action '47b4575d-8429-4478-a772-37e8bc38a05a' = 'Compress Air'; 
-                        connection '6a77dfb4-bfab-4ee5-8c49-d69d54310844' : FunctionalChainInvolvementLink 
-                            connect source ::> 'f96f5d63-a330-4fd5-9707-2a055a35b5e0'
-                            to  target ::> '6088eb7c-7177-4a7d-a02e-daf55c7e26d2' {
-
-                                ref :>> involved = '4c27511b-2046-4491-900f-442a530e9d34';
-
-                            } 
-                        ref action '6088eb7c-7177-4a7d-a02e-daf55c7e26d2' = 'Compres LP Air'; 
-                        connection '349daa25-0f47-4ac3-a8aa-14b48637208c' : FunctionalChainInvolvementLink 
-                            connect source ::> 'f96f5d63-a330-4fd5-9707-2a055a35b5e0'
-                            to  target ::> '3fcb6d8b-d4a4-401f-a4e0-77242a8b8838' {
-
-                                ref :>> involved = '1a6b2da4-d217-40da-88f4-109ab788c26b';
-
-                            } 
-                        ref action '3fcb6d8b-d4a4-401f-a4e0-77242a8b8838' = 'Contribut to Compession'; 
-                        connection '5390a3a1-ca7f-4f9b-a910-628fcad4c741' : FunctionalChainInvolvementLink 
-                            connect source ::> '3fcb6d8b-d4a4-401f-a4e0-77242a8b8838'
-                            to  target ::> '6088eb7c-7177-4a7d-a02e-daf55c7e26d2' {
-
-                                ref :>> involved = '47892821-ae1a-40f8-bf93-bca460a27e2e';
-
-                            } 
-                        connection '6399e3b9-7f49-440d-afc6-5d7e6f1eb8f6' : FunctionalChainInvolvementLink 
-                            connect source ::> '6088eb7c-7177-4a7d-a02e-daf55c7e26d2'
-                            to  target ::> 'd7ae65e1-ada7-433f-9cd5-2ecfb0a96709' {
-
-                                ref :>> involved = '90ecbd9b-1814-4a3e-a99c-6589ade50a87';
-
-                            } 
-                        ref action 'd7ae65e1-ada7-433f-9cd5-2ecfb0a96709' = 'Channel HP Outlet Air'; 
-                         
-                    }  
-                    action 'Monitor Combustion Chamber Pressue' : FunctionalChain  { 
-                        @CapellaID { eid = "b2669099-4f46-42c5-8cb0-9334a0627ebb"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '5aeeada1-d91a-420f-ab4b-3dd330467eb3' : FunctionalChainInvolvementLink 
-                            connect source ::> '3048502e-2134-4350-b28c-c0bfd55bfcf5'
-                            to  target ::> '37b05050-c764-4733-8d7a-83e25c4a538a' {
-
-                                ref :>> involved = 'ee95b174-e67a-446d-acab-7b7421029ab9';
-
-                            } 
-                        ref action '37b05050-c764-4733-8d7a-83e25c4a538a' = 'Control Engine'; 
-                        ref action '3048502e-2134-4350-b28c-c0bfd55bfcf5' = 'Measure Pressure'; 
-                        connection 'b6f76cf0-3242-47d2-80f0-6b1594b0395a' : FunctionalChainInvolvementLink 
-                            connect source ::> '28438e64-dd4e-4491-8ae6-dba4f66138a3'
-                            to  target ::> '3048502e-2134-4350-b28c-c0bfd55bfcf5' {
-
-                                ref :>> involved = '98e62ed6-4223-4839-ad5a-3e5b725d65d7';
-
-                            } 
-                        ref action '28438e64-dd4e-4491-8ae6-dba4f66138a3' = 'Burn Fuel'; 
-                         
-                    }  
-                    action 'Extract HP Turbine Energy' : FunctionalChain  { 
-                        @CapellaID { eid = "781670cd-b6db-4de7-b687-f275241fa71d"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '2f479fee-1503-4e81-a294-2e0ad814b317' : FunctionalChainInvolvementLink 
-                            connect source ::> '34f572a8-d246-413c-91be-6fc02afc3788'
-                            to  target ::> '80cd6bca-6ed0-48bc-87ab-430306f65fbf' {
-
-                                ref :>> involved = '5f417526-62bc-4e73-9783-ff32914c3b88';
-
-                            } 
-                        ref action '80cd6bca-6ed0-48bc-87ab-430306f65fbf' = 'Extract Energy'; 
-                        ref action '34f572a8-d246-413c-91be-6fc02afc3788' = 'Direct Hot Gas to Turbine'; 
-                        connection '691eeaeb-36ab-4da4-b463-b0035c2fc620' : FunctionalChainInvolvementLink 
-                            connect source ::> '80cd6bca-6ed0-48bc-87ab-430306f65fbf'
-                            to  target ::> '273e1236-0631-4719-a742-3d079ecb8dba' {
-
-                                ref :>> involved = 'af04101a-93b0-4ad3-a428-f70688268dd9';
-
-                            } 
-                        ref action '273e1236-0631-4719-a742-3d079ecb8dba' = 'Tranfer Torque'; 
-                         
-                    }  
-                    action 'Monitor N2' : FunctionalChain  { 
-                        @CapellaID { eid = "f5b04367-19ca-4833-9799-c76f4969c97e"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'd1759cb9-a170-4616-8fc1-5f50b6c6dbe7' : FunctionalChainInvolvementLink 
-                            connect source ::> 'd3785023-4837-4897-9371-80d05db8e44b'
-                            to  target ::> 'cb056e54-d0b8-46a6-a5f6-85f192d088ce' {
-
-                                ref :>> involved = 'f356e536-ed67-40b1-aae6-c16e17a4dbfc';
-
-                            } 
-                        ref action 'cb056e54-d0b8-46a6-a5f6-85f192d088ce' = 'Control Engine'; 
-                        ref action 'd3785023-4837-4897-9371-80d05db8e44b' = 'Measure N2'; 
-                        connection 'ae5a62dd-d878-4fb7-8624-ab975a9e78bd' : FunctionalChainInvolvementLink 
-                            connect source ::> '4929dd54-9def-484e-a3a3-1711abd66320'
-                            to  target ::> 'd3785023-4837-4897-9371-80d05db8e44b' {
-
-                                ref :>> involved = 'f5dd6000-d95d-4add-8222-c8094dcaf515';
-
-                            } 
-                        ref action '4929dd54-9def-484e-a3a3-1711abd66320' = 'Tranfer Torque'; 
-                         
-                    }  
-                    action 'Monitor HPT Outlet Pressure' : FunctionalChain  { 
-                        @CapellaID { eid = "30f93f3f-4a07-4708-8036-0b598c918a2f"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '18d6c633-3d10-4e35-9138-9e299d8d05e9' : FunctionalChainInvolvementLink 
-                            connect source ::> 'd13d0344-a8b7-4310-8262-2e54908e396a'
-                            to  target ::> 'a2d8f5a8-d187-46ff-8674-996cfe6845fa' {
-
-                                ref :>> involved = 'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0';
-
-                            } 
-                        ref action 'a2d8f5a8-d187-46ff-8674-996cfe6845fa' = 'Control Engine'; 
-                        ref action 'd13d0344-a8b7-4310-8262-2e54908e396a' = 'Measure Turbine Outlet Pressure'; 
-                        connection 'ec10a7cf-cfa8-4c22-9853-188c418ce6b9' : FunctionalChainInvolvementLink 
-                            connect source ::> '5c00a9c6-c54a-43d0-88f1-17d21c228290'
-                            to  target ::> 'd13d0344-a8b7-4310-8262-2e54908e396a' {
-
-                                ref :>> involved = 'd32877de-8f90-4c97-8528-1358ce28b3d9';
-
-                            } 
-                        ref action '5c00a9c6-c54a-43d0-88f1-17d21c228290' = 'Channel to LP Turbine'; 
-                         
-                    }  
-                    action 'Monitor EGT' : FunctionalChain  { 
-                        @CapellaID { eid = "8c2a6a0c-276d-4d4c-ac85-ba37704b45c4"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '0f3db2e3-6cce-4ae6-9245-d35d2343a867' : FunctionalChainInvolvementLink 
-                            connect source ::> '73a96de7-a630-45d7-9b3e-c7039985697e'
-                            to  target ::> 'f91fa7aa-5b31-4cf4-ad9f-8a0ff01a89b5' {
-
-                                ref :>> involved = '2e5af410-7699-45db-a3cd-d1c97fa52a38';
-
-                            } 
-                        ref action 'f91fa7aa-5b31-4cf4-ad9f-8a0ff01a89b5' = 'Control Engine'; 
-                        ref action '73a96de7-a630-45d7-9b3e-c7039985697e' = 'Measure  Exhaust Gas Temp'; 
-                        connection '57d6c0d1-caae-4b67-afcb-f9f682ee529b' : FunctionalChainInvolvementLink 
-                            connect source ::> 'eb7450f3-8aab-4aaa-989e-5ce4768410b0'
-                            to  target ::> '73a96de7-a630-45d7-9b3e-c7039985697e' {
-
-                                ref :>> involved = '672503df-1b75-4d68-96ec-673e24f7e635';
-
-                            } 
-                        ref action 'eb7450f3-8aab-4aaa-989e-5ce4768410b0' = 'Direct Turbine Exhaust'; 
-                         
-                    }  
-                    action 'LP Turbine to Shaft' : FunctionalChain  { 
-                        @CapellaID { eid = "80746594-cb46-4ee9-918d-963bd7bd5668"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        ref action '0ca7a54e-6fc7-487c-ac08-537e393bc9a9' = 'Channel to LP Turbine'; 
-                        connection 'e0f1cf3d-256a-4aed-96f0-9acad72e0e18' : FunctionalChainInvolvementLink 
-                            connect source ::> '0ca7a54e-6fc7-487c-ac08-537e393bc9a9'
-                            to  target ::> '11b71d82-6928-4bbd-b0cf-3aae044d6d9f' {
-
-                                ref :>> involved = '7a0ed679-84af-4fa0-b50e-40966b05814a';
-
-                            } 
-                        ref action '11b71d82-6928-4bbd-b0cf-3aae044d6d9f' = 'Drive Fan and LP Compressor'; 
-                        ref action 'e39a2926-ade9-482d-ade3-7c45c1b2d34b' = 'Rotate Fan and LP Compressor'; 
-                        connection '59fd8f05-4185-49b3-a5ba-4485ba45f752' : FunctionalChainInvolvementLink 
-                            connect source ::> '11b71d82-6928-4bbd-b0cf-3aae044d6d9f'
-                            to  target ::> 'e39a2926-ade9-482d-ade3-7c45c1b2d34b' {
-
-                                ref :>> involved = 'bbb5bc36-287f-4037-89dd-577c222bec86';
-
-                            } 
-                        ref action '6a2bdab7-da7a-4cd4-9e71-77f516a75e68' = 'Compress Air'; 
-                        connection '07b45d24-af6d-4db4-a3da-3333d4be1fd3' : FunctionalChainInvolvementLink 
-                            connect source ::> 'e39a2926-ade9-482d-ade3-7c45c1b2d34b'
-                            to  target ::> '6a2bdab7-da7a-4cd4-9e71-77f516a75e68' {
-
-                                ref :>> involved = '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c';
-
-                            } 
-                         
-                    }  
-                    action 'Monitor HP Pressure' : FunctionalChain  { 
-                        @CapellaID { eid = "4d3e5b56-9212-46b9-bb5f-a7cff9d9ea78"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '92c0d708-364e-4485-a9b8-9b8a6aaad8ad' : FunctionalChainInvolvementLink 
-                            connect source ::> 'b3439023-c695-43fb-bde1-b2836ebd3cd1'
-                            to  target ::> '5d1125cc-435b-4023-9c6e-89d16ead28de' {
-
-                                ref :>> involved = 'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0';
-
-                            } 
-                        ref action '5d1125cc-435b-4023-9c6e-89d16ead28de' = 'Control Engine'; 
-                        ref action 'b3439023-c695-43fb-bde1-b2836ebd3cd1' = 'Measure Turbine Outlet Pressure'; 
-                        connection 'a0f13c45-330a-4ba7-b6df-a25738888e8f' : FunctionalChainInvolvementLink 
-                            connect source ::> 'c92e8be5-8e4b-46a4-936c-1a82c1bdac5e'
-                            to  target ::> 'b3439023-c695-43fb-bde1-b2836ebd3cd1' {
-
-                                ref :>> involved = 'd32877de-8f90-4c97-8528-1358ce28b3d9';
-
-                            } 
-                        ref action 'c92e8be5-8e4b-46a4-936c-1a82c1bdac5e' = 'Channel to LP Turbine'; 
-                         
-                    }  
-                    action 'Monitor N1' : FunctionalChain  { 
-                        @CapellaID { eid = "2e195f49-8fc9-4f6d-be09-cd665657e276"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '4e9b2520-e52b-4253-b624-7af267a4ae89' : FunctionalChainInvolvementLink 
-                            connect source ::> '0d42ee52-004d-4af3-9247-42d1879636f6'
-                            to  target ::> 'c51490df-d486-4d50-bba6-1f92a3cacd21' {
-
-                                ref :>> involved = '8ecfee11-7429-49c2-ba2b-0cc2814959db';
-
-                            } 
-                        ref action 'c51490df-d486-4d50-bba6-1f92a3cacd21' = 'Control Engine'; 
-                        ref action '0d42ee52-004d-4af3-9247-42d1879636f6' = 'Measure N1 Speed'; 
-                        connection '86814035-9a42-4113-a80f-ee562c197cee' : FunctionalChainInvolvementLink 
-                            connect source ::> '50aecd22-3f72-4599-b363-d72292023634'
-                            to  target ::> '0d42ee52-004d-4af3-9247-42d1879636f6' {
-
-                                ref :>> involved = '07237295-f3a8-46de-b4eb-445004270f04';
-
-                            } 
-                        ref action '50aecd22-3f72-4599-b363-d72292023634' = 'Rotate Fan and LP Compressor'; 
-                         
-                    }  
-                    action 'Measure FMV Position' : FunctionalChain  { 
-                        @CapellaID { eid = "4b5cc4c8-6af6-410a-a1b6-e76d3be3f549"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection 'a8982c51-e3a1-41da-9202-f68625f55204' : FunctionalChainInvolvementLink 
-                            connect source ::> '72317377-c4aa-4f62-903d-7ff060c31fa0'
-                            to  target ::> '7689e8e0-88fa-44ea-9a6f-33b3e58c24e0' {
-
-                                ref :>> involved = 'ec00c7e2-2bf0-4d75-8470-dd08fae8fb24';
-
-                            } 
-                        ref action '7689e8e0-88fa-44ea-9a6f-33b3e58c24e0' = 'Sense Position'; 
-                        ref action '72317377-c4aa-4f62-903d-7ff060c31fa0' = 'Control Fuel Flow'; 
-                        connection 'fc836911-2f8e-4660-86d6-ef9d8c830e8d' : FunctionalChainInvolvementLink 
-                            connect source ::> '7689e8e0-88fa-44ea-9a6f-33b3e58c24e0'
-                            to  target ::> '183e50cd-b4aa-4b3c-aee1-a3fce7994747' {
-
-                                ref :>> involved = 'a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c';
-
-                            } 
-                        ref action '183e50cd-b4aa-4b3c-aee1-a3fce7994747' = 'Control Engine'; 
-                         
-                    }  
-                    action 'Deliver Thrust' : FunctionalChain  { 
-                        @CapellaID { eid = "a878bccb-fdd5-4d79-b711-3a84e4395f87"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        ref action '91bfb57e-e01b-4ec8-a2ba-2856fb735539' = 'Receive Air'; 
-                        ref action '4a2c1ac2-5cae-4d39-a3ae-83a7f6815f56' = 'Deliver Engine Thrust'; 
-                        ref action '4b662b1f-a934-44fb-87f0-2a02b21ed278' = 'Perform LP Compression'; 
-                        ref action 'fe7a56dd-6c54-4821-9b6a-9d4bbbdec7f2' = 'Deliver Fan Thrust'; 
-                        connection '5a11b16f-ca5a-41b9-8ea6-15e2464aad60' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Receive Air'.'107b1113-0e86-45dc-904f-3ecd8bbb6303'
-                            to  target ::> 'Deliver Fan Thrust'.'451db0fd-64fe-465e-a9fc-5b8c28ba91b7' {
-
-                                ref :>> involved = 'b3b42c74-f43e-478c-bed4-03ae1cfb8c83';
-
-                            } 
-                        connection 'b8fbf741-4e99-4075-b5af-4ed9b60ca1f3' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Deliver Fan Thrust'.'451db0fd-64fe-465e-a9fc-5b8c28ba91b7'
-                            to  target ::> 'Perform LP Compression'.'1342f2a5-508f-41db-ae05-43b0a73e81a4' {
-
-                                ref :>> involved = '41f1bde3-03c4-4332-870f-19f32b9009e5';
-
-                            } 
-                        ref action '11f2bf18-2ee4-4b40-bdca-894824117b24' = 'Perform HP Compression'; 
-                        connection 'dbe35148-ea16-4c6c-a8ef-b046ab4e80ba' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Perform LP Compression'.'5e1c2043-9ba1-4749-b367-66288750701c'
-                            to  target ::> 'Perform HP Compression'.'f96f5d63-a330-4fd5-9707-2a055a35b5e0' {
-
-                                ref :>> involved = '152a6432-3c81-426b-948e-89e8ccd8ee15';
-
-                            } 
-                        ref action 'eff60f71-70bb-4543-8c6c-6f7be1c63d81' = 'Combust Fuel'; 
-                        connection '9530e986-cc66-4dc8-a2d6-971abf7a13d9' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Perform HP Compression'.'d7ae65e1-ada7-433f-9cd5-2ecfb0a96709'
-                            to  target ::> 'Combust Fuel'.'4b660a49-2523-4ce6-9da5-b35c05401355' {
-
-                                ref :>> involved = 'dd59f184-65e3-42c3-b022-1e9429e7b06e';
-
-                            } 
-                        ref action 'b70d4436-4521-44a7-99d8-2d179a8f815f' = 'Extract HP Turbine Energy'; 
-                        connection '9bb5bfef-1873-46ef-bdaa-cc6f38f1e3a4' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Combust Fuel'.'796c1b58-3c2a-477c-8985-2763b40a8822'
-                            to  target ::> 'Extract HP Turbine Energy'.'80cd6bca-6ed0-48bc-87ab-430306f65fbf' {
-
-                                ref :>> involved = '5f417526-62bc-4e73-9783-ff32914c3b88';
-
-                            } 
-                        ref action 'ca41f8ee-6650-48b4-a5f4-8be630c5cdab' = 'LP Turbine to Shaft'; 
-                        connection 'f526a6f4-0eba-4d67-ad95-f123a26260f8' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Extract HP Turbine Energy'.'80cd6bca-6ed0-48bc-87ab-430306f65fbf'
-                            to  target ::> 'LP Turbine to Shaft'.'0ca7a54e-6fc7-487c-ac08-537e393bc9a9' {
-
-                                ref :>> involved = 'f36e68fd-3dba-451f-acb8-af210ae6d0c7';
-
-                            } 
-                        ref action '92b89357-fa3f-44a4-8b44-ed82f31feb2d' = 'Direct Turbine Exhaust'; 
-                        connection 'b86b1e2f-0a5d-4c2e-8a60-d8935ee0ddff' : FunctionalChainInvolvementLink 
-                            connect source ::> 'LP Turbine to Shaft'.'11b71d82-6928-4bbd-b0cf-3aae044d6d9f'
-                            to  target ::> '92b89357-fa3f-44a4-8b44-ed82f31feb2d' {
-
-                                ref :>> involved = 'e4ef588d-9824-4310-a97d-da082f4902aa';
-
-                            } 
-                        connection 'adaa3496-06b1-4a8a-8795-b3ac81f06c8c' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Deliver Fan Thrust'.'d2e31ff5-b018-42f2-b11f-365613a55da3'
-                            to  target ::> 'Deliver Engine Thrust'.'d8d31990-4f35-42d7-8bc0-6850dea28d46' {
-
-                                ref :>> involved = 'ac24a803-17bc-4a51-9c74-d28fb15ead21';
-
-                            } 
-                        ref action '402ef529-4a3e-4eaf-b4dd-98ac5c208b29' = 'Monitor TLA'; 
-                        connection 'df04fc10-194e-4bb6-8241-18d27870e158' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Monitor TLA'.'b6a81a47-7294-45a3-9e25-882d70be138b'
-                            to  target ::> 'Perform HP Compression'.'3fcb6d8b-d4a4-401f-a4e0-77242a8b8838' {
-
-                                ref :>> involved = '8ee986d5-18b6-46ad-82f3-d02fb3c78258';
-
-                            } 
-                        connection 'c9789bac-0367-4667-98ea-50802b44a90b' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Monitor TLA'.'ad97574a-2c56-4296-a7b6-cfe13d3eb4fc'
-                            to  target ::> 'Combust Fuel'.'4b660a49-2523-4ce6-9da5-b35c05401355' {
-
-                                ref :>> involved = '66c98476-f91d-4d49-8070-75f81cfed404';
-
-                            } 
-                        connection '45ec8579-a2a7-4665-94e6-a65cbf5524e2' : FunctionalChainInvolvementLink 
-                            connect source ::> 'Monitor TLA'.'0ba8fd3d-a761-4e3a-9090-1ebc74d1837a'
-                            to  target ::> 'Perform LP Compression'.'e7d66a07-2e26-4dda-b07f-a95318354ffc' {
-
-                                ref :>> involved = '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85';
-
-                            } 
-                        ref :>> appliedPropertyValueGroups =  ('SMW Properties'::'Parameters'::'Quito Airport High Altitude',
-                        'SMW Properties'::'Parameters'::'Quito Airport Scenario Temp'); 
-                         
-                    }  
-                    action 'Control Bleed Air Valve' : FunctionalChain  { 
-                        @CapellaID { eid = "110faf01-6814-42df-87fb-6291f075bbc9"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '7633b23c-1e02-4753-82ae-a6235caebbbd' : FunctionalChainInvolvementLink 
-                            connect source ::> '321ae6ac-629c-4634-be5e-816752a28871'
-                            to  target ::> 'a324030a-d8d4-41d3-b0ba-cab3ad3a34a8' {
-
-                                ref :>> involved = 'fddba676-404f-4ad5-b6c6-32a72a100584';
-
-                            } 
-                        ref action 'a324030a-d8d4-41d3-b0ba-cab3ad3a34a8' = 'Set Bleed Air Postion'; 
-                        ref action '321ae6ac-629c-4634-be5e-816752a28871' = 'Control Engine'; 
-                        connection '3df72793-5670-4042-a148-d7c2cbe3d2a9' : FunctionalChainInvolvementLink 
-                            connect source ::> 'a324030a-d8d4-41d3-b0ba-cab3ad3a34a8'
-                            to  target ::> 'c5ff7017-0197-4f50-af32-dddd35e8ee7a' {
-
-                                ref :>> involved = '5f715b20-4600-4a0b-993f-ff7e07a56328';
-
-                            } 
-                        ref action 'c5ff7017-0197-4f50-af32-dddd35e8ee7a' = 'Channel Bleed Air'; 
-                         
-                    }  
-                    action 'Monitor LP Stator Vanes' : FunctionalChain  { 
-                        @CapellaID { eid = "7bbbca5b-8957-496d-b090-4abda5528d01"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '187b2e85-cf68-4402-9e5c-6db9a31a94d9' : FunctionalChainInvolvementLink 
-                            connect source ::> '927eec83-b607-41c6-83ed-84923972c256'
-                            to  target ::> 'd8548cc6-0500-4392-a035-bb22a53fe1ee' {
-
-                                ref :>> involved = 'fc852416-3199-4415-8c3f-1bbc2fb84deb';
-
-                            } 
-                        ref action 'd8548cc6-0500-4392-a035-bb22a53fe1ee' = 'Control Engine'; 
-                        ref action '927eec83-b607-41c6-83ed-84923972c256' = 'Measure Position'; 
-                        connection '7d95a4a4-2d13-4468-8fe9-f017760e54ca' : FunctionalChainInvolvementLink 
-                            connect source ::> 'cf068ca3-6789-42b5-8ecb-7a542f7f660e'
-                            to  target ::> '927eec83-b607-41c6-83ed-84923972c256' {
-
-                                ref :>> involved = 'c9809ac2-550a-452c-969f-843ae5c659d2';
-
-                            } 
-                        ref action 'cf068ca3-6789-42b5-8ecb-7a542f7f660e' = 'Contribut to LP Compression'; 
-                         
-                    }  
-                    action 'Monitor HP Stator Vane Position' : FunctionalChain  { 
-                        @CapellaID { eid = "c315a7cd-5c39-43a4-87d7-591d38adc07a"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '0c10dab9-ba81-4d4e-b9c4-64b501015b82' : FunctionalChainInvolvementLink 
-                            connect source ::> 'a6b9dc47-0f20-489d-925f-5ab99b9c7c8b'
-                            to  target ::> '445e59d7-a6ac-49c4-baba-a7dcaf69f9c4' {
-
-                                ref :>> involved = '4668a416-3451-46ce-9b7f-89f129783786';
-
-                            } 
-                        ref action '445e59d7-a6ac-49c4-baba-a7dcaf69f9c4' = 'Control Engine'; 
-                        ref action 'a6b9dc47-0f20-489d-925f-5ab99b9c7c8b' = 'Sense HP Stator Vane Position'; 
-                        connection 'f5a3e15a-c737-442f-94c1-c5a0dc9ba7dd' : FunctionalChainInvolvementLink 
-                            connect source ::> '5ea547c4-8990-434f-96a5-f1e912652dc9'
-                            to  target ::> 'a6b9dc47-0f20-489d-925f-5ab99b9c7c8b' {
-
-                                ref :>> involved = '49b68c29-d119-472e-aa4a-d64a0cae24bc';
-
-                            } 
-                        ref action '5ea547c4-8990-434f-96a5-f1e912652dc9' = 'Contribut to Compession'; 
-                         
-                    }  
-                    action 'Engine to Aiframe' : FunctionalChain  { 
-                        @CapellaID { eid = "47b4d5a7-fda5-4fbf-b397-33b6f3922eb3"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '9e2b4bc6-ba07-4066-9e3e-c24795cfcf3c' : FunctionalChainInvolvementLink 
-                            connect source ::> '9b1ca436-5905-4e37-acb9-6f44039dd872'
-                            to  target ::> '372ddd61-8d05-4c80-b69b-8107e708d684' {
-
-                                ref :>> involved = 'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0';
-
-                            } 
-                        ref action '372ddd61-8d05-4c80-b69b-8107e708d684' = 'Receive Thrust'; 
-                        ref action '9b1ca436-5905-4e37-acb9-6f44039dd872' = 'Receive Engine Cowling Thrust'; 
-                        connection 'd0cbbdaa-c351-48a2-9330-33bbb0cff489' : FunctionalChainInvolvementLink 
-                            connect source ::> 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32'
-                            to  target ::> '9b1ca436-5905-4e37-acb9-6f44039dd872' {
-
-                                ref :>> involved = '901a4898-9193-4dab-a301-b81033da56c0';
-
-                            } 
-                        ref action 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32' = 'Provide Support Transfer Thrust'; 
-                        connection 'a5d8287b-b3fd-447f-a64d-07de568d5066' : FunctionalChainInvolvementLink 
-                            connect source ::> '637788e0-872c-45ab-bf95-a9aa5f638620'
-                            to  target ::> 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32' {
-
-                                ref :>> involved = '3b3090ba-d017-4073-b7f5-95f953d89083';
-
-                            } 
-                        ref action '637788e0-872c-45ab-bf95-a9aa5f638620' = 'Deliver Thrust'; 
-                        connection 'dc25269f-7243-4e9c-89f9-70d875a1bd3b' : FunctionalChainInvolvementLink 
-                            connect source ::> '241d7983-5f0e-4c79-bc23-4aa4d273be68'
-                            to  target ::> 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32' {
-
-                                ref :>> involved = '6558b95b-b05b-4544-960d-ee21871e89ff';
-
-                            } 
-                        ref action '241d7983-5f0e-4c79-bc23-4aa4d273be68' = 'Deliver Thrust'; 
-                         
-                    }  
-                    action 'Monitor TLA' : FunctionalChain  { 
-                        @CapellaID { eid = "4e3e87c8-a6ab-40e8-ac60-035788c64da7"; } 
-                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
-                        connection '4b248ef5-c2f4-45fc-903c-e677c77c570b' : FunctionalChainInvolvementLink 
-                            connect source ::> 'd56c9fa4-f954-477a-9bad-e60aff71997e'
-                            to  target ::> 'ea775d23-7304-4fa9-8da4-2c2000230216' {
-
-                                ref :>> involved = 'ac4e3bb3-dd39-40b0-a637-51cbf229520b';
-
-                            } 
-                        ref action 'ea775d23-7304-4fa9-8da4-2c2000230216' = 'Accept TLA'; 
-                        ref action 'd56c9fa4-f954-477a-9bad-e60aff71997e' = 'Provide Throttle Input'; 
-                        connection '396fb709-46ce-4666-ad50-07a4ec8be432' : FunctionalChainInvolvementLink 
-                            connect source ::> 'ea775d23-7304-4fa9-8da4-2c2000230216'
-                            to  target ::> 'be5afec1-878e-45db-b56c-7a64a9645678' {
-
-                                ref :>> involved = 'd761a29d-75a8-4067-a921-836986c40dd2';
-
-                            } 
-                        ref action 'be5afec1-878e-45db-b56c-7a64a9645678' = 'Control Engine'; 
-                        ref action '0c9c4762-60dc-492f-b5f7-d0af2e384565' = 'Set Bleed Air Postion'; 
-                        connection '5a988f74-90ff-49f7-ba95-2f8168ae2db3' : FunctionalChainInvolvementLink 
-                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
-                            to  target ::> '0c9c4762-60dc-492f-b5f7-d0af2e384565' {
-
-                                ref :>> involved = 'fddba676-404f-4ad5-b6c6-32a72a100584';
-
-                            } 
-                        ref action '0ba8fd3d-a761-4e3a-9090-1ebc74d1837a' = 'Move LP Stator Vanes'; 
-                        connection '7ec0ce61-6dd8-4e82-bac6-1ba8783c1681' : FunctionalChainInvolvementLink 
-                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
-                            to  target ::> '0ba8fd3d-a761-4e3a-9090-1ebc74d1837a' {
-
-                                ref :>> involved = '15f03c3f-00f1-4fb8-9834-2965148500c9';
-
-                            } 
-                        ref action 'ad97574a-2c56-4296-a7b6-cfe13d3eb4fc' = 'Control Fuel Flow'; 
-                        connection '60333ff5-363b-4434-87b3-1e78e0ae39c3' : FunctionalChainInvolvementLink 
-                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
-                            to  target ::> 'ad97574a-2c56-4296-a7b6-cfe13d3eb4fc' {
-
-                                ref :>> involved = '95d003e7-80b2-4bd4-be5c-c4197934f717';
-
-                            } 
-                        ref action 'b6a81a47-7294-45a3-9e25-882d70be138b' = 'Adjust Vanes'; 
-                        connection '78b5ef6d-ee58-405f-a033-ac55d62cf821' : FunctionalChainInvolvementLink 
-                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
-                            to  target ::> 'b6a81a47-7294-45a3-9e25-882d70be138b' {
-
-                                ref :>> involved = '4a7ad229-da53-499f-be20-f1c323e7e6a2';
-
-                            } 
-                         
-                    }  
-                    action 'Generate Thrust' : LogicalFunction  { 
-                        @CapellaID { eid = "7430612c-72c2-4e9a-886a-53485c0e7113"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                         
-                    }  
-                    action 'Provide Air' : LogicalFunction  { 
-                        @CapellaID { eid = "fa0b7121-64af-4c57-8bee-065993e2af4b"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "4cd35867-e297-41d5-a272-9883b5578d71"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Receive Air' : LogicalFunction  { 
-                        @CapellaID { eid = "f3695f88-9bab-46d2-bbd7-6a765b71e76e"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "058b0c1a-9ac3-46eb-9e47-2b1e2a7a62b9"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "f3f7ba00-b6ab-4942-b090-5aff85bef9de"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "470307ac-aa6d-4ab1-9f69-f3ce9526165c"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Increase Air Mass Flow' : LogicalFunction  { 
-                        @CapellaID { eid = "184153d7-8160-4928-ba38-9edd2a7e29cb"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "0ceb4e2d-1081-4e2d-b1e1-874e3dd8321c"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "6f2fd9d8-95b7-444e-bafa-dceb4cbccbf5"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "6e138918-609a-4881-b428-549c55a42e2a"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "1f204831-ef31-4bf5-b159-fca22668bbde"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Expel Bypass AIr' : LogicalFunction  { 
-                        @CapellaID { eid = "40b60614-85bc-40ae-b076-6fd6a688b71d"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "850c718e-f214-45fa-9074-bcc4fe768665"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "1f4a50e4-2bc8-4d3c-b1ff-6aeb66c9477f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "6005cceb-8fb7-4d4f-aacf-a032d08b9947"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Receive Thrust' : LogicalFunction  { 
-                        @CapellaID { eid = "08d87dfb-26f5-41f6-8d22-f06a26e04fcb"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "87d09590-c903-4e1c-933e-c3ea76e7ccca"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "e9030ced-cba3-41f1-ae45-c87a05055992"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2'); 
-                    }  
-                    action 'Receive Bypass Air' : LogicalFunction  { 
-                        @CapellaID { eid = "cb5d241a-0a7e-4760-9470-2c5e21d51dd4"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "ee2ee176-79cc-4c07-aa04-f37edc947d69"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                    }  
-                    action 'Drive Fan and LP Compressor' : LogicalFunction  { 
-                        @CapellaID { eid = "39dcd103-6ced-4604-a4dd-96370fbe572a"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "f1259c26-a7b7-42f5-9913-653b8b7774b6"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "6c07e9f5-1714-4e58-98b9-25834ed5a77f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "7b8205ab-25af-47fb-8a0b-f577fde7e255"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Receive Nozzle Thrust' : LogicalFunction  { 
-                        @CapellaID { eid = "aa61b477-acc5-4a41-8896-cb8035b5958a"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "45099b89-4782-47cc-839b-32b94a967953"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "9a9dc4af-cf7f-4c90-a081-7c7b96ae62d7"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Compress Air' : LogicalFunction  { 
-                        @CapellaID { eid = "e74f30bc-7e5c-4b4f-bed1-b31bc68eea5b"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "57912dc8-3867-4af4-ae42-a6140209c7d7"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "7ff79222-792d-4faf-8b0a-f3caa66e7520"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 3' : FunctionInputPort  { 
-                            @CapellaID { eid = "5c0c8828-04ab-410b-8c60-4e5c4fa83382"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "49984c52-44f0-46da-a253-730944c849bd"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2',
-                        'FIP 3'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Compres LP Air' : LogicalFunction  { 
-                        @CapellaID { eid = "40fa74ad-4ca5-444a-bd46-7fc1e820169c"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "ed763560-efe7-47fa-aa99-3cf8a8d1088f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 3' : FunctionInputPort  { 
-                            @CapellaID { eid = "7334ad98-21b1-47f0-aa6a-0fe722d16584"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "ca2907b7-0575-46d4-b878-4cc4ce4aa3ec"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "1fe803ee-e3f5-453a-9257-e92365c6f23f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 2',
-                        'FIP 3',
-                        'FIP 2'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Burn Fuel' : LogicalFunction  { 
-                        @CapellaID { eid = "d30b8ff1-ce4c-4258-baef-06e13a3b9767"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "990c8303-c95b-410b-8fcf-7f9471cfb2b3"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "6e129de7-b3a4-478d-a91e-0bb4f89757ad"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "3729054a-f988-4c36-a3b2-b7b34fbe868a"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "91e61c6c-b64e-46b2-9254-0f773ce96775"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Extract Energy' : LogicalFunction  { 
-                        @CapellaID { eid = "063c930f-d0a2-493e-8764-302af770722e"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "37f54e34-4a07-4b9d-8339-2c93e47247a3"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "4b5afa12-8d11-4150-bdc5-6d4c99366273"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "340b5bb2-f157-49f3-ac88-c341e414378d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Measure inlet Temperature (T2)' : LogicalFunction  { 
-                        @CapellaID { eid = "6137346b-93f2-4b34-8460-27a710b3e3b1"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "358662a4-66c0-4b05-ac3b-123887d61b51"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "4d23a941-9dc2-49dc-8eae-d5e2760a778d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Control Engine' : LogicalFunction  { 
-                        @CapellaID { eid = "c884dbd9-4225-4a33-b867-9e103760b107"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "b62af3de-dec7-46dd-8957-2ef2664dd490"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "69556b91-a73d-4aa6-90b3-c006d0b0dc47"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 4' : FunctionInputPort  { 
-                            @CapellaID { eid = "11399a87-5e85-4338-b923-0bbcf60f3840"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 5' : FunctionInputPort  { 
-                            @CapellaID { eid = "a44619bd-a0d3-463a-8001-674f409e6561"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 7' : FunctionInputPort  { 
-                            @CapellaID { eid = "7f26d9a5-df99-4505-a9a9-e45c7691cb5f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 8' : FunctionInputPort  { 
-                            @CapellaID { eid = "1b3be5c3-fc7b-41b6-87aa-3e573e7f6c9e"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 9' : FunctionInputPort  { 
-                            @CapellaID { eid = "2bf490f8-9f90-43e1-90fe-688cbaa4e644"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 10' : FunctionInputPort  { 
-                            @CapellaID { eid = "0255f3c3-20ea-4854-87d3-1f6d58bcbe45"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 11' : FunctionInputPort  { 
-                            @CapellaID { eid = "074a767a-fb22-4d38-9247-8c70b849707d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 12' : FunctionInputPort  { 
-                            @CapellaID { eid = "72c19ff8-0a90-4746-8322-adc2ad8ee094"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 13' : FunctionInputPort  { 
-                            @CapellaID { eid = "7aacf774-907d-49ec-b7f3-4c84c8fc9264"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 14' : FunctionInputPort  { 
-                            @CapellaID { eid = "1579e74c-c4cc-417a-96f8-54b71ef5d19a"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 15' : FunctionInputPort  { 
-                            @CapellaID { eid = "0e88eaa3-6ed2-4e90-8167-a2842b6fdfb8"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 16' : FunctionInputPort  { 
-                            @CapellaID { eid = "bb7e15d4-776a-4263-ad9e-3db8205140da"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "0380c35c-fc37-4c28-9800-ab152885833a"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "35394e70-9701-4f7d-a884-85e3b5235319"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 3' : FunctionOutputPort  { 
-                            @CapellaID { eid = "9b2d8648-ceea-4769-b2ad-5d7e1e9f9503"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 4' : FunctionOutputPort  { 
-                            @CapellaID { eid = "49fa5328-b0cc-4cb9-9f01-a7e9898af6b5"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2',
-                        'FIP 4',
-                        'FIP 5',
-                        'FIP 7',
-                        'FIP 8',
-                        'FIP 9',
-                        'FIP 10',
-                        'FIP 11',
-                        'FIP 12',
-                        'FIP 13',
-                        'FIP 14',
-                        'FIP 15',
-                        'FIP 16'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2',
-                        'FOP 3',
-                        'FOP 4'); 
-                    }  
-                    action 'Measure Inlet Air Temperatur' : LogicalFunction  { 
-                        @CapellaID { eid = "5c3fc6ba-797f-418c-ab67-e1bc9ae4be1e"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "38811b27-f651-4197-ace8-ef187f028c39"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "91540c5a-0c5e-4b34-8e16-5231e9f6d0a8"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Channel Fan Air to Turbine' : LogicalFunction  { 
-                        doc /*
-                        <p>A&nbsp; Input Fan&nbsp;Air is channeled to LP Inlet with a typically small portion being extracted into Bleed Air System.</p>
-
-                        */ 
-                        @CapellaID { eid = "591cc2eb-d18e-4fba-a949-1489cfad791d"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "a3cbe087-36dd-413d-aad1-c1d9664b1ef8"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "ee83a3b1-1d47-4760-ac4d-14ac33d8227c"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "a4504dc8-e74d-4341-a608-b7f49f45eccf"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 4' : FunctionOutputPort  { 
-                            @CapellaID { eid = "842006af-2bc7-4feb-951e-4e9cc6377f10"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 6' : FunctionOutputPort  { 
-                            @CapellaID { eid = "6f8fc6ee-ee0d-4726-b245-0192a621949d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2',
-                        'FOP 4',
-                        'FOP 6'); 
-                    }  
-                    action 'Channel Air to HPC' : LogicalFunction  { 
-                        @CapellaID { eid = "ee94b8d9-ca74-49b4-a805-59f75298c93a"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "7fc3ead5-b7d1-4112-9a90-a5d4d82e34ec"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "6563a7d9-da64-4690-a255-444430948c26"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "8201e039-b9e2-4d0f-bba8-c7c409b072e2"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 3' : FunctionOutputPort  { 
-                            @CapellaID { eid = "136dd619-58ff-4a1e-a8a8-679a3defc0dc"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2',
-                        'FOP 3'); 
-                    }  
-                    action 'Meassure LP DIscharge Pressure' : LogicalFunction  { 
-                        @CapellaID { eid = "43a6baf5-f30f-472c-9607-ba003d6e1acd"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "bb3d89f0-c87c-43b6-ae2b-60ffdb4e56d8"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "7212d06c-b1f3-4310-b2ec-0d2de0a1f952"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Channel HP Outlet Air' : LogicalFunction  { 
-                        @CapellaID { eid = "9d594040-bb36-498e-a8f1-ce9c14723e89"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "ec7de6ee-b79f-4783-8ed3-6e85b99d4b9d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "c3b527e1-0bd7-4216-94ad-deee2c152efb"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "85bea33e-7b79-40e3-91c5-a803416cff93"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Measure HP Outlet Pressure' : LogicalFunction  { 
-                        @CapellaID { eid = "3259b1b1-9c56-4899-b5ab-2434274e99dc"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "67270e00-fad1-43ed-9e40-75d066c94414"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "65c3d2c2-43d1-4406-a590-dcbb72f23c5c"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Contribut to Compession' : LogicalFunction  { 
-                        @CapellaID { eid = "830b1ae3-0907-4425-8b8b-980b4cdc4750"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "1b3a589e-3173-4c00-865a-b4224db17335"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "2c66e37a-a853-4eb0-b1b6-e0b5c2857a35"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "d1eaf0aa-3b5b-4d3a-8c3d-0186c1b5e849"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "c65cef4a-5add-4c95-80ae-6c0b37aed32e"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Adjust Vanes' : LogicalFunction  { 
-                        @CapellaID { eid = "2ced1194-c9fe-44f8-bc47-5fafb13adba2"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "9f064bc2-2562-47e8-898a-e2f0300a914c"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "033a9cec-9235-41e2-a7ba-6a11d2726a3f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Contribut to LP Compression' : LogicalFunction  { 
-                        @CapellaID { eid = "f821514c-740b-4d63-9d35-1e2285e218cf"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "74835f27-26f5-4bc9-b7ad-60f00cf86ccf"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "69bbe885-1ead-4b55-918d-5917cb76d62d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "fef39770-edc2-4308-8448-3a64cc25aa14"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "30612171-d48f-483a-b206-1dde5de8162e"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Move LP Stator Vanes' : LogicalFunction  { 
-                        @CapellaID { eid = "9e5431d6-82c8-4c7f-83bd-e95b5d9d6056"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "7cfdc000-d707-46a2-8381-ddde1940a755"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "263a29c8-df01-414a-84d6-468644fb10d2"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Direct Hot Gas to Turbine' : LogicalFunction  { 
-                        @CapellaID { eid = "e208b463-6d8d-4821-b83d-2653dc5231d0"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "ac41e469-e436-4be0-8b90-942e037540f2"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "f9d17312-a033-438c-9235-b373650a2510"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 2'); 
-                    }  
-                    action 'Measure Exhaust Gas Temperature' : LogicalFunction  { 
-                        @CapellaID { eid = "ee4265f5-3a89-441b-b354-744cf4a71da2"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                         
-                    }  
-                    action 'Suppy Fuel' : LogicalFunction  { 
-                        @CapellaID { eid = "b2c1d43d-b5cc-4a5d-89a8-f101e0c3c1b5"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "efb0167b-4c63-4fc7-84cf-373de509babe"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Control Fuel Flow' : LogicalFunction  { 
-                        @CapellaID { eid = "a3ad3615-407f-4dcd-bacd-96879e86c9c5"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "5411e520-f478-42dd-82be-bbc28e641791"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "0ef726b2-862f-4ce1-81c4-1809301a941b"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "d773b24b-660e-4082-b341-80675fbf0c43"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "799d4304-6966-441c-badc-2d4b4a4d8519"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Measure Turbine Outlet Pressure' : LogicalFunction  { 
-                        @CapellaID { eid = "f693e052-048e-43da-ba2c-42749f1d46c7"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "8be15b8c-4e9f-4009-9a4b-47fc43bd5d3b"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "7d7bc882-815b-4be4-9cbf-b456a83273ed"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Channel to LP Turbine' : LogicalFunction  { 
-                        @CapellaID { eid = "16ef4c5a-42e0-474a-bb65-edaad66e0e69"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "160c6a4f-1f78-4058-98af-c01d7e8975ea"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "23a7f290-dd92-40c3-a5a4-adad97e7c0f6"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "f20ecb63-75fe-4dc4-b642-fa6ec3841980"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2'); 
-                    }  
-                    action 'Rotate Fan and LP Compressor' : LogicalFunction  { 
-                        @CapellaID { eid = "3611cdf7-42de-4454-88b6-c9084b70c132"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "6ceda69d-9497-4d43-a968-c32fc2699330"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "3a0478c1-4b3d-4ff1-9e99-04d99e0893cf"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 3' : FunctionOutputPort  { 
-                            @CapellaID { eid = "462a58f1-6de2-4c0b-b9e6-f3c3d18772ce"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 4' : FunctionOutputPort  { 
-                            @CapellaID { eid = "ebcdd9e8-f7f8-4af9-a844-fbd901beea78"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 5' : FunctionOutputPort  { 
-                            @CapellaID { eid = "e6c0046d-c210-4c66-8512-2d1e118ac39a"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 3',
-                        'FOP 4',
-                        'FOP 5'); 
-                    }  
-                    action 'Tranfer Torque' : LogicalFunction  { 
-                        @CapellaID { eid = "5e5e5bae-6f5e-47c0-9ed4-5f28dec9a17c"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "7fa29312-a299-41fe-a314-501175eec3e5"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "874fef5a-2354-480f-a252-e2a918012d21"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 2' : FunctionOutputPort  { 
-                            @CapellaID { eid = "c3749828-9f14-4b33-be3d-5b005148c5e3"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 3' : FunctionOutputPort  { 
-                            @CapellaID { eid = "0922ff7c-8209-4124-ace4-a9bef117d780"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 2'); 
-                        ref :>> outputs =  ('FOP 1',
-                        'FOP 2',
-                        'FOP 3'); 
-                    }  
-                    action 'Measure Pressure' : LogicalFunction  { 
-                        @CapellaID { eid = "d789335f-0887-4b9d-87b6-867f1eef1f5f"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "9ee4edf8-8419-4751-9807-d3c54172d371"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "30ec39e4-01ad-4cd0-b041-81cad296104b"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Direct Turbine Exhaust' : LogicalFunction  { 
-                        @CapellaID { eid = "db777fd2-909c-47c5-805e-29c77ad8bea9"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "e2a7af00-f6a9-4ae4-a18b-46b7c64b5888"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "a70dbc88-f5d4-45d9-8f92-463c86f0b20d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Measure  Exhaust Gas Temp' : LogicalFunction  { 
-                        @CapellaID { eid = "b9b64fc6-1b49-4cb4-93ee-32d63a6fa14f"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "240e137f-828e-46a6-82da-02c05557571f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "55106197-3f37-4170-8656-3dee93ffe69e"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Measure N2' : LogicalFunction  { 
-                        @CapellaID { eid = "1ea1ce3c-f608-4ca4-9342-a3d57a8756f0"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "4082a73f-5087-4ff5-800f-ad98b57fca25"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "f7aa854f-4a03-4b98-a217-f3d705c52d1f"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Measure N1 Speed' : LogicalFunction  { 
-                        @CapellaID { eid = "5828d3c4-5f42-4177-befb-2b03bfb9d318"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "20f927df-e894-4b5e-b8b0-51bd5bd6d76c"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "d12a2fa6-d3d3-4239-a816-7e4059966a78"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Sense Position' : LogicalFunction  { 
-                        @CapellaID { eid = "a33e586a-0393-4a07-8c2b-170d085c2d61"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "f7431fcf-94ce-4ccc-8ba9-1c3dbd0baf18"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "917018b1-ba2e-4730-9ce3-60883a48d815"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Accept TLA' : LogicalFunction  { 
-                        @CapellaID { eid = "15d8942e-73d2-488a-afd2-f1a5d76bceb6"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "f864a2e8-a175-4ec2-8e8c-2dec74acec05"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "9ea8b58f-9df9-4b45-9fdb-5acb2108e99e"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Provide Throttle Input' : LogicalFunction  { 
-                        @CapellaID { eid = "5d9f1e9e-c24f-4995-9fb9-f3dc257bffdf"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "24a59810-b5a4-4f93-b239-f0311e38d335"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Consume Air' : LogicalFunction  { 
-                        @CapellaID { eid = "7ae85fd6-6f63-4010-9959-7d7c15a94344"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'Air' : FunctionInputPort  { 
-                            @CapellaID { eid = "d159593f-c952-4b41-ba6b-b8b8ed7abec1"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('Air'); 
-                    }  
-                    action 'Set Bleed Air Postion' : LogicalFunction  { 
-                        @CapellaID { eid = "d1dbfcf0-0ddb-4b71-9d8b-875678ed24b0"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "23fc1dd5-92a3-4326-9bdb-aefeb60a2ae8"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "eb5e8bf6-0698-4da3-8ab8-60779f32a2fe"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Measure Position' : LogicalFunction  { 
-                        @CapellaID { eid = "4fb0d36e-5c1e-4edc-8491-9332621242d8"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "d583a291-1068-43b8-b8bd-e1c2a6818dfb"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "7fb1a18e-e1b7-42ce-8c65-767d300523e3"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Measure Bleed Air Valve Poistion' : LogicalFunction  { 
-                        @CapellaID { eid = "8a748608-02ef-444e-bc38-ee6a4056e797"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "b3e33f36-abfd-4d26-ace3-649e0adc4f42"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "0ca80901-10e8-4033-acf1-73ede43e158d"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Channel Bleed Air' : LogicalFunction  { 
-                        @CapellaID { eid = "96cc7d88-987b-4f53-9e97-c9198ab952f4"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "eb5e1e70-f1a2-4e25-98a8-267a0c5f8314"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 3' : FunctionInputPort  { 
-                            @CapellaID { eid = "5d8d6b05-bc72-44a2-9411-bc1a4ec1f6db"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 6' : FunctionOutputPort  { 
-                            @CapellaID { eid = "c88f6331-7b55-44e2-a4a8-3c75762354f9"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 5' : FunctionOutputPort  { 
-                            @CapellaID { eid = "bd8e0ea1-a730-48aa-aba0-019008c09f9c"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 2',
-                        'FIP 3'); 
-                        ref :>> outputs =  ('FOP 6',
-                        'FOP 5'); 
-                    }  
-                    action 'Sense HP Stator Vane Position' : LogicalFunction  { 
-                        @CapellaID { eid = "671e4a6b-63ba-4168-8b35-686305e54055"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "3b80de52-9b4f-4e3e-922f-2ca307a08883"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "13095b04-57f8-4f86-be8d-88a7a58010fa"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Receive Engine Cowling Thrust' : LogicalFunction  { 
-                        @CapellaID { eid = "51c3c952-ccbb-4e20-95a1-5084368c3d3d"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "2609d779-a830-4bb1-84ba-528da2a064de"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "7be3dc73-f56c-4558-8fff-cb641b8e25df"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Provide Support Transfer Thrust' : LogicalFunction  { 
-                        @CapellaID { eid = "24d894f7-fd32-4be6-a3a4-3c8e448f32d4"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "c127358c-c7cb-47a8-9392-4832e004e1dc"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        in port 'FIP 2' : FunctionInputPort  { 
-                            @CapellaID { eid = "1170a574-02f7-46cf-a894-38a2f225b062"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "9d87ef69-a166-4b2f-8141-ba986315d079"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1',
-                        'FIP 2'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Deliver Thrust' : LogicalFunction  { 
-                        @CapellaID { eid = "f6892691-c0dc-4ebc-8ddb-ef77e43d1dd3"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "8a4e9276-cf71-4fd5-afd7-3d0babff9985"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "3701e656-cb47-4cc9-a645-1f54472dd99a"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    action 'Deliver Thrust' : LogicalFunction  { 
-                        @CapellaID { eid = "05a6b951-a1db-4708-95b0-dd0af4dee556"; } 
-                        attribute :>> aggregationKind = AggregationKind::UNSET; 
-                        attribute :>> isFinal = false; 
-                        attribute :>> isAbstract = false; 
-                        attribute :>> isDerived = false; 
-                        attribute :>> isPartOfKey = false; 
-                        attribute :>> isReadOnly = false; 
-                        attribute :>> isStatic = false; 
-                        attribute :>> kind = FunctionKind::FUNCTION; 
-                        attribute :>> isMaxInclusive = false; 
-                        attribute :>> isMinInclusive = false; 
-                        attribute :>> isOrdered = false; 
-                        attribute :>> isUnique = false; 
-                        in port 'FIP 1' : FunctionInputPort  { 
-                            @CapellaID { eid = "c6ea28ac-6e3a-421b-bd58-88be3aed9da9"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                        out port 'FOP 1' : FunctionOutputPort  { 
-                            @CapellaID { eid = "81bf7b68-ea9d-4a92-a0da-b4f242826a1b"; } 
-                            attribute :>> isControl = false; 
-                            attribute :>> isControlType = false; 
-                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
-                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
-                             
-                        }  
-                         
-                        ref :>> inputs =  ('FIP 1'); 
-                        ref :>> outputs =  ('FOP 1'); 
-                    }  
-                    ref :>> ownedFunctionalExchanges =  ('0257347a-2a89-4fe4-a302-10cae2f02bb3',
-                    'b3b42c74-f43e-478c-bed4-03ae1cfb8c83',
-                    'ac24a803-17bc-4a51-9c74-d28fb15ead21',
-                    '3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49',
-                    '39e80b06-d704-4398-ae5b-fa73cd902189',
-                    'b2c0a7ca-077d-40b0-8327-082c60c037e2',
-                    'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a',
-                    '41f1bde3-03c4-4332-870f-19f32b9009e5',
-                    '152a6432-3c81-426b-948e-89e8ccd8ee15',
-                    '90ecbd9b-1814-4a3e-a99c-6589ade50a87',
-                    'af04101a-93b0-4ad3-a428-f70688268dd9',
-                    'de38cdd4-0239-4048-a299-4e04d836de71',
-                    '8f5f029f-85d0-4510-bc67-9743b358b61b',
-                    'fb11d111-28b9-4d9c-af3f-49b71330c27c',
-                    '046a8771-7d28-4d6b-93c2-1b0b53cddbe3',
-                    '889c3cce-7981-46d7-b082-24ab331e258b',
-                    '58f3ee77-c282-4022-b314-625d96c1de1e',
-                    '5e745df4-0070-44fc-85ab-67d1a9189d7b',
-                    'dd59f184-65e3-42c3-b022-1e9429e7b06e',
-                    '7e2199b0-d113-4057-9de3-d8e5a5394846',
-                    'afcd9a36-9fab-4606-82b4-17c26ab5ac58',
-                    '1a6b2da4-d217-40da-88f4-109ab788c26b',
-                    '47892821-ae1a-40f8-bf93-bca460a27e2e',
-                    '4a7ad229-da53-499f-be20-f1c323e7e6a2',
-                    '8ee986d5-18b6-46ad-82f3-d02fb3c78258',
-                    '99bf85cd-8d72-4c44-acb8-0c06db11ddeb',
-                    '15f03c3f-00f1-4fb8-9834-2965148500c9',
-                    '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85',
-                    'eaa4c472-d34a-46ae-a8bc-f1a33de39bda',
-                    '95d003e7-80b2-4bd4-be5c-c4197934f717',
-                    '8e028087-9961-44d5-8c33-02ef922a7ff6',
-                    '66c98476-f91d-4d49-8070-75f81cfed404',
-                    '02c9527d-8024-43d3-b24c-2fa00aa04cc0',
-                    '5f417526-62bc-4e73-9783-ff32914c3b88',
-                    'f36e68fd-3dba-451f-acb8-af210ae6d0c7',
-                    'd32877de-8f90-4c97-8528-1358ce28b3d9',
-                    'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0',
-                    '7a0ed679-84af-4fa0-b50e-40966b05814a',
-                    'bbb5bc36-287f-4037-89dd-577c222bec86',
-                    'd0181a94-0d0b-4f21-a111-a70a6915f5a0',
-                    '98e62ed6-4223-4839-ad5a-3e5b725d65d7',
-                    'ee95b174-e67a-446d-acab-7b7421029ab9',
-                    '672503df-1b75-4d68-96ec-673e24f7e635',
-                    'e4ef588d-9824-4310-a97d-da082f4902aa',
-                    '2e5af410-7699-45db-a3cd-d1c97fa52a38',
-                    '4c27511b-2046-4491-900f-442a530e9d34',
-                    'f356e536-ed67-40b1-aae6-c16e17a4dbfc',
-                    'f5dd6000-d95d-4add-8222-c8094dcaf515',
-                    '07237295-f3a8-46de-b4eb-445004270f04',
-                    '8ecfee11-7429-49c2-ba2b-0cc2814959db',
-                    '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c',
-                    'ec00c7e2-2bf0-4d75-8470-dd08fae8fb24',
-                    'a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c',
-                    'ac4e3bb3-dd39-40b0-a637-51cbf229520b',
-                    'd761a29d-75a8-4067-a921-836986c40dd2',
-                    '707d4125-6bc1-49cf-b9b0-e97cd34b798a',
-                    'fddba676-404f-4ad5-b6c6-32a72a100584',
-                    '5f715b20-4600-4a0b-993f-ff7e07a56328',
-                    'c9809ac2-550a-452c-969f-843ae5c659d2',
-                    'fc852416-3199-4415-8c3f-1bbc2fb84deb',
-                    '486601ad-a608-4815-b409-38481daf99e6',
-                    '36d037d1-f577-4c8b-8b31-0ab2358f1df4',
-                    '6857e0e2-511b-4c96-9042-358138b39e2e',
-                    '49b68c29-d119-472e-aa4a-d64a0cae24bc',
-                    '4668a416-3451-46ce-9b7f-89f129783786',
-                    '22ebf707-0b92-4a61-8955-9957c90751d6',
-                    '6558b95b-b05b-4544-960d-ee21871e89ff',
-                    '901a4898-9193-4dab-a301-b81033da56c0',
-                    'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0',
-                    '0ceb62c4-2a70-4da9-8dd1-b7b50bb85a94',
-                    '3b3090ba-d017-4073-b7f5-95f953d89083'); 
-                     
-                    ref :>> ownedFunctions =  ('Generate Thrust',
-                    'Provide Air',
-                    'Receive Air',
-                    'Increase Air Mass Flow',
-                    'Expel Bypass AIr',
-                    'Receive Thrust',
-                    'Receive Bypass Air',
-                    'Drive Fan and LP Compressor',
-                    'Receive Nozzle Thrust',
-                    'Compress Air',
-                    'Compres LP Air',
-                    'Burn Fuel',
-                    'Extract Energy',
-                    'Measure inlet Temperature (T2)',
-                    'Control Engine',
-                    'Measure Inlet Air Temperatur',
-                    'Channel Fan Air to Turbine',
-                    'Channel Air to HPC',
-                    'Meassure LP DIscharge Pressure',
-                    'Channel HP Outlet Air',
-                    'Measure HP Outlet Pressure',
-                    'Contribut to Compession',
-                    'Adjust Vanes',
-                    'Contribut to LP Compression',
-                    'Move LP Stator Vanes',
-                    'Direct Hot Gas to Turbine',
-                    'Measure Exhaust Gas Temperature',
-                    'Suppy Fuel',
-                    'Control Fuel Flow',
-                    'Measure Turbine Outlet Pressure',
-                    'Channel to LP Turbine',
-                    'Rotate Fan and LP Compressor',
-                    'Tranfer Torque',
-                    'Measure Pressure',
-                    'Direct Turbine Exhaust',
-                    'Measure  Exhaust Gas Temp',
-                    'Measure N2',
-                    'Measure N1 Speed',
-                    'Sense Position',
-                    'Accept TLA',
-                    'Provide Throttle Input',
-                    'Consume Air',
-                    'Set Bleed Air Postion',
-                    'Measure Position',
-                    'Measure Bleed Air Valve Poistion',
-                    'Channel Bleed Air',
-                    'Sense HP Stator Vane Position',
-                    'Receive Engine Cowling Thrust',
-                    'Provide Support Transfer Thrust',
-                    'Deliver Thrust',
-                    'Deliver Thrust'); 
-                     
-                }  
-            } 
-            package 'Interfaces' {
-                @PackageMeta {
-                    type = "InterfacePkg";
-                } 
-                @CapellaID { eid = "6599dadc-f7d4-4b97-be98-525169abb94f"; } 
-            } 
-            package 'Data' {
-                @PackageMeta {
-                    type = "DataPkg";
-                } 
-                @CapellaID { eid = "4fed7f90-ed70-4e9a-9cf9-62bbf888d951"; } 
-            } 
             package 'Structure' {
                 @PackageMeta {
                     type = "LogicalComponentPkg";
                 } 
                 @CapellaID { eid = "30b925ff-a187-4c6a-8837-ba2787d7b67a"; } 
+                interface '16a121dd-6c7c-4685-a05f-9a2566bce94f' : ComponentExchange 
+                    connect source ::> 'Airframe'.'CP 1'
+                    to  target ::> 'High Bypass Turbo Fan'.'Nacelle'.'CP 1' { 
+                    @CapellaID { eid = "16a121dd-6c7c-4685-a05f-9a2566bce94f"; } 
+                    attribute :>> kind = ComponentExchangeKind::FLOW; 
+                    attribute :>> interfaceName = "P-AF to Nacelle"; 
+                    attribute :>> isOriented = false; 
+                    allocation '41fef4ca-7334-4967-a455-c8e0d788e7db' : ComponentExchangeFunctionalExchangeAllocation
+                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a'
+                        to componentExchange ::> 'Structure'::'16a121dd-6c7c-4685-a05f-9a2566bce94f' { 
+                        @CapellaID { eid = "41fef4ca-7334-4967-a455-c8e0d788e7db"; } 
+                         
+                    }  
+                    allocation '1122deb7-4cd3-4dc6-ba01-977e371653fb' : ComponentExchangeFunctionalExchangeAllocation
+                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0'
+                        to componentExchange ::> 'Structure'::'16a121dd-6c7c-4685-a05f-9a2566bce94f' { 
+                        @CapellaID { eid = "1122deb7-4cd3-4dc6-ba01-977e371653fb"; } 
+                         
+                    }  
+                     
+                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('41fef4ca-7334-4967-a455-c8e0d788e7db',
+                    '1122deb7-4cd3-4dc6-ba01-977e371653fb'); 
+                }  
+                interface '9c0d5103-e4be-49ed-9e4c-5861c6bb48d4' : ComponentExchange 
+                    connect source ::> 'High Bypass Turbo Fan'.'Fan Nozzle'.'CP 2'
+                    to  target ::> 'Environment'.'CP 1' { 
+                    @CapellaID { eid = "9c0d5103-e4be-49ed-9e4c-5861c6bb48d4"; } 
+                    attribute :>> kind = ComponentExchangeKind::FLOW; 
+                    attribute :>> interfaceName = "H-Fan Nozzel to Env"; 
+                    attribute :>> isOriented = false; 
+                    allocation 'd40f16f4-fba1-4de4-8391-540925e90a94' : ComponentExchangeFunctionalExchangeAllocation
+                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49'
+                        to componentExchange ::> 'Structure'::'9c0d5103-e4be-49ed-9e4c-5861c6bb48d4' { 
+                        @CapellaID { eid = "d40f16f4-fba1-4de4-8391-540925e90a94"; } 
+                         
+                    }  
+                     
+                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('d40f16f4-fba1-4de4-8391-540925e90a94'); 
+                }  
+                interface 'cd2d3584-2600-4cbe-b033-9844d6cf68b9' : ComponentExchange 
+                    connect source ::> 'Environment'.'CP 2'
+                    to  target ::> 'High Bypass Turbo Fan'.'Nacelle'.'CP 3' { 
+                    @CapellaID { eid = "cd2d3584-2600-4cbe-b033-9844d6cf68b9"; } 
+                    attribute :>> kind = ComponentExchangeKind::FLOW; 
+                    attribute :>> interfaceName = "F-Env to Fan"; 
+                    attribute :>> isOriented = false; 
+                    allocation 'b097e5db-29fe-40ca-8169-0c7ae1f128f5' : ComponentExchangeFunctionalExchangeAllocation
+                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'0257347a-2a89-4fe4-a302-10cae2f02bb3'
+                        to componentExchange ::> 'Structure'::'cd2d3584-2600-4cbe-b033-9844d6cf68b9' { 
+                        @CapellaID { eid = "b097e5db-29fe-40ca-8169-0c7ae1f128f5"; } 
+                         
+                    }  
+                     
+                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('b097e5db-29fe-40ca-8169-0c7ae1f128f5'); 
+                }  
+                interface '337e01a5-2f75-4b0b-bce8-f3553e8c2d00' : ComponentExchange 
+                    connect source ::> 'High Bypass Turbo Fan'.'Core Nozzle'.'CP 2'
+                    to  target ::> 'Environment'.'CP 3' { 
+                    @CapellaID { eid = "337e01a5-2f75-4b0b-bce8-f3553e8c2d00"; } 
+                    attribute :>> kind = ComponentExchangeKind::FLOW; 
+                    attribute :>> interfaceName = "F-Nozzel to Env"; 
+                    attribute :>> isOriented = false; 
+                     
+                }  
+                interface '62db57cc-db97-4e02-b84d-e347a3dde4d9' : ComponentExchange 
+                    connect source ::> 'High Bypass Turbo Fan'.'Fuel Meter Valve (FMV)'.'CP 2'
+                    to  target ::> 'Fuel System'.'CP 2' { 
+                    @CapellaID { eid = "62db57cc-db97-4e02-b84d-e347a3dde4d9"; } 
+                    attribute :>> kind = ComponentExchangeKind::FLOW; 
+                    attribute :>> interfaceName = "H-FMV to "; 
+                    attribute :>> isOriented = false; 
+                    allocation '1e5f4cec-d533-4d28-ae66-26a5e5e65c61' : ComponentExchangeFunctionalExchangeAllocation
+                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'8e028087-9961-44d5-8c33-02ef922a7ff6'
+                        to componentExchange ::> 'Structure'::'62db57cc-db97-4e02-b84d-e347a3dde4d9' { 
+                        @CapellaID { eid = "1e5f4cec-d533-4d28-ae66-26a5e5e65c61"; } 
+                         
+                    }  
+                     
+                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('1e5f4cec-d533-4d28-ae66-26a5e5e65c61'); 
+                }  
+                interface 'b73e80a3-be76-44c2-a7f7-b30792d43127' : ComponentExchange 
+                    connect source ::> 'Pilot'.'CP 1'
+                    to  target ::> 'High Bypass Turbo Fan'.'Throttle Lever Angle'.'CP 2' { 
+                    @CapellaID { eid = "b73e80a3-be76-44c2-a7f7-b30792d43127"; } 
+                    attribute :>> kind = ComponentExchangeKind::FLOW; 
+                    attribute :>> interfaceName = "E-TLA"; 
+                    attribute :>> isOriented = false; 
+                    allocation 'a817dc50-e24c-4966-b826-a732880fa59b' : ComponentExchangeFunctionalExchangeAllocation
+                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'ac4e3bb3-dd39-40b0-a637-51cbf229520b'
+                        to componentExchange ::> 'Structure'::'b73e80a3-be76-44c2-a7f7-b30792d43127' { 
+                        @CapellaID { eid = "a817dc50-e24c-4966-b826-a732880fa59b"; } 
+                         
+                    }  
+                     
+                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('a817dc50-e24c-4966-b826-a732880fa59b'); 
+                }  
+                interface '76d70416-9e20-4860-988b-3f5f7718df1d' : ComponentExchange 
+                    connect source ::> 'High Bypass Turbo Fan'.'Bleed Air Vlave'.'CP 6'
+                    to  target ::> 'Bleed Air System'.'CP 1' { 
+                    @CapellaID { eid = "76d70416-9e20-4860-988b-3f5f7718df1d"; } 
+                    attribute :>> kind = ComponentExchangeKind::FLOW; 
+                    attribute :>> interfaceName = "H-Bleed Air"; 
+                    attribute :>> isOriented = false; 
+                    allocation 'a01a0295-2966-4f5a-8cfc-6c7ac16a1e9d' : ComponentExchangeFunctionalExchangeAllocation
+                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'707d4125-6bc1-49cf-b9b0-e97cd34b798a'
+                        to componentExchange ::> 'Structure'::'76d70416-9e20-4860-988b-3f5f7718df1d' { 
+                        @CapellaID { eid = "a01a0295-2966-4f5a-8cfc-6c7ac16a1e9d"; } 
+                         
+                    }  
+                     
+                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('a01a0295-2966-4f5a-8cfc-6c7ac16a1e9d'); 
+                }  
                 part 'High Bypass Turbo Fan' : LogicalComponent { 
                     @CapellaID { eid = "c22f220a-34ad-4e28-baa9-ded79bce183a"; } 
                     attribute :>> isAbstract = false; 
@@ -3954,8 +308,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "ddbd1718-ab4a-4a19-8132-8551d790f916"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ddbd1718-ab4a-4a19-8132-8551d790f916'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ddbd1718-ab4a-4a19-8132-8551d790f916'); 
                     }  
                     interface '058bc7d5-da07-498b-8e12-ef1fe24176eb' : ComponentExchange 
                         connect source ::> 'HP Turbine'.'CP 2'
@@ -3970,8 +324,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "f462942b-3118-4f85-8af4-ba1b4ccd5985"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('f462942b-3118-4f85-8af4-ba1b4ccd5985'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('f462942b-3118-4f85-8af4-ba1b4ccd5985'); 
                     }  
                     interface '226b34dc-23e4-43bc-9ad1-e18c483b7fea' : ComponentExchange 
                         connect source ::> 'LP Turbine'.'CP 3'
@@ -3995,8 +349,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "66f9e335-5bf5-4d00-8f1c-750c1647dd60"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('66f9e335-5bf5-4d00-8f1c-750c1647dd60'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('66f9e335-5bf5-4d00-8f1c-750c1647dd60'); 
                     }  
                     interface 'a01e51f4-a332-466d-9a7d-8ae1913b5a83' : ComponentExchange 
                         connect source ::> 'HP Turbine Inlet'.'CP 4'
@@ -4011,8 +365,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "610648f8-6da3-4b04-a8b1-684b28d2591d"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('610648f8-6da3-4b04-a8b1-684b28d2591d'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('610648f8-6da3-4b04-a8b1-684b28d2591d'); 
                     }  
                     interface '127065f5-59f8-4997-bcf8-1d4cbb52d3d3' : ComponentExchange 
                         connect source ::> 'Fan Nozzle'.'CP 3'
@@ -4027,8 +381,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "ef2336c1-69b8-4297-b0e1-54a4527c8b7f"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ef2336c1-69b8-4297-b0e1-54a4527c8b7f'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ef2336c1-69b8-4297-b0e1-54a4527c8b7f'); 
                     }  
                     interface '67e0f1ee-9eee-45a0-ab8c-87a53a7a00b1' : ComponentExchange 
                         connect source ::> 'Turbine Intet Temperature (P2)'.'CP 1'
@@ -4043,8 +397,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "f6794323-18ad-42f8-b976-24adc775676d"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('f6794323-18ad-42f8-b976-24adc775676d'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('f6794323-18ad-42f8-b976-24adc775676d'); 
                     }  
                     interface '7ed13717-fb2f-411f-9804-03c7a641399e' : ComponentExchange 
                         connect source ::> 'Fan Inlet Temperature'.'CP 1'
@@ -4059,8 +413,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "aefbbdde-4bbd-4958-8722-4535d9da8291"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('aefbbdde-4bbd-4958-8722-4535d9da8291'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('aefbbdde-4bbd-4958-8722-4535d9da8291'); 
                     }  
                     interface '189573a1-5ead-45fd-9667-bfeb6874c336' : ComponentExchange 
                         connect source ::> 'LP Compress Inlet '.'CP 2'
@@ -4075,8 +429,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "838dfd0c-1545-47b8-b23e-89198c69f0dc"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('838dfd0c-1545-47b8-b23e-89198c69f0dc'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('838dfd0c-1545-47b8-b23e-89198c69f0dc'); 
                     }  
                     interface '6c4b6ddb-8f91-4a3a-b7b6-91a5caababce' : ComponentExchange 
                         connect source ::> 'Turbine Intet Temperature (P2)'.'CP 2'
@@ -4091,8 +445,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "5b536f61-73e2-45ad-ab77-e039430ba42c"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5b536f61-73e2-45ad-ab77-e039430ba42c'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5b536f61-73e2-45ad-ab77-e039430ba42c'); 
                     }  
                     interface '1a8a0fc5-e684-4435-886e-4192c33a0912' : ComponentExchange 
                         connect source ::> 'LP Compressor'.'CP 4'
@@ -4107,8 +461,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "34868adb-1b3e-4d40-8792-7951ea8e6ff7"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('34868adb-1b3e-4d40-8792-7951ea8e6ff7'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('34868adb-1b3e-4d40-8792-7951ea8e6ff7'); 
                     }  
                     interface 'fab51c98-fa4a-4583-b525-ecb37126bcce' : ComponentExchange 
                         connect source ::> 'HP Turbine Inlet'.'CP 3'
@@ -4123,8 +477,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "170434e4-aa35-42eb-b68e-87e6dbc1d652"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('170434e4-aa35-42eb-b68e-87e6dbc1d652'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('170434e4-aa35-42eb-b68e-87e6dbc1d652'); 
                     }  
                     interface '42331981-d18c-4d98-a1ef-4a6438c910db' : ComponentExchange 
                         connect source ::> 'LP Compressor discharge pressure (P2.5)'.'CP 2'
@@ -4139,8 +493,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "ec1828d6-83cd-4cff-91b2-132db57957f8"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ec1828d6-83cd-4cff-91b2-132db57957f8'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ec1828d6-83cd-4cff-91b2-132db57957f8'); 
                     }  
                     interface '577b40fb-4d11-4c65-ab60-a802494a1c07' : ComponentExchange 
                         connect source ::> 'HPC Outlet'.'CP 2'
@@ -4155,8 +509,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "82a0deb1-df8f-4dfd-ba3a-3cadd6f10f28"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('82a0deb1-df8f-4dfd-ba3a-3cadd6f10f28'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('82a0deb1-df8f-4dfd-ba3a-3cadd6f10f28'); 
                     }  
                     interface 'd0963053-4a8b-49e8-9885-0950cec9d45a' : ComponentExchange 
                         connect source ::> 'HPC Outlet'.'CP 4'
@@ -4171,8 +525,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "23fbaa91-1d49-4a41-8980-19005987a6dc"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('23fbaa91-1d49-4a41-8980-19005987a6dc'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('23fbaa91-1d49-4a41-8980-19005987a6dc'); 
                     }  
                     interface 'fbecc2f5-706f-46a5-9cda-5de5bdb3e904' : ComponentExchange 
                         connect source ::> 'HP Compressor Outlet Pressure (P3)'.'CP 3'
@@ -4187,8 +541,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "3ae36ad3-9b28-45ff-8aa5-3d9818a7c1da"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('3ae36ad3-9b28-45ff-8aa5-3d9818a7c1da'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('3ae36ad3-9b28-45ff-8aa5-3d9818a7c1da'); 
                     }  
                     interface 'cced3b44-0ef3-46da-af2f-6f79b12084a1' : ComponentExchange 
                         connect source ::> 'HP Turbine Inlet'.'CP 5'
@@ -4203,8 +557,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "8fb9f843-7d25-4a13-b9a9-2ab0c0cefd6e"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('8fb9f843-7d25-4a13-b9a9-2ab0c0cefd6e'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('8fb9f843-7d25-4a13-b9a9-2ab0c0cefd6e'); 
                     }  
                     interface 'f8a2db14-6060-4643-a830-2d74b71078aa' : ComponentExchange 
                         connect source ::> 'Control System'.'CP 5'
@@ -4219,8 +573,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "0b873d81-ff2c-489f-add6-bbffad727594"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('0b873d81-ff2c-489f-add6-bbffad727594'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('0b873d81-ff2c-489f-add6-bbffad727594'); 
                     }  
                     interface '3ca1cb5d-5082-49c5-9a7c-2f068a5eb120' : ComponentExchange 
                         connect source ::> 'LP Compress Inlet '.'CP 5'
@@ -4235,8 +589,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "e5ce58fe-8bd9-43c2-aeac-c29368469f74"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('e5ce58fe-8bd9-43c2-aeac-c29368469f74'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('e5ce58fe-8bd9-43c2-aeac-c29368469f74'); 
                     }  
                     interface '53da880d-c34a-4767-8fe9-d37abdd91206' : ComponentExchange 
                         connect source ::> 'HP Stator Vane Actuator'.'CP 2'
@@ -4251,8 +605,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "7186903f-a8a9-42f0-a575-fc26d91491ec"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('7186903f-a8a9-42f0-a575-fc26d91491ec'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('7186903f-a8a9-42f0-a575-fc26d91491ec'); 
                     }  
                     interface 'd0a35cc6-13b9-4d9f-b063-d6d9e33f9f95' : ComponentExchange 
                         connect source ::> 'Control System'.'CP 7'
@@ -4267,8 +621,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "e7a48a08-5227-4b8a-bc35-f6a9da485375"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('e7a48a08-5227-4b8a-bc35-f6a9da485375'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('e7a48a08-5227-4b8a-bc35-f6a9da485375'); 
                     }  
                     interface 'fe02fbaf-889d-413b-b78a-b5c26cdaf348' : ComponentExchange 
                         connect source ::> 'HP Turbine Outlet'.'CP 3'
@@ -4283,8 +637,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "78080b12-cbff-4407-8685-dea44ecacc0a"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('78080b12-cbff-4407-8685-dea44ecacc0a'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('78080b12-cbff-4407-8685-dea44ecacc0a'); 
                     }  
                     interface 'c131c717-a178-417e-90d0-eabbe1170969' : ComponentExchange 
                         connect source ::> 'Combustion Chamber Pressure (P4)'.'CP 1'
@@ -4299,8 +653,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "c92e2dde-3835-4b43-888a-80f1346fd34b"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('c92e2dde-3835-4b43-888a-80f1346fd34b'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('c92e2dde-3835-4b43-888a-80f1346fd34b'); 
                     }  
                     interface '64b3f7bf-f234-4b10-b3d2-a5e4d17fbbf9' : ComponentExchange 
                         connect source ::> 'Compustion chamber'.'CP 4'
@@ -4315,8 +669,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "0ce8b363-b80b-42b4-bbd4-7d7158aa276d"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('0ce8b363-b80b-42b4-bbd4-7d7158aa276d'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('0ce8b363-b80b-42b4-bbd4-7d7158aa276d'); 
                     }  
                     interface '17dc871a-7a20-4001-8f00-dee253d80720' : ComponentExchange 
                         connect source ::> 'Core Nozzle'.'CP 3'
@@ -4331,8 +685,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "998c9821-3cc6-437e-bb05-6b66b6d67e92"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('998c9821-3cc6-437e-bb05-6b66b6d67e92'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('998c9821-3cc6-437e-bb05-6b66b6d67e92'); 
                     }  
                     interface '125daff1-a8f1-4374-9704-639400e5f2c1' : ComponentExchange 
                         connect source ::> 'Exhaust Gas Temperature (EGT)'.'CP 4'
@@ -4347,8 +701,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "8792c79c-6ddd-4ada-b2ed-ef745d56d859"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('8792c79c-6ddd-4ada-b2ed-ef745d56d859'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('8792c79c-6ddd-4ada-b2ed-ef745d56d859'); 
                     }  
                     interface 'a60023c8-44b1-4321-bdb7-12ac645d2fc4' : ComponentExchange 
                         connect source ::> 'Control System'.'CP 11'
@@ -4363,8 +717,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "177920d9-4692-47df-925c-ca81c39d4c07"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('177920d9-4692-47df-925c-ca81c39d4c07'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('177920d9-4692-47df-925c-ca81c39d4c07'); 
                     }  
                     interface '467e364e-a46c-477a-a89b-985829ad9b33' : ComponentExchange 
                         connect source ::> 'LP Stator Vanes Actuator'.'CP 2'
@@ -4379,8 +733,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "a14a09c2-c450-4b22-8d88-68cf84f987eb"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('a14a09c2-c450-4b22-8d88-68cf84f987eb'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('a14a09c2-c450-4b22-8d88-68cf84f987eb'); 
                     }  
                     interface 'c37ad973-4fe6-47e2-95d7-cd4bb1cb9a38' : ComponentExchange 
                         connect source ::> 'HP Turbine Outlet'.'CP 4'
@@ -4395,8 +749,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "0a5b796d-0c4e-4891-8e05-14cfb9fdc422"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('0a5b796d-0c4e-4891-8e05-14cfb9fdc422'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('0a5b796d-0c4e-4891-8e05-14cfb9fdc422'); 
                     }  
                     interface '03b5863f-bb31-46bb-9ca8-693fccc72bc1' : ComponentExchange 
                         connect source ::> 'HP Turbine Outlet Pressure Sensor (4.5)'.'CP 2'
@@ -4411,8 +765,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "475c8c44-c767-42f3-9fd1-74892f53c6f8"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('475c8c44-c767-42f3-9fd1-74892f53c6f8'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('475c8c44-c767-42f3-9fd1-74892f53c6f8'); 
                     }  
                     interface 'f842a4a2-5e91-4f9f-beaa-83127f6df7b3' : ComponentExchange 
                         connect source ::> 'HP Shaft'.'CP 1'
@@ -4427,8 +781,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "25fd4dfa-d84f-44d1-af7a-7c0712506329"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('25fd4dfa-d84f-44d1-af7a-7c0712506329'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('25fd4dfa-d84f-44d1-af7a-7c0712506329'); 
                     }  
                     interface '57e439db-4bca-470a-8520-1d3237a49cf3' : ComponentExchange 
                         connect source ::> 'N2 Senor'.'CP 2'
@@ -4443,8 +797,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "87f2c352-de62-4fb6-95a5-fbadc778716e"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('87f2c352-de62-4fb6-95a5-fbadc778716e'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('87f2c352-de62-4fb6-95a5-fbadc778716e'); 
                     }  
                     interface '2f321ba1-2603-44ff-92e2-7f1a832b3c64' : ComponentExchange 
                         connect source ::> 'LP and Fan Shaft'.'CP 1'
@@ -4459,8 +813,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "e5ff03ca-3057-4f37-a0ff-d27bbafd3847"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('e5ff03ca-3057-4f37-a0ff-d27bbafd3847'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('e5ff03ca-3057-4f37-a0ff-d27bbafd3847'); 
                     }  
                     interface '7edb00b8-fb83-471e-a0c2-fff6fc99d875' : ComponentExchange 
                         connect source ::> 'N1 Speed'.'CP 2'
@@ -4475,8 +829,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "1b121324-b11d-4932-a11f-2149c2c8188b"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('1b121324-b11d-4932-a11f-2149c2c8188b'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('1b121324-b11d-4932-a11f-2149c2c8188b'); 
                     }  
                     interface '3ca613cd-373b-4688-ba39-06cfc0cbd9df' : ComponentExchange 
                         connect source ::> 'LP and Fan Shaft'.'CP 2'
@@ -4491,8 +845,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "b1c3f2ec-5d64-47cc-8659-907e3db7a863"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('b1c3f2ec-5d64-47cc-8659-907e3db7a863'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('b1c3f2ec-5d64-47cc-8659-907e3db7a863'); 
                     }  
                     interface '7ace07d2-43e3-402d-b19f-405c33f308da' : ComponentExchange 
                         connect source ::> 'LP and Fan Shaft'.'CP 3'
@@ -4516,8 +870,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "5f240e52-5fa7-45b2-a131-73eb13356d38"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5f240e52-5fa7-45b2-a131-73eb13356d38'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5f240e52-5fa7-45b2-a131-73eb13356d38'); 
                     }  
                     interface 'cb6e2545-9695-41bc-b191-8fd07eada4bd' : ComponentExchange 
                         connect source ::> 'Combustion Outlet'.'CP 2'
@@ -4532,8 +886,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "489a9820-4f9a-4de1-b6c0-50454a045313"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('489a9820-4f9a-4de1-b6c0-50454a045313'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('489a9820-4f9a-4de1-b6c0-50454a045313'); 
                     }  
                     interface 'a427faeb-74d3-4f42-9ce5-5c4a0828ab78' : ComponentExchange 
                         connect source ::> 'HP Shaft'.'CP 3'
@@ -4548,8 +902,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "ef6c694a-458e-4f35-a525-125cd821f30b"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ef6c694a-458e-4f35-a525-125cd821f30b'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ef6c694a-458e-4f35-a525-125cd821f30b'); 
                     }  
                     interface '7bd709ff-1ebf-41ff-9f0f-4a68a0b64495' : ComponentExchange 
                         connect source ::> 'Fuel Meter Valve (FMV)'.'CP 3'
@@ -4564,8 +918,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "d617cc9b-41ca-4de3-b799-fed756b04f42"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('d617cc9b-41ca-4de3-b799-fed756b04f42'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('d617cc9b-41ca-4de3-b799-fed756b04f42'); 
                     }  
                     interface '06134d5a-dfa1-448e-9156-a710090ecb77' : ComponentExchange 
                         connect source ::> 'FMV Position Sensor'.'CP 2'
@@ -4580,8 +934,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "acd1f28f-63d9-44d9-8216-1ef15fdb61ae"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('acd1f28f-63d9-44d9-8216-1ef15fdb61ae'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('acd1f28f-63d9-44d9-8216-1ef15fdb61ae'); 
                     }  
                     interface '719020d3-0aaa-4cd7-ac71-e2352ef88dc8' : ComponentExchange 
                         connect source ::> 'Throttle Lever Angle'.'CP 1'
@@ -4596,8 +950,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "28145334-03ae-4fca-92f0-4484a72b1229"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('28145334-03ae-4fca-92f0-4484a72b1229'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('28145334-03ae-4fca-92f0-4484a72b1229'); 
                     }  
                     interface '56fa856d-8503-4e0d-a856-b5c68b918b80' : ComponentExchange 
                         connect source ::> 'Bleed Air Valve Actuator'.'CP 1'
@@ -4612,8 +966,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "67c0fbb6-007a-4994-ad7c-39c17acfd6a9"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('67c0fbb6-007a-4994-ad7c-39c17acfd6a9'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('67c0fbb6-007a-4994-ad7c-39c17acfd6a9'); 
                     }  
                     interface '1b38b041-3496-4dd0-9069-49543995e5b9' : ComponentExchange 
                         connect source ::> 'Control System'.'CP 17'
@@ -4628,8 +982,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "5ce08686-c5d0-4a94-9f46-99f041e67eaf"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5ce08686-c5d0-4a94-9f46-99f041e67eaf'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5ce08686-c5d0-4a94-9f46-99f041e67eaf'); 
                     }  
                     interface 'bb47ef2a-4510-4b59-a98c-d80123592d8c' : ComponentExchange 
                         connect source ::> 'LP Stator Vanes'.'CP 3'
@@ -4644,8 +998,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "8e51586d-8539-43cd-b63c-21442011f423"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('8e51586d-8539-43cd-b63c-21442011f423'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('8e51586d-8539-43cd-b63c-21442011f423'); 
                     }  
                     interface '892c750e-6212-4fca-a3a7-7d84443685e1' : ComponentExchange 
                         connect source ::> 'Stator Vane Position Sensor'.'CP 2'
@@ -4660,8 +1014,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "716f5eb0-89a3-4bd8-a190-70accdbed29d"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('716f5eb0-89a3-4bd8-a190-70accdbed29d'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('716f5eb0-89a3-4bd8-a190-70accdbed29d'); 
                     }  
                     interface '5bd25ffe-9cc1-40bd-a7dc-02da2670255a' : ComponentExchange 
                         connect source ::> 'Bleed Air Vlave'.'CP 8'
@@ -4676,8 +1030,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "43f65859-85a7-4ea1-96a8-3d49c8eeb635"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('43f65859-85a7-4ea1-96a8-3d49c8eeb635'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('43f65859-85a7-4ea1-96a8-3d49c8eeb635'); 
                     }  
                     interface '437acadc-49a8-4316-945e-289c5519ceed' : ComponentExchange 
                         connect source ::> 'Bleed Air Valve Position'.'CP 2'
@@ -4692,8 +1046,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "1721546a-cde6-4476-afe3-f436b4704f5f"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('1721546a-cde6-4476-afe3-f436b4704f5f'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('1721546a-cde6-4476-afe3-f436b4704f5f'); 
                     }  
                     interface '8e008ced-afe6-42c1-a634-ee8db3dce172' : ComponentExchange 
                         connect source ::> 'LP Compress Inlet '.'CP 7'
@@ -4708,8 +1062,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "ac8b7f7f-f516-422e-9b8e-feb08c65cc0e"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ac8b7f7f-f516-422e-9b8e-feb08c65cc0e'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('ac8b7f7f-f516-422e-9b8e-feb08c65cc0e'); 
                     }  
                     interface 'c9c40a28-0951-4a58-8310-d937f6fed11a' : ComponentExchange 
                         connect source ::> 'HP Stator Vanes'.'CP 3'
@@ -4724,8 +1078,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "33075d0b-be32-4eaa-a4d5-8716bb1a49d0"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('33075d0b-be32-4eaa-a4d5-8716bb1a49d0'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('33075d0b-be32-4eaa-a4d5-8716bb1a49d0'); 
                     }  
                     interface 'd7c05e59-c2e3-4333-b78d-07c04845155f' : ComponentExchange 
                         connect source ::> 'HP Stator Vane Position Sensor'.'CP 2'
@@ -4740,8 +1094,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "4ce9de07-5921-4296-811e-238d8036cf53"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('4ce9de07-5921-4296-811e-238d8036cf53'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('4ce9de07-5921-4296-811e-238d8036cf53'); 
                     }  
                     interface 'f0fec9b5-04d9-4d2d-a6c6-dc24e637a2cd' : ComponentExchange 
                         connect source ::> 'Engine Cowling'.'CP 1'
@@ -4756,8 +1110,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "b5620622-ba52-4a7d-b267-19a4503dfd61"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('b5620622-ba52-4a7d-b267-19a4503dfd61'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('b5620622-ba52-4a7d-b267-19a4503dfd61'); 
                     }  
                     interface '8964b43f-b20e-40a9-9cb7-bcf0cd7b5f13' : ComponentExchange 
                         connect source ::> 'LP Turbine'.'CP 5'
@@ -4772,8 +1126,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "af3f3021-9149-4644-8bc7-88a084dd67f8"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('af3f3021-9149-4644-8bc7-88a084dd67f8'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('af3f3021-9149-4644-8bc7-88a084dd67f8'); 
                     }  
                     interface '44264ef0-b570-4422-8f82-2885712c0674' : ComponentExchange 
                         connect source ::> 'HP Shaft'.'CP 4'
@@ -4788,8 +1142,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "33c291bb-aa3c-4b4a-85bf-f62cef1371c9"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('33c291bb-aa3c-4b4a-85bf-f62cef1371c9'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('33c291bb-aa3c-4b4a-85bf-f62cef1371c9'); 
                     }  
                     interface '8b80ea92-fa6e-4b09-b63d-c535a954411e' : ComponentExchange 
                         connect source ::> 'LP and Fan Shaft'.'CP 5'
@@ -4804,8 +1158,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "aa4fcd44-797b-4aef-ab31-b4401d5ff718"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('aa4fcd44-797b-4aef-ab31-b4401d5ff718'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('aa4fcd44-797b-4aef-ab31-b4401d5ff718'); 
                     }  
                     interface 'a0a905df-9fcb-4707-9213-2fcfe40512ca' : ComponentExchange 
                         connect source ::> 'Fuel Meter Valve (FMV)'.'CP 4'
@@ -4820,8 +1174,8 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             @CapellaID { eid = "5f2f2460-0999-4857-ae85-d817a8613e32"; } 
                              
                         }  
-                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5f2f2460-0999-4857-ae85-d817a8613e32'); 
                          
+                        ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('5f2f2460-0999-4857-ae85-d817a8613e32'); 
                     }  
                     part 'ed5e0328-d284-4e41-b1ec-64fd4dda4500' : CPart :> 'Fan'  { 
                         @CapellaID { eid = "ed5e0328-d284-4e41-b1ec-64fd4dda4500"; } 
@@ -5701,12 +2055,12 @@ library package 'High_Bypass_Turbo_Fan Library' {
                         attribute :>> isActor = false; 
                         attribute :>> isHuman = false; 
                         allocation 'd6fa2914-e221-4bae-8c32-cfd8d779b784' : ComponentFunctionalAllocation
-                            allocate function ::> 'Logical Functions'::'Root Logical Function'.'Compres LP Air'
+                            allocate function ::> 'Logical Functions'::'Root Logical Function'.'Compress LP Air'
                             to component ::> 'HP Compressor' { 
                             @CapellaID { eid = "d6fa2914-e221-4bae-8c32-cfd8d779b784"; } 
                              
                         } 
-                        perform 'Logical Functions'::'Root Logical Function'.'Compres LP Air' ; 
+                        perform 'Logical Functions'::'Root Logical Function'.'Compress LP Air' ; 
                         port 'CP 2' : ComponentPort { 
                             @CapellaID { eid = "38457515-12b5-4362-817c-62e7bda33728"; } 
                             attribute :>> aggregationKind = AggregationKind::UNSET; 
@@ -5723,7 +2077,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             attribute :>> orientation = OrientationPortKind::OUT; 
                             attribute :>> isUnique = false; 
                             ref allocation '054b8682-c32f-442f-ac58-285a1e107df9' : PortAllocation
-                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Compres LP Air'.'FOP 1'
+                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Compress LP Air'.'FOP 1'
                                 to allocatingPort ::> 'CP 2'; 
                              
                             ref :>> ownedPortAllocations =  ('054b8682-c32f-442f-ac58-285a1e107df9'); 
@@ -5744,7 +2098,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             attribute :>> orientation = OrientationPortKind::IN; 
                             attribute :>> isUnique = false; 
                             ref allocation '4c8ac3f9-d126-49bc-afad-59bb45ea0621' : PortAllocation
-                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Compres LP Air'.'FIP 3'
+                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Compress LP Air'.'FIP 3'
                                 to allocatingPort ::> 'CP 3'; 
                              
                             ref :>> ownedPortAllocations =  ('4c8ac3f9-d126-49bc-afad-59bb45ea0621'); 
@@ -5765,7 +2119,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             attribute :>> orientation = OrientationPortKind::IN; 
                             attribute :>> isUnique = false; 
                             ref allocation '2d461130-0eb3-4ef8-8cc2-dea5cd346e3f' : PortAllocation
-                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Compres LP Air'.'FIP 2'
+                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Compress LP Air'.'FIP 2'
                                 to allocatingPort ::> 'CP 4'; 
                              
                             ref :>> ownedPortAllocations =  ('2d461130-0eb3-4ef8-8cc2-dea5cd346e3f'); 
@@ -7565,12 +3919,12 @@ library package 'High_Bypass_Turbo_Fan Library' {
                         } 
                         perform 'Logical Functions'::'Root Logical Function'.'Rotate Fan and LP Compressor' ; 
                         allocation 'b270723c-367a-4d66-b998-c6e72f0d124a' : ComponentFunctionalAllocation
-                            allocate function ::> 'Logical Functions'::'Root Logical Function'.'Deliver Thrust'
+                            allocate function ::> 'Logical Functions'::'Root Logical Function'.'Deliver LP Fan Shaft Thrust '
                             to component ::> 'LP and Fan Shaft' { 
                             @CapellaID { eid = "b270723c-367a-4d66-b998-c6e72f0d124a"; } 
                              
                         } 
-                        perform 'Logical Functions'::'Root Logical Function'.'Deliver Thrust' ; 
+                        perform 'Logical Functions'::'Root Logical Function'.'Deliver LP Fan Shaft Thrust ' ; 
                         port 'CP 1' : ComponentPort { 
                             @CapellaID { eid = "e7a7657b-17b6-4929-8586-e5a39bd8f789"; } 
                             attribute :>> aggregationKind = AggregationKind::UNSET; 
@@ -7667,7 +4021,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             attribute :>> orientation = OrientationPortKind::OUT; 
                             attribute :>> isUnique = false; 
                             ref allocation '2aa7f58b-1006-431f-81a9-8de350137ba8' : PortAllocation
-                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Deliver Thrust'.'FOP 1'
+                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Deliver LP Fan Shaft Thrust '.'FOP 1'
                                 to allocatingPort ::> 'CP 5'; 
                              
                             ref :>> ownedPortAllocations =  ('2aa7f58b-1006-431f-81a9-8de350137ba8'); 
@@ -7689,12 +4043,12 @@ library package 'High_Bypass_Turbo_Fan Library' {
                         } 
                         perform 'Logical Functions'::'Root Logical Function'.'Tranfer Torque' ; 
                         allocation '805bc4e2-20a0-4b4b-ab1c-f3af6d207e44' : ComponentFunctionalAllocation
-                            allocate function ::> 'Logical Functions'::'Root Logical Function'.'Deliver Thrust'
+                            allocate function ::> 'Logical Functions'::'Root Logical Function'.'Deliver HP Shaft Thrust'
                             to component ::> 'HP Shaft' { 
                             @CapellaID { eid = "805bc4e2-20a0-4b4b-ab1c-f3af6d207e44"; } 
                              
                         } 
-                        perform 'Logical Functions'::'Root Logical Function'.'Deliver Thrust' ; 
+                        perform 'Logical Functions'::'Root Logical Function'.'Deliver HP Shaft Thrust' ; 
                         port 'CP 1' : ComponentPort { 
                             @CapellaID { eid = "44bcfac1-80af-4465-baae-a71c5f51e16b"; } 
                             attribute :>> aggregationKind = AggregationKind::UNSET; 
@@ -7774,7 +4128,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                             attribute :>> orientation = OrientationPortKind::OUT; 
                             attribute :>> isUnique = false; 
                             ref allocation '0a13ab2f-3f96-4dcf-965e-633189f12da5' : PortAllocation
-                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Deliver Thrust'.'FOP 1'
+                                allocate allocatedPort ::> 'Logical Functions'::'Root Logical Function'.'Deliver HP Shaft Thrust'.'FOP 1'
                                 to allocatingPort ::> 'CP 4'; 
                              
                             ref :>> ownedPortAllocations =  ('0a13ab2f-3f96-4dcf-965e-633189f12da5'); 
@@ -8587,6 +4941,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                         ref :>> ownedFunctionalAllocation =  ('94e8ba3a-f0ca-4ccf-b082-bbb9a62b0505'); 
                          
                     }  
+                     
                     ref :>> ownedComponentExchanges =  ('023fae84-8dc8-4f24-86e6-bf8452ecd7b2',
                     '311d3c30-5ec5-4de7-bc46-3a37133c2261',
                     '058bc7d5-da07-498b-8e12-ef1fe24176eb',
@@ -8644,7 +4999,6 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     '44264ef0-b570-4422-8f82-2885712c0674',
                     '8b80ea92-fa6e-4b09-b63d-c535a954411e',
                     'a0a905df-9fcb-4707-9213-2fcfe40512ca'); 
-                     
                     ref :>> ownedLogicalComponents =  ('Fan',
                     'Nacelle',
                     'LP Compressor',
@@ -8916,6 +5270,26 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     ref :>> ownedFunctionalAllocation =  ('45bc191e-9e52-4a44-bf01-b4851b0cbd71'); 
                      
                 }  
+                constraint '1dea0406-71c4-4dc1-aee6-4db5855ad5d3' : CapellaConstraint { 
+                    language "capella:linkedText" /*  */
+                    @CapellaID { eid = "1dea0406-71c4-4dc1-aee6-4db5855ad5d3"; }
+                    
+                } 
+                constraint '9badeda3-22ef-4329-a00e-7c9f7480b8e6' : CapellaConstraint { 
+                    language "capella:linkedText" /*  */
+                    @CapellaID { eid = "9badeda3-22ef-4329-a00e-7c9f7480b8e6"; }
+                    
+                } 
+                constraint '92e5408d-3b0f-4916-883b-ecad771831ae' : CapellaConstraint { 
+                    language "capella:linkedText" /*  */
+                    @CapellaID { eid = "92e5408d-3b0f-4916-883b-ecad771831ae"; }
+                    
+                } 
+                constraint '734ca38c-388c-4f29-a8a4-091166a77130' : CapellaConstraint { 
+                    language "capella:linkedText" /*  */
+                    @CapellaID { eid = "734ca38c-388c-4f29-a8a4-091166a77130"; }
+                    
+                } 
                 part 'c58dfdba-cb34-4b21-bfe1-e956ad1381a7' : CPart :> 'High Bypass Turbo Fan'  { 
                     @CapellaID { eid = "c58dfdba-cb34-4b21-bfe1-e956ad1381a7"; } 
                     attribute :>> aggregationKind = AggregationKind::UNSET; 
@@ -9006,138 +5380,6 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     attribute :>> isUnique = false; 
                      
                 }  
-                interface '16a121dd-6c7c-4685-a05f-9a2566bce94f' : ComponentExchange 
-                    connect source ::> 'Airframe'.'CP 1'
-                    to  target ::> 'High Bypass Turbo Fan'.'Nacelle'.'CP 1' { 
-                    @CapellaID { eid = "16a121dd-6c7c-4685-a05f-9a2566bce94f"; } 
-                    attribute :>> kind = ComponentExchangeKind::FLOW; 
-                    attribute :>> interfaceName = "P-AF to Nacelle"; 
-                    attribute :>> isOriented = false; 
-                    allocation '41fef4ca-7334-4967-a455-c8e0d788e7db' : ComponentExchangeFunctionalExchangeAllocation
-                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a'
-                        to componentExchange ::> 'Structure'::'16a121dd-6c7c-4685-a05f-9a2566bce94f' { 
-                        @CapellaID { eid = "41fef4ca-7334-4967-a455-c8e0d788e7db"; } 
-                         
-                    }  
-                    allocation '1122deb7-4cd3-4dc6-ba01-977e371653fb' : ComponentExchangeFunctionalExchangeAllocation
-                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0'
-                        to componentExchange ::> 'Structure'::'16a121dd-6c7c-4685-a05f-9a2566bce94f' { 
-                        @CapellaID { eid = "1122deb7-4cd3-4dc6-ba01-977e371653fb"; } 
-                         
-                    }  
-                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('41fef4ca-7334-4967-a455-c8e0d788e7db',
-                    '1122deb7-4cd3-4dc6-ba01-977e371653fb'); 
-                     
-                }  
-                interface '9c0d5103-e4be-49ed-9e4c-5861c6bb48d4' : ComponentExchange 
-                    connect source ::> 'High Bypass Turbo Fan'.'Fan Nozzle'.'CP 2'
-                    to  target ::> 'Environment'.'CP 1' { 
-                    @CapellaID { eid = "9c0d5103-e4be-49ed-9e4c-5861c6bb48d4"; } 
-                    attribute :>> kind = ComponentExchangeKind::FLOW; 
-                    attribute :>> interfaceName = "H-Fan Nozzel to Env"; 
-                    attribute :>> isOriented = false; 
-                    allocation 'd40f16f4-fba1-4de4-8391-540925e90a94' : ComponentExchangeFunctionalExchangeAllocation
-                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49'
-                        to componentExchange ::> 'Structure'::'9c0d5103-e4be-49ed-9e4c-5861c6bb48d4' { 
-                        @CapellaID { eid = "d40f16f4-fba1-4de4-8391-540925e90a94"; } 
-                         
-                    }  
-                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('d40f16f4-fba1-4de4-8391-540925e90a94'); 
-                     
-                }  
-                interface 'cd2d3584-2600-4cbe-b033-9844d6cf68b9' : ComponentExchange 
-                    connect source ::> 'Environment'.'CP 2'
-                    to  target ::> 'High Bypass Turbo Fan'.'Nacelle'.'CP 3' { 
-                    @CapellaID { eid = "cd2d3584-2600-4cbe-b033-9844d6cf68b9"; } 
-                    attribute :>> kind = ComponentExchangeKind::FLOW; 
-                    attribute :>> interfaceName = "F-Env to Fan"; 
-                    attribute :>> isOriented = false; 
-                    allocation 'b097e5db-29fe-40ca-8169-0c7ae1f128f5' : ComponentExchangeFunctionalExchangeAllocation
-                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'0257347a-2a89-4fe4-a302-10cae2f02bb3'
-                        to componentExchange ::> 'Structure'::'cd2d3584-2600-4cbe-b033-9844d6cf68b9' { 
-                        @CapellaID { eid = "b097e5db-29fe-40ca-8169-0c7ae1f128f5"; } 
-                         
-                    }  
-                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('b097e5db-29fe-40ca-8169-0c7ae1f128f5'); 
-                     
-                }  
-                interface '337e01a5-2f75-4b0b-bce8-f3553e8c2d00' : ComponentExchange 
-                    connect source ::> 'High Bypass Turbo Fan'.'Core Nozzle'.'CP 2'
-                    to  target ::> 'Environment'.'CP 3' { 
-                    @CapellaID { eid = "337e01a5-2f75-4b0b-bce8-f3553e8c2d00"; } 
-                    attribute :>> kind = ComponentExchangeKind::FLOW; 
-                    attribute :>> interfaceName = "F-Nozzel to Env"; 
-                    attribute :>> isOriented = false; 
-                     
-                }  
-                interface '62db57cc-db97-4e02-b84d-e347a3dde4d9' : ComponentExchange 
-                    connect source ::> 'High Bypass Turbo Fan'.'Fuel Meter Valve (FMV)'.'CP 2'
-                    to  target ::> 'Fuel System'.'CP 2' { 
-                    @CapellaID { eid = "62db57cc-db97-4e02-b84d-e347a3dde4d9"; } 
-                    attribute :>> kind = ComponentExchangeKind::FLOW; 
-                    attribute :>> interfaceName = "H-FMV to "; 
-                    attribute :>> isOriented = false; 
-                    allocation '1e5f4cec-d533-4d28-ae66-26a5e5e65c61' : ComponentExchangeFunctionalExchangeAllocation
-                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'8e028087-9961-44d5-8c33-02ef922a7ff6'
-                        to componentExchange ::> 'Structure'::'62db57cc-db97-4e02-b84d-e347a3dde4d9' { 
-                        @CapellaID { eid = "1e5f4cec-d533-4d28-ae66-26a5e5e65c61"; } 
-                         
-                    }  
-                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('1e5f4cec-d533-4d28-ae66-26a5e5e65c61'); 
-                     
-                }  
-                interface 'b73e80a3-be76-44c2-a7f7-b30792d43127' : ComponentExchange 
-                    connect source ::> 'Pilot'.'CP 1'
-                    to  target ::> 'High Bypass Turbo Fan'.'Throttle Lever Angle'.'CP 2' { 
-                    @CapellaID { eid = "b73e80a3-be76-44c2-a7f7-b30792d43127"; } 
-                    attribute :>> kind = ComponentExchangeKind::FLOW; 
-                    attribute :>> interfaceName = "E-TLA"; 
-                    attribute :>> isOriented = false; 
-                    allocation 'a817dc50-e24c-4966-b826-a732880fa59b' : ComponentExchangeFunctionalExchangeAllocation
-                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'ac4e3bb3-dd39-40b0-a637-51cbf229520b'
-                        to componentExchange ::> 'Structure'::'b73e80a3-be76-44c2-a7f7-b30792d43127' { 
-                        @CapellaID { eid = "a817dc50-e24c-4966-b826-a732880fa59b"; } 
-                         
-                    }  
-                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('a817dc50-e24c-4966-b826-a732880fa59b'); 
-                     
-                }  
-                interface '76d70416-9e20-4860-988b-3f5f7718df1d' : ComponentExchange 
-                    connect source ::> 'High Bypass Turbo Fan'.'Bleed Air Vlave'.'CP 6'
-                    to  target ::> 'Bleed Air System'.'CP 1' { 
-                    @CapellaID { eid = "76d70416-9e20-4860-988b-3f5f7718df1d"; } 
-                    attribute :>> kind = ComponentExchangeKind::FLOW; 
-                    attribute :>> interfaceName = "H-Bleed Air"; 
-                    attribute :>> isOriented = false; 
-                    allocation 'a01a0295-2966-4f5a-8cfc-6c7ac16a1e9d' : ComponentExchangeFunctionalExchangeAllocation
-                        allocate functionalExchange ::> 'Logical Functions'::'Root Logical Function'.'707d4125-6bc1-49cf-b9b0-e97cd34b798a'
-                        to componentExchange ::> 'Structure'::'76d70416-9e20-4860-988b-3f5f7718df1d' { 
-                        @CapellaID { eid = "a01a0295-2966-4f5a-8cfc-6c7ac16a1e9d"; } 
-                         
-                    }  
-                    ref :>> ownedComponentExchangeFunctionalExchangeAllocations =  ('a01a0295-2966-4f5a-8cfc-6c7ac16a1e9d'); 
-                     
-                }  
-                constraint '1dea0406-71c4-4dc1-aee6-4db5855ad5d3' : CapellaConstraint { 
-                    language "capella:linkedText" /*  */
-                    @CapellaID { eid = "1dea0406-71c4-4dc1-aee6-4db5855ad5d3"; }
-                    
-                } 
-                constraint '9badeda3-22ef-4329-a00e-7c9f7480b8e6' : CapellaConstraint { 
-                    language "capella:linkedText" /*  */
-                    @CapellaID { eid = "9badeda3-22ef-4329-a00e-7c9f7480b8e6"; }
-                    
-                } 
-                constraint '92e5408d-3b0f-4916-883b-ecad771831ae' : CapellaConstraint { 
-                    language "capella:linkedText" /*  */
-                    @CapellaID { eid = "92e5408d-3b0f-4916-883b-ecad771831ae"; }
-                    
-                } 
-                constraint '734ca38c-388c-4f29-a8a4-091166a77130' : CapellaConstraint { 
-                    language "capella:linkedText" /*  */
-                    @CapellaID { eid = "734ca38c-388c-4f29-a8a4-091166a77130"; }
-                    
-                } 
             } 
             package 'Capabilities' {
                 @PackageMeta {
@@ -9145,12 +5387,3779 @@ library package 'High_Bypass_Turbo_Fan Library' {
                 } 
                 @CapellaID { eid = "9e016054-4e66-4e27-bf10-ace064ad885b"; } 
             } 
+            package 'Logical Functions' {
+                @PackageMeta {
+                    type = "LogicalFunctionPkg";
+                } 
+                @CapellaID { eid = "f07d73ed-8208-4d71-9776-43febd86194e"; } 
+                action 'Root Logical Function' : LogicalFunction  { 
+                    @CapellaID { eid = "f82481b8-e5b0-444c-a69a-74d14b4e194f"; } 
+                    attribute :>> aggregationKind = AggregationKind::UNSET; 
+                    attribute :>> isFinal = false; 
+                    attribute :>> isAbstract = false; 
+                    attribute :>> isDerived = false; 
+                    attribute :>> isPartOfKey = false; 
+                    attribute :>> isReadOnly = false; 
+                    attribute :>> isStatic = false; 
+                    attribute :>> kind = FunctionKind::FUNCTION; 
+                    attribute :>> isMaxInclusive = false; 
+                    attribute :>> isMinInclusive = false; 
+                    attribute :>> isOrdered = false; 
+                    attribute :>> isUnique = false; 
+                    action 'Generate Thrust' : LogicalFunction  { 
+                        @CapellaID { eid = "7430612c-72c2-4e9a-886a-53485c0e7113"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                         
+                    }  
+                    action 'Provide Air' : LogicalFunction  { 
+                        @CapellaID { eid = "fa0b7121-64af-4c57-8bee-065993e2af4b"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "4cd35867-e297-41d5-a272-9883b5578d71"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Receive Air' : LogicalFunction  { 
+                        @CapellaID { eid = "f3695f88-9bab-46d2-bbd7-6a765b71e76e"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "058b0c1a-9ac3-46eb-9e47-2b1e2a7a62b9"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "f3f7ba00-b6ab-4942-b090-5aff85bef9de"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "470307ac-aa6d-4ab1-9f69-f3ce9526165c"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Increase Air Mass Flow' : LogicalFunction  { 
+                        @CapellaID { eid = "184153d7-8160-4928-ba38-9edd2a7e29cb"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "0ceb4e2d-1081-4e2d-b1e1-874e3dd8321c"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "6f2fd9d8-95b7-444e-bafa-dceb4cbccbf5"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "6e138918-609a-4881-b428-549c55a42e2a"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "1f204831-ef31-4bf5-b159-fca22668bbde"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Expel Bypass AIr' : LogicalFunction  { 
+                        @CapellaID { eid = "40b60614-85bc-40ae-b076-6fd6a688b71d"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "850c718e-f214-45fa-9074-bcc4fe768665"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "1f4a50e4-2bc8-4d3c-b1ff-6aeb66c9477f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "6005cceb-8fb7-4d4f-aacf-a032d08b9947"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Receive Thrust' : LogicalFunction  { 
+                        @CapellaID { eid = "08d87dfb-26f5-41f6-8d22-f06a26e04fcb"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "87d09590-c903-4e1c-933e-c3ea76e7ccca"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "e9030ced-cba3-41f1-ae45-c87a05055992"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2'); 
+                    }  
+                    action 'Receive Bypass Air' : LogicalFunction  { 
+                        @CapellaID { eid = "cb5d241a-0a7e-4760-9470-2c5e21d51dd4"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "ee2ee176-79cc-4c07-aa04-f37edc947d69"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                    }  
+                    action 'Drive Fan and LP Compressor' : LogicalFunction  { 
+                        @CapellaID { eid = "39dcd103-6ced-4604-a4dd-96370fbe572a"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "f1259c26-a7b7-42f5-9913-653b8b7774b6"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "6c07e9f5-1714-4e58-98b9-25834ed5a77f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "7b8205ab-25af-47fb-8a0b-f577fde7e255"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Receive Nozzle Thrust' : LogicalFunction  { 
+                        @CapellaID { eid = "aa61b477-acc5-4a41-8896-cb8035b5958a"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "45099b89-4782-47cc-839b-32b94a967953"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "9a9dc4af-cf7f-4c90-a081-7c7b96ae62d7"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Compress Air' : LogicalFunction  { 
+                        @CapellaID { eid = "e74f30bc-7e5c-4b4f-bed1-b31bc68eea5b"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "57912dc8-3867-4af4-ae42-a6140209c7d7"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "7ff79222-792d-4faf-8b0a-f3caa66e7520"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 3' : FunctionInputPort  { 
+                            @CapellaID { eid = "5c0c8828-04ab-410b-8c60-4e5c4fa83382"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "49984c52-44f0-46da-a253-730944c849bd"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2',
+                        'FIP 3'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Compress LP Air' : LogicalFunction  { 
+                        @CapellaID { eid = "40fa74ad-4ca5-444a-bd46-7fc1e820169c"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "ed763560-efe7-47fa-aa99-3cf8a8d1088f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 3' : FunctionInputPort  { 
+                            @CapellaID { eid = "7334ad98-21b1-47f0-aa6a-0fe722d16584"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 4' : FunctionInputPort  { 
+                            @CapellaID { eid = "ca2907b7-0575-46d4-b878-4cc4ce4aa3ec"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "1fe803ee-e3f5-453a-9257-e92365c6f23f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 2',
+                        'FIP 3',
+                        'FIP 4'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Burn Fuel' : LogicalFunction  { 
+                        @CapellaID { eid = "d30b8ff1-ce4c-4258-baef-06e13a3b9767"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "990c8303-c95b-410b-8fcf-7f9471cfb2b3"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "6e129de7-b3a4-478d-a91e-0bb4f89757ad"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "3729054a-f988-4c36-a3b2-b7b34fbe868a"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "91e61c6c-b64e-46b2-9254-0f773ce96775"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Extract Energy' : LogicalFunction  { 
+                        @CapellaID { eid = "063c930f-d0a2-493e-8764-302af770722e"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "37f54e34-4a07-4b9d-8339-2c93e47247a3"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "4b5afa12-8d11-4150-bdc5-6d4c99366273"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "340b5bb2-f157-49f3-ac88-c341e414378d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Measure inlet Temperature (T2)' : LogicalFunction  { 
+                        @CapellaID { eid = "6137346b-93f2-4b34-8460-27a710b3e3b1"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "358662a4-66c0-4b05-ac3b-123887d61b51"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "4d23a941-9dc2-49dc-8eae-d5e2760a778d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Control Engine' : LogicalFunction  { 
+                        @CapellaID { eid = "c884dbd9-4225-4a33-b867-9e103760b107"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "b62af3de-dec7-46dd-8957-2ef2664dd490"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "69556b91-a73d-4aa6-90b3-c006d0b0dc47"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 4' : FunctionInputPort  { 
+                            @CapellaID { eid = "11399a87-5e85-4338-b923-0bbcf60f3840"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 5' : FunctionInputPort  { 
+                            @CapellaID { eid = "a44619bd-a0d3-463a-8001-674f409e6561"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 7' : FunctionInputPort  { 
+                            @CapellaID { eid = "7f26d9a5-df99-4505-a9a9-e45c7691cb5f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 8' : FunctionInputPort  { 
+                            @CapellaID { eid = "1b3be5c3-fc7b-41b6-87aa-3e573e7f6c9e"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 9' : FunctionInputPort  { 
+                            @CapellaID { eid = "2bf490f8-9f90-43e1-90fe-688cbaa4e644"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 10' : FunctionInputPort  { 
+                            @CapellaID { eid = "0255f3c3-20ea-4854-87d3-1f6d58bcbe45"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 11' : FunctionInputPort  { 
+                            @CapellaID { eid = "074a767a-fb22-4d38-9247-8c70b849707d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 12' : FunctionInputPort  { 
+                            @CapellaID { eid = "72c19ff8-0a90-4746-8322-adc2ad8ee094"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 13' : FunctionInputPort  { 
+                            @CapellaID { eid = "7aacf774-907d-49ec-b7f3-4c84c8fc9264"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 14' : FunctionInputPort  { 
+                            @CapellaID { eid = "1579e74c-c4cc-417a-96f8-54b71ef5d19a"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 15' : FunctionInputPort  { 
+                            @CapellaID { eid = "0e88eaa3-6ed2-4e90-8167-a2842b6fdfb8"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 16' : FunctionInputPort  { 
+                            @CapellaID { eid = "bb7e15d4-776a-4263-ad9e-3db8205140da"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "0380c35c-fc37-4c28-9800-ab152885833a"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "35394e70-9701-4f7d-a884-85e3b5235319"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 3' : FunctionOutputPort  { 
+                            @CapellaID { eid = "9b2d8648-ceea-4769-b2ad-5d7e1e9f9503"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 4' : FunctionOutputPort  { 
+                            @CapellaID { eid = "49fa5328-b0cc-4cb9-9f01-a7e9898af6b5"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2',
+                        'FIP 4',
+                        'FIP 5',
+                        'FIP 7',
+                        'FIP 8',
+                        'FIP 9',
+                        'FIP 10',
+                        'FIP 11',
+                        'FIP 12',
+                        'FIP 13',
+                        'FIP 14',
+                        'FIP 15',
+                        'FIP 16'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2',
+                        'FOP 3',
+                        'FOP 4'); 
+                    }  
+                    action 'Measure Inlet Air Temperatur' : LogicalFunction  { 
+                        @CapellaID { eid = "5c3fc6ba-797f-418c-ab67-e1bc9ae4be1e"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "38811b27-f651-4197-ace8-ef187f028c39"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "91540c5a-0c5e-4b34-8e16-5231e9f6d0a8"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Channel Fan Air to Turbine' : LogicalFunction  { 
+                        doc /*
+                        <p>A&nbsp; Input Fan&nbsp;Air is channeled to LP Inlet with a typically small portion being extracted into Bleed Air System.</p>
+
+                        */ 
+                        @CapellaID { eid = "591cc2eb-d18e-4fba-a949-1489cfad791d"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "a3cbe087-36dd-413d-aad1-c1d9664b1ef8"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "ee83a3b1-1d47-4760-ac4d-14ac33d8227c"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "a4504dc8-e74d-4341-a608-b7f49f45eccf"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 4' : FunctionOutputPort  { 
+                            @CapellaID { eid = "842006af-2bc7-4feb-951e-4e9cc6377f10"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 6' : FunctionOutputPort  { 
+                            @CapellaID { eid = "6f8fc6ee-ee0d-4726-b245-0192a621949d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2',
+                        'FOP 4',
+                        'FOP 6'); 
+                    }  
+                    action 'Channel Air to HPC' : LogicalFunction  { 
+                        @CapellaID { eid = "ee94b8d9-ca74-49b4-a805-59f75298c93a"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "7fc3ead5-b7d1-4112-9a90-a5d4d82e34ec"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "6563a7d9-da64-4690-a255-444430948c26"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "8201e039-b9e2-4d0f-bba8-c7c409b072e2"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 3' : FunctionOutputPort  { 
+                            @CapellaID { eid = "136dd619-58ff-4a1e-a8a8-679a3defc0dc"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2',
+                        'FOP 3'); 
+                    }  
+                    action 'Meassure LP DIscharge Pressure' : LogicalFunction  { 
+                        @CapellaID { eid = "43a6baf5-f30f-472c-9607-ba003d6e1acd"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "bb3d89f0-c87c-43b6-ae2b-60ffdb4e56d8"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "7212d06c-b1f3-4310-b2ec-0d2de0a1f952"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Channel HP Outlet Air' : LogicalFunction  { 
+                        @CapellaID { eid = "9d594040-bb36-498e-a8f1-ce9c14723e89"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "ec7de6ee-b79f-4783-8ed3-6e85b99d4b9d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "c3b527e1-0bd7-4216-94ad-deee2c152efb"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "85bea33e-7b79-40e3-91c5-a803416cff93"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Measure HP Outlet Pressure' : LogicalFunction  { 
+                        @CapellaID { eid = "3259b1b1-9c56-4899-b5ab-2434274e99dc"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "67270e00-fad1-43ed-9e40-75d066c94414"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "65c3d2c2-43d1-4406-a590-dcbb72f23c5c"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Contribut to Compession' : LogicalFunction  { 
+                        @CapellaID { eid = "830b1ae3-0907-4425-8b8b-980b4cdc4750"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "1b3a589e-3173-4c00-865a-b4224db17335"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "2c66e37a-a853-4eb0-b1b6-e0b5c2857a35"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "d1eaf0aa-3b5b-4d3a-8c3d-0186c1b5e849"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "c65cef4a-5add-4c95-80ae-6c0b37aed32e"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Adjust Vanes' : LogicalFunction  { 
+                        @CapellaID { eid = "2ced1194-c9fe-44f8-bc47-5fafb13adba2"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "9f064bc2-2562-47e8-898a-e2f0300a914c"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "033a9cec-9235-41e2-a7ba-6a11d2726a3f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Contribut to LP Compression' : LogicalFunction  { 
+                        @CapellaID { eid = "f821514c-740b-4d63-9d35-1e2285e218cf"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "74835f27-26f5-4bc9-b7ad-60f00cf86ccf"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "69bbe885-1ead-4b55-918d-5917cb76d62d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "fef39770-edc2-4308-8448-3a64cc25aa14"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "30612171-d48f-483a-b206-1dde5de8162e"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Move LP Stator Vanes' : LogicalFunction  { 
+                        @CapellaID { eid = "9e5431d6-82c8-4c7f-83bd-e95b5d9d6056"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "7cfdc000-d707-46a2-8381-ddde1940a755"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "263a29c8-df01-414a-84d6-468644fb10d2"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Direct Hot Gas to Turbine' : LogicalFunction  { 
+                        @CapellaID { eid = "e208b463-6d8d-4821-b83d-2653dc5231d0"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "ac41e469-e436-4be0-8b90-942e037540f2"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "f9d17312-a033-438c-9235-b373650a2510"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 2'); 
+                    }  
+                    action 'Measure Exhaust Gas Temperature' : LogicalFunction  { 
+                        @CapellaID { eid = "ee4265f5-3a89-441b-b354-744cf4a71da2"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                         
+                    }  
+                    action 'Suppy Fuel' : LogicalFunction  { 
+                        @CapellaID { eid = "b2c1d43d-b5cc-4a5d-89a8-f101e0c3c1b5"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "efb0167b-4c63-4fc7-84cf-373de509babe"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Control Fuel Flow' : LogicalFunction  { 
+                        @CapellaID { eid = "a3ad3615-407f-4dcd-bacd-96879e86c9c5"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "5411e520-f478-42dd-82be-bbc28e641791"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "0ef726b2-862f-4ce1-81c4-1809301a941b"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "d773b24b-660e-4082-b341-80675fbf0c43"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "799d4304-6966-441c-badc-2d4b4a4d8519"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Measure Turbine Outlet Pressure' : LogicalFunction  { 
+                        @CapellaID { eid = "f693e052-048e-43da-ba2c-42749f1d46c7"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "8be15b8c-4e9f-4009-9a4b-47fc43bd5d3b"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "7d7bc882-815b-4be4-9cbf-b456a83273ed"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Channel to LP Turbine' : LogicalFunction  { 
+                        @CapellaID { eid = "16ef4c5a-42e0-474a-bb65-edaad66e0e69"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "160c6a4f-1f78-4058-98af-c01d7e8975ea"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "23a7f290-dd92-40c3-a5a4-adad97e7c0f6"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "f20ecb63-75fe-4dc4-b642-fa6ec3841980"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2'); 
+                    }  
+                    action 'Rotate Fan and LP Compressor' : LogicalFunction  { 
+                        @CapellaID { eid = "3611cdf7-42de-4454-88b6-c9084b70c132"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "6ceda69d-9497-4d43-a968-c32fc2699330"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "3a0478c1-4b3d-4ff1-9e99-04d99e0893cf"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 3' : FunctionOutputPort  { 
+                            @CapellaID { eid = "462a58f1-6de2-4c0b-b9e6-f3c3d18772ce"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 4' : FunctionOutputPort  { 
+                            @CapellaID { eid = "ebcdd9e8-f7f8-4af9-a844-fbd901beea78"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 5' : FunctionOutputPort  { 
+                            @CapellaID { eid = "e6c0046d-c210-4c66-8512-2d1e118ac39a"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 3',
+                        'FOP 4',
+                        'FOP 5'); 
+                    }  
+                    action 'Tranfer Torque' : LogicalFunction  { 
+                        @CapellaID { eid = "5e5e5bae-6f5e-47c0-9ed4-5f28dec9a17c"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "7fa29312-a299-41fe-a314-501175eec3e5"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "874fef5a-2354-480f-a252-e2a918012d21"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 2' : FunctionOutputPort  { 
+                            @CapellaID { eid = "c3749828-9f14-4b33-be3d-5b005148c5e3"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 3' : FunctionOutputPort  { 
+                            @CapellaID { eid = "0922ff7c-8209-4124-ace4-a9bef117d780"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 2'); 
+                        ref :>> outputs =  ('FOP 1',
+                        'FOP 2',
+                        'FOP 3'); 
+                    }  
+                    action 'Measure Pressure' : LogicalFunction  { 
+                        @CapellaID { eid = "d789335f-0887-4b9d-87b6-867f1eef1f5f"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "9ee4edf8-8419-4751-9807-d3c54172d371"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "30ec39e4-01ad-4cd0-b041-81cad296104b"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Direct Turbine Exhaust' : LogicalFunction  { 
+                        @CapellaID { eid = "db777fd2-909c-47c5-805e-29c77ad8bea9"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "e2a7af00-f6a9-4ae4-a18b-46b7c64b5888"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "a70dbc88-f5d4-45d9-8f92-463c86f0b20d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Measure  Exhaust Gas Temp' : LogicalFunction  { 
+                        @CapellaID { eid = "b9b64fc6-1b49-4cb4-93ee-32d63a6fa14f"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "240e137f-828e-46a6-82da-02c05557571f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "55106197-3f37-4170-8656-3dee93ffe69e"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Measure N2' : LogicalFunction  { 
+                        @CapellaID { eid = "1ea1ce3c-f608-4ca4-9342-a3d57a8756f0"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "4082a73f-5087-4ff5-800f-ad98b57fca25"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "f7aa854f-4a03-4b98-a217-f3d705c52d1f"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Measure N1 Speed' : LogicalFunction  { 
+                        @CapellaID { eid = "5828d3c4-5f42-4177-befb-2b03bfb9d318"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "20f927df-e894-4b5e-b8b0-51bd5bd6d76c"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "d12a2fa6-d3d3-4239-a816-7e4059966a78"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Sense Position' : LogicalFunction  { 
+                        @CapellaID { eid = "a33e586a-0393-4a07-8c2b-170d085c2d61"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "f7431fcf-94ce-4ccc-8ba9-1c3dbd0baf18"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "917018b1-ba2e-4730-9ce3-60883a48d815"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Accept TLA' : LogicalFunction  { 
+                        @CapellaID { eid = "15d8942e-73d2-488a-afd2-f1a5d76bceb6"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "f864a2e8-a175-4ec2-8e8c-2dec74acec05"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "9ea8b58f-9df9-4b45-9fdb-5acb2108e99e"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Provide Throttle Input' : LogicalFunction  { 
+                        @CapellaID { eid = "5d9f1e9e-c24f-4995-9fb9-f3dc257bffdf"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "24a59810-b5a4-4f93-b239-f0311e38d335"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Consume Air' : LogicalFunction  { 
+                        @CapellaID { eid = "7ae85fd6-6f63-4010-9959-7d7c15a94344"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'Air' : FunctionInputPort  { 
+                            @CapellaID { eid = "d159593f-c952-4b41-ba6b-b8b8ed7abec1"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('Air'); 
+                    }  
+                    action 'Set Bleed Air Postion' : LogicalFunction  { 
+                        @CapellaID { eid = "d1dbfcf0-0ddb-4b71-9d8b-875678ed24b0"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "23fc1dd5-92a3-4326-9bdb-aefeb60a2ae8"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "eb5e8bf6-0698-4da3-8ab8-60779f32a2fe"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Measure Position' : LogicalFunction  { 
+                        @CapellaID { eid = "4fb0d36e-5c1e-4edc-8491-9332621242d8"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "d583a291-1068-43b8-b8bd-e1c2a6818dfb"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "7fb1a18e-e1b7-42ce-8c65-767d300523e3"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Measure Bleed Air Valve Poistion' : LogicalFunction  { 
+                        @CapellaID { eid = "8a748608-02ef-444e-bc38-ee6a4056e797"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "b3e33f36-abfd-4d26-ace3-649e0adc4f42"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "0ca80901-10e8-4033-acf1-73ede43e158d"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Channel Bleed Air' : LogicalFunction  { 
+                        @CapellaID { eid = "96cc7d88-987b-4f53-9e97-c9198ab952f4"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "eb5e1e70-f1a2-4e25-98a8-267a0c5f8314"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 3' : FunctionInputPort  { 
+                            @CapellaID { eid = "5d8d6b05-bc72-44a2-9411-bc1a4ec1f6db"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 6' : FunctionOutputPort  { 
+                            @CapellaID { eid = "c88f6331-7b55-44e2-a4a8-3c75762354f9"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 5' : FunctionOutputPort  { 
+                            @CapellaID { eid = "bd8e0ea1-a730-48aa-aba0-019008c09f9c"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 2',
+                        'FIP 3'); 
+                        ref :>> outputs =  ('FOP 6',
+                        'FOP 5'); 
+                    }  
+                    action 'Sense HP Stator Vane Position' : LogicalFunction  { 
+                        @CapellaID { eid = "671e4a6b-63ba-4168-8b35-686305e54055"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "3b80de52-9b4f-4e3e-922f-2ca307a08883"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "13095b04-57f8-4f86-be8d-88a7a58010fa"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Receive Engine Cowling Thrust' : LogicalFunction  { 
+                        @CapellaID { eid = "51c3c952-ccbb-4e20-95a1-5084368c3d3d"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "2609d779-a830-4bb1-84ba-528da2a064de"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "7be3dc73-f56c-4558-8fff-cb641b8e25df"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Provide Support Transfer Thrust' : LogicalFunction  { 
+                        @CapellaID { eid = "24d894f7-fd32-4be6-a3a4-3c8e448f32d4"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "c127358c-c7cb-47a8-9392-4832e004e1dc"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        in port 'FIP 2' : FunctionInputPort  { 
+                            @CapellaID { eid = "1170a574-02f7-46cf-a894-38a2f225b062"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "9d87ef69-a166-4b2f-8141-ba986315d079"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1',
+                        'FIP 2'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Deliver HP Shaft Thrust' : LogicalFunction  { 
+                        @CapellaID { eid = "f6892691-c0dc-4ebc-8ddb-ef77e43d1dd3"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "8a4e9276-cf71-4fd5-afd7-3d0babff9985"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "3701e656-cb47-4cc9-a645-1f54472dd99a"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    action 'Deliver LP Fan Shaft Thrust ' : LogicalFunction  { 
+                        @CapellaID { eid = "05a6b951-a1db-4708-95b0-dd0af4dee556"; } 
+                        attribute :>> aggregationKind = AggregationKind::UNSET; 
+                        attribute :>> isFinal = false; 
+                        attribute :>> isAbstract = false; 
+                        attribute :>> isDerived = false; 
+                        attribute :>> isPartOfKey = false; 
+                        attribute :>> isReadOnly = false; 
+                        attribute :>> isStatic = false; 
+                        attribute :>> kind = FunctionKind::FUNCTION; 
+                        attribute :>> isMaxInclusive = false; 
+                        attribute :>> isMinInclusive = false; 
+                        attribute :>> isOrdered = false; 
+                        attribute :>> isUnique = false; 
+                        in port 'FIP 1' : FunctionInputPort  { 
+                            @CapellaID { eid = "c6ea28ac-6e3a-421b-bd58-88be3aed9da9"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                        out port 'FOP 1' : FunctionOutputPort  { 
+                            @CapellaID { eid = "81bf7b68-ea9d-4a92-a0da-b4f242826a1b"; } 
+                            attribute :>> isControl = false; 
+                            attribute :>> isControlType = false; 
+                            attribute :>> kindOfNode = ObjectNodeKind::Unspecified; 
+                            attribute :>> ordering = ObjectNodeOrderingKind::FIFO; 
+                             
+                        }  
+                         
+                        ref :>> inputs =  ('FIP 1'); 
+                        ref :>> outputs =  ('FOP 1'); 
+                    }  
+                    interface '0257347a-2a89-4fe4-a302-10cae2f02bb3' : FunctionalExchange 
+                        connect source ::> 'Provide Air'.'FOP 1'
+                        to target ::> 'Receive Air'.'FIP 1' { 
+                        @CapellaID { eid = "0257347a-2a89-4fe4-a302-10cae2f02bb3"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Air from Environment"; 
+                         
+                    }  
+                    interface 'b3b42c74-f43e-478c-bed4-03ae1cfb8c83' : FunctionalExchange 
+                        connect source ::> 'Receive Air'.'FOP 1'
+                        to target ::> 'Increase Air Mass Flow'.'FIP 1' { 
+                        @CapellaID { eid = "b3b42c74-f43e-478c-bed4-03ae1cfb8c83"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Air"; 
+                         
+                    }  
+                    interface 'ac24a803-17bc-4a51-9c74-d28fb15ead21' : FunctionalExchange 
+                        connect source ::> 'Expel Bypass AIr'.'FOP 1'
+                        to target ::> 'Receive Nozzle Thrust'.'FIP 1' { 
+                        @CapellaID { eid = "ac24a803-17bc-4a51-9c74-d28fb15ead21"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bypass Thrust"; 
+                         
+                    }  
+                    interface '3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49' : FunctionalExchange 
+                        connect source ::> 'Expel Bypass AIr'.'FOP 2'
+                        to target ::> 'Receive Bypass Air'.'FIP 1' { 
+                        @CapellaID { eid = "3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bypass Air"; 
+                         
+                    }  
+                    interface '39e80b06-d704-4398-ae5b-fa73cd902189' : FunctionalExchange 
+                        connect source ::> 'Increase Air Mass Flow'.'FOP 1'
+                        to target ::> 'Expel Bypass AIr'.'FIP 1' { 
+                        @CapellaID { eid = "39e80b06-d704-4398-ae5b-fa73cd902189"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Fan Air"; 
+                         
+                    }  
+                    interface 'b2c0a7ca-077d-40b0-8327-082c60c037e2' : FunctionalExchange 
+                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 1'
+                        to target ::> 'Increase Air Mass Flow'.'FIP 2' { 
+                        @CapellaID { eid = "b2c0a7ca-077d-40b0-8327-082c60c037e2"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Torque to Fan"; 
+                         
+                    }  
+                    interface 'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a' : FunctionalExchange 
+                        connect source ::> 'Receive Nozzle Thrust'.'FOP 1'
+                        to target ::> 'Receive Thrust'.'FIP 1' { 
+                        @CapellaID { eid = "e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    interface '41f1bde3-03c4-4332-870f-19f32b9009e5' : FunctionalExchange 
+                        connect source ::> 'Increase Air Mass Flow'.'FOP 2'
+                        to target ::> 'Channel Fan Air to Turbine'.'FIP 1' { 
+                        @CapellaID { eid = "41f1bde3-03c4-4332-870f-19f32b9009e5"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Fan Air"; 
+                         
+                    }  
+                    interface '152a6432-3c81-426b-948e-89e8ccd8ee15' : FunctionalExchange 
+                        connect source ::> 'Compress Air'.'FOP 1'
+                        to target ::> 'Channel Air to HPC'.'FIP 1' { 
+                        @CapellaID { eid = "152a6432-3c81-426b-948e-89e8ccd8ee15"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "LP Air"; 
+                         
+                    }  
+                    interface '90ecbd9b-1814-4a3e-a99c-6589ade50a87' : FunctionalExchange 
+                        connect source ::> 'Compress LP Air'.'FOP 1'
+                        to target ::> 'Channel HP Outlet Air'.'FIP 1' { 
+                        @CapellaID { eid = "90ecbd9b-1814-4a3e-a99c-6589ade50a87"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "HP Air"; 
+                         
+                    }  
+                    interface 'af04101a-93b0-4ad3-a428-f70688268dd9' : FunctionalExchange 
+                        connect source ::> 'Extract Energy'.'FOP 1'
+                        to target ::> 'Tranfer Torque'.'FIP 2' { 
+                        @CapellaID { eid = "af04101a-93b0-4ad3-a428-f70688268dd9"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "HP Compressor Torque"; 
+                         
+                    }  
+                    interface 'de38cdd4-0239-4048-a299-4e04d836de71' : FunctionalExchange 
+                        connect source ::> 'Measure inlet Temperature (T2)'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 1' { 
+                        @CapellaID { eid = "de38cdd4-0239-4048-a299-4e04d836de71"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "TIT"; 
+                         
+                    }  
+                    interface '8f5f029f-85d0-4510-bc67-9743b358b61b' : FunctionalExchange 
+                        connect source ::> 'Receive Air'.'FOP 2'
+                        to target ::> 'Measure Inlet Air Temperatur'.'FIP 1' { 
+                        @CapellaID { eid = "8f5f029f-85d0-4510-bc67-9743b358b61b"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Air"; 
+                         
+                    }  
+                    interface 'fb11d111-28b9-4d9c-af3f-49b71330c27c' : FunctionalExchange 
+                        connect source ::> 'Measure Inlet Air Temperatur'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 2' { 
+                        @CapellaID { eid = "fb11d111-28b9-4d9c-af3f-49b71330c27c"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Inlet Air Temp"; 
+                         
+                    }  
+                    interface '046a8771-7d28-4d6b-93c2-1b0b53cddbe3' : FunctionalExchange 
+                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 1'
+                        to target ::> 'Compress Air'.'FIP 1' { 
+                        @CapellaID { eid = "046a8771-7d28-4d6b-93c2-1b0b53cddbe3"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Turbine Inlet Air"; 
+                         
+                    }  
+                    interface '889c3cce-7981-46d7-b082-24ab331e258b' : FunctionalExchange 
+                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 2'
+                        to target ::> 'Measure inlet Temperature (T2)'.'FIP 1' { 
+                        @CapellaID { eid = "889c3cce-7981-46d7-b082-24ab331e258b"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Turbin Inlet Temp"; 
+                         
+                    }  
+                    interface '58f3ee77-c282-4022-b314-625d96c1de1e' : FunctionalExchange 
+                        connect source ::> 'Channel Air to HPC'.'FOP 1'
+                        to target ::> 'Meassure LP DIscharge Pressure'.'FIP 1' { 
+                        @CapellaID { eid = "58f3ee77-c282-4022-b314-625d96c1de1e"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "LPT Discharge Air Pressure"; 
+                         
+                    }  
+                    interface '5e745df4-0070-44fc-85ab-67d1a9189d7b' : FunctionalExchange 
+                        connect source ::> 'Meassure LP DIscharge Pressure'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 4' { 
+                        @CapellaID { eid = "5e745df4-0070-44fc-85ab-67d1a9189d7b"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "LPT Discharge Temp"; 
+                         
+                    }  
+                    interface 'dd59f184-65e3-42c3-b022-1e9429e7b06e' : FunctionalExchange 
+                        connect source ::> 'Channel HP Outlet Air'.'FOP 1'
+                        to target ::> 'Burn Fuel'.'FIP 1' { 
+                        @CapellaID { eid = "dd59f184-65e3-42c3-b022-1e9429e7b06e"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Outlet Air"; 
+                         
+                    }  
+                    interface '7e2199b0-d113-4057-9de3-d8e5a5394846' : FunctionalExchange 
+                        connect source ::> 'Channel HP Outlet Air'.'FOP 2'
+                        to target ::> 'Measure HP Outlet Pressure'.'FIP 1' { 
+                        @CapellaID { eid = "7e2199b0-d113-4057-9de3-d8e5a5394846"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "HP Outlet Pressure"; 
+                         
+                    }  
+                    interface 'afcd9a36-9fab-4606-82b4-17c26ab5ac58' : FunctionalExchange 
+                        connect source ::> 'Measure HP Outlet Pressure'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 5' { 
+                        @CapellaID { eid = "afcd9a36-9fab-4606-82b4-17c26ab5ac58"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "HP Outlet Pressure"; 
+                         
+                    }  
+                    interface '1a6b2da4-d217-40da-88f4-109ab788c26b' : FunctionalExchange 
+                        connect source ::> 'Channel Air to HPC'.'FOP 2'
+                        to target ::> 'Contribut to Compession'.'FIP 1' { 
+                        @CapellaID { eid = "1a6b2da4-d217-40da-88f4-109ab788c26b"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Compressed Air"; 
+                         
+                    }  
+                    interface '47892821-ae1a-40f8-bf93-bca460a27e2e' : FunctionalExchange 
+                        connect source ::> 'Contribut to Compession'.'FOP 1'
+                        to target ::> 'Compress LP Air'.'FIP 4' { 
+                        @CapellaID { eid = "47892821-ae1a-40f8-bf93-bca460a27e2e"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Vane Pressure"; 
+                         
+                    }  
+                    interface '4a7ad229-da53-499f-be20-f1c323e7e6a2' : FunctionalExchange 
+                        connect source ::> 'Control Engine'.'FOP 1'
+                        to target ::> 'Adjust Vanes'.'FIP 1' { 
+                        @CapellaID { eid = "4a7ad229-da53-499f-be20-f1c323e7e6a2"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Hp Stator Vane"; 
+                         
+                    }  
+                    interface '8ee986d5-18b6-46ad-82f3-d02fb3c78258' : FunctionalExchange 
+                        connect source ::> 'Adjust Vanes'.'FOP 1'
+                        to target ::> 'Contribut to Compession'.'FIP 2' { 
+                        @CapellaID { eid = "8ee986d5-18b6-46ad-82f3-d02fb3c78258"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Vane position"; 
+                         
+                    }  
+                    interface '99bf85cd-8d72-4c44-acb8-0c06db11ddeb' : FunctionalExchange 
+                        connect source ::> 'Contribut to LP Compression'.'FOP 1'
+                        to target ::> 'Compress Air'.'FIP 2' { 
+                        @CapellaID { eid = "99bf85cd-8d72-4c44-acb8-0c06db11ddeb"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Compressed Air"; 
+                         
+                    }  
+                    interface '15f03c3f-00f1-4fb8-9834-2965148500c9' : FunctionalExchange 
+                        connect source ::> 'Control Engine'.'FOP 2'
+                        to target ::> 'Move LP Stator Vanes'.'FIP 1' { 
+                        @CapellaID { eid = "15f03c3f-00f1-4fb8-9834-2965148500c9"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "LP Stator Vanes"; 
+                         
+                    }  
+                    interface '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85' : FunctionalExchange 
+                        connect source ::> 'Move LP Stator Vanes'.'FOP 1'
+                        to target ::> 'Contribut to LP Compression'.'FIP 1' { 
+                        @CapellaID { eid = "46a8f61a-3a35-4b8b-8dcc-bafcab55fa85"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "FunctionalExchange 30"; 
+                         
+                    }  
+                    interface 'eaa4c472-d34a-46ae-a8bc-f1a33de39bda' : FunctionalExchange 
+                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 4'
+                        to target ::> 'Contribut to LP Compression'.'FIP 2' { 
+                        @CapellaID { eid = "eaa4c472-d34a-46ae-a8bc-f1a33de39bda"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "LP inlet Air"; 
+                         
+                    }  
+                    interface '95d003e7-80b2-4bd4-be5c-c4197934f717' : FunctionalExchange 
+                        connect source ::> 'Control Engine'.'FOP 3'
+                        to target ::> 'Control Fuel Flow'.'FIP 1' { 
+                        @CapellaID { eid = "95d003e7-80b2-4bd4-be5c-c4197934f717"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Fuel Request"; 
+                         
+                    }  
+                    interface '8e028087-9961-44d5-8c33-02ef922a7ff6' : FunctionalExchange 
+                        connect source ::> 'Suppy Fuel'.'FOP 1'
+                        to target ::> 'Control Fuel Flow'.'FIP 2' { 
+                        @CapellaID { eid = "8e028087-9961-44d5-8c33-02ef922a7ff6"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Fuel"; 
+                         
+                    }  
+                    interface '66c98476-f91d-4d49-8070-75f81cfed404' : FunctionalExchange 
+                        connect source ::> 'Control Fuel Flow'.'FOP 1'
+                        to target ::> 'Burn Fuel'.'FIP 2' { 
+                        @CapellaID { eid = "66c98476-f91d-4d49-8070-75f81cfed404"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Fuel"; 
+                         
+                    }  
+                    interface '02c9527d-8024-43d3-b24c-2fa00aa04cc0' : FunctionalExchange 
+                        connect source ::> 'Burn Fuel'.'FOP 1'
+                        to target ::> 'Direct Hot Gas to Turbine'.'FIP 1' { 
+                        @CapellaID { eid = "02c9527d-8024-43d3-b24c-2fa00aa04cc0"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "EG"; 
+                         
+                    }  
+                    interface '5f417526-62bc-4e73-9783-ff32914c3b88' : FunctionalExchange 
+                        connect source ::> 'Direct Hot Gas to Turbine'.'FOP 2'
+                        to target ::> 'Extract Energy'.'FIP 1' { 
+                        @CapellaID { eid = "5f417526-62bc-4e73-9783-ff32914c3b88"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Hot Exhaust Gas"; 
+                         
+                    }  
+                    interface 'f36e68fd-3dba-451f-acb8-af210ae6d0c7' : FunctionalExchange 
+                        connect source ::> 'Extract Energy'.'FOP 2'
+                        to target ::> 'Channel to LP Turbine'.'FIP 1' { 
+                        @CapellaID { eid = "f36e68fd-3dba-451f-acb8-af210ae6d0c7"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Combusted Air"; 
+                         
+                    }  
+                    interface 'd32877de-8f90-4c97-8528-1358ce28b3d9' : FunctionalExchange 
+                        connect source ::> 'Channel to LP Turbine'.'FOP 1'
+                        to target ::> 'Measure Turbine Outlet Pressure'.'FIP 1' { 
+                        @CapellaID { eid = "d32877de-8f90-4c97-8528-1358ce28b3d9"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "P- HP Turbine Outlet Pressure"; 
+                         
+                    }  
+                    interface 'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0' : FunctionalExchange 
+                        connect source ::> 'Measure Turbine Outlet Pressure'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 7' { 
+                        @CapellaID { eid = "d2bb457c-8b54-42c3-bf56-1cd0a8f700b0"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "E- HP Turbine Outlet Pressue"; 
+                         
+                    }  
+                    interface '7a0ed679-84af-4fa0-b50e-40966b05814a' : FunctionalExchange 
+                        connect source ::> 'Channel to LP Turbine'.'FOP 2'
+                        to target ::> 'Drive Fan and LP Compressor'.'FIP 1' { 
+                        @CapellaID { eid = "7a0ed679-84af-4fa0-b50e-40966b05814a"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Torque"; 
+                         
+                    }  
+                    interface 'bbb5bc36-287f-4037-89dd-577c222bec86' : FunctionalExchange 
+                        connect source ::> 'Drive Fan and LP Compressor'.'FOP 1'
+                        to target ::> 'Rotate Fan and LP Compressor'.'FIP 1' { 
+                        @CapellaID { eid = "bbb5bc36-287f-4037-89dd-577c222bec86"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "LP Turbine Torque"; 
+                         
+                    }  
+                    interface 'd0181a94-0d0b-4f21-a111-a70a6915f5a0' : FunctionalExchange 
+                        connect source ::> 'Tranfer Torque'.'FOP 1'
+                        to target ::> 'Compress LP Air'.'FIP 2' { 
+                        @CapellaID { eid = "d0181a94-0d0b-4f21-a111-a70a6915f5a0"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "HP Shaft Torque"; 
+                         
+                    }  
+                    interface '98e62ed6-4223-4839-ad5a-3e5b725d65d7' : FunctionalExchange 
+                        connect source ::> 'Burn Fuel'.'FOP 2'
+                        to target ::> 'Measure Pressure'.'FIP 1' { 
+                        @CapellaID { eid = "98e62ed6-4223-4839-ad5a-3e5b725d65d7"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Combustion Pressure"; 
+                         
+                    }  
+                    interface 'ee95b174-e67a-446d-acab-7b7421029ab9' : FunctionalExchange 
+                        connect source ::> 'Measure Pressure'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 8' { 
+                        @CapellaID { eid = "ee95b174-e67a-446d-acab-7b7421029ab9"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Combustion Pressire"; 
+                         
+                    }  
+                    interface '672503df-1b75-4d68-96ec-673e24f7e635' : FunctionalExchange 
+                        connect source ::> 'Direct Turbine Exhaust'.'FOP 1'
+                        to target ::> 'Measure  Exhaust Gas Temp'.'FIP 1' { 
+                        @CapellaID { eid = "672503df-1b75-4d68-96ec-673e24f7e635"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "EGT"; 
+                         
+                    }  
+                    interface 'e4ef588d-9824-4310-a97d-da082f4902aa' : FunctionalExchange 
+                        connect source ::> 'Drive Fan and LP Compressor'.'FOP 2'
+                        to target ::> 'Direct Turbine Exhaust'.'FIP 1' { 
+                        @CapellaID { eid = "e4ef588d-9824-4310-a97d-da082f4902aa"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    interface '2e5af410-7699-45db-a3cd-d1c97fa52a38' : FunctionalExchange 
+                        connect source ::> 'Measure  Exhaust Gas Temp'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 9' { 
+                        @CapellaID { eid = "2e5af410-7699-45db-a3cd-d1c97fa52a38"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "EGT"; 
+                         
+                    }  
+                    interface '4c27511b-2046-4491-900f-442a530e9d34' : FunctionalExchange 
+                        connect source ::> 'Channel Air to HPC'.'FOP 3'
+                        to target ::> 'Compress LP Air'.'FIP 3' { 
+                        @CapellaID { eid = "4c27511b-2046-4491-900f-442a530e9d34"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Inlet HP Air"; 
+                         
+                    }  
+                    interface 'f356e536-ed67-40b1-aae6-c16e17a4dbfc' : FunctionalExchange 
+                        connect source ::> 'Measure N2'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 10' { 
+                        @CapellaID { eid = "f356e536-ed67-40b1-aae6-c16e17a4dbfc"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "N2 Speed"; 
+                         
+                    }  
+                    interface 'f5dd6000-d95d-4add-8222-c8094dcaf515' : FunctionalExchange 
+                        connect source ::> 'Tranfer Torque'.'FOP 2'
+                        to target ::> 'Measure N2'.'FIP 1' { 
+                        @CapellaID { eid = "f5dd6000-d95d-4add-8222-c8094dcaf515"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "N2 Speed"; 
+                         
+                    }  
+                    interface '07237295-f3a8-46de-b4eb-445004270f04' : FunctionalExchange 
+                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 3'
+                        to target ::> 'Measure N1 Speed'.'FIP 1' { 
+                        @CapellaID { eid = "07237295-f3a8-46de-b4eb-445004270f04"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "FunctionalExchange 53"; 
+                         
+                    }  
+                    interface '8ecfee11-7429-49c2-ba2b-0cc2814959db' : FunctionalExchange 
+                        connect source ::> 'Measure N1 Speed'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 11' { 
+                        @CapellaID { eid = "8ecfee11-7429-49c2-ba2b-0cc2814959db"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "N1 Speed"; 
+                         
+                    }  
+                    interface '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c' : FunctionalExchange 
+                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 4'
+                        to target ::> 'Compress Air'.'FIP 3' { 
+                        @CapellaID { eid = "8a8b37a6-1e68-4b99-91f7-c95bcd207a6c"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Shaft Torque"; 
+                         
+                    }  
+                    interface 'ec00c7e2-2bf0-4d75-8470-dd08fae8fb24' : FunctionalExchange 
+                        connect source ::> 'Control Fuel Flow'.'FOP 2'
+                        to target ::> 'Sense Position'.'FIP 1' { 
+                        @CapellaID { eid = "ec00c7e2-2bf0-4d75-8470-dd08fae8fb24"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Position"; 
+                         
+                    }  
+                    interface 'a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c' : FunctionalExchange 
+                        connect source ::> 'Sense Position'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 12' { 
+                        @CapellaID { eid = "a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "FMV Position"; 
+                         
+                    }  
+                    interface 'ac4e3bb3-dd39-40b0-a637-51cbf229520b' : FunctionalExchange 
+                        connect source ::> 'Provide Throttle Input'.'FOP 1'
+                        to target ::> 'Accept TLA'.'FIP 1' { 
+                        @CapellaID { eid = "ac4e3bb3-dd39-40b0-a637-51cbf229520b"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "TLA Angle"; 
+                         
+                    }  
+                    interface 'd761a29d-75a8-4067-a921-836986c40dd2' : FunctionalExchange 
+                        connect source ::> 'Accept TLA'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 13' { 
+                        @CapellaID { eid = "d761a29d-75a8-4067-a921-836986c40dd2"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "TLA Angle"; 
+                         
+                    }  
+                    interface '707d4125-6bc1-49cf-b9b0-e97cd34b798a' : FunctionalExchange 
+                        connect source ::> 'Channel Bleed Air'.'FOP 5'
+                        to target ::> 'Consume Air'.'Air' { 
+                        @CapellaID { eid = "707d4125-6bc1-49cf-b9b0-e97cd34b798a"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bleed Air"; 
+                         
+                    }  
+                    interface 'fddba676-404f-4ad5-b6c6-32a72a100584' : FunctionalExchange 
+                        connect source ::> 'Control Engine'.'FOP 4'
+                        to target ::> 'Set Bleed Air Postion'.'FIP 1' { 
+                        @CapellaID { eid = "fddba676-404f-4ad5-b6c6-32a72a100584"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bleed Air Position"; 
+                         
+                    }  
+                    interface '5f715b20-4600-4a0b-993f-ff7e07a56328' : FunctionalExchange 
+                        connect source ::> 'Set Bleed Air Postion'.'FOP 1'
+                        to target ::> 'Channel Bleed Air'.'FIP 2' { 
+                        @CapellaID { eid = "5f715b20-4600-4a0b-993f-ff7e07a56328"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bleed Air Valve Percentage"; 
+                         
+                    }  
+                    interface 'c9809ac2-550a-452c-969f-843ae5c659d2' : FunctionalExchange 
+                        connect source ::> 'Contribut to LP Compression'.'FOP 2'
+                        to target ::> 'Measure Position'.'FIP 1' { 
+                        @CapellaID { eid = "c9809ac2-550a-452c-969f-843ae5c659d2"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Position "; 
+                         
+                    }  
+                    interface 'fc852416-3199-4415-8c3f-1bbc2fb84deb' : FunctionalExchange 
+                        connect source ::> 'Measure Position'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 14' { 
+                        @CapellaID { eid = "fc852416-3199-4415-8c3f-1bbc2fb84deb"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Postion"; 
+                         
+                    }  
+                    interface '486601ad-a608-4815-b409-38481daf99e6' : FunctionalExchange 
+                        connect source ::> 'Channel Bleed Air'.'FOP 6'
+                        to target ::> 'Measure Bleed Air Valve Poistion'.'FIP 1' { 
+                        @CapellaID { eid = "486601ad-a608-4815-b409-38481daf99e6"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bleed Air Valve Position"; 
+                         
+                    }  
+                    interface '36d037d1-f577-4c8b-8b31-0ab2358f1df4' : FunctionalExchange 
+                        connect source ::> 'Measure Bleed Air Valve Poistion'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 15' { 
+                        @CapellaID { eid = "36d037d1-f577-4c8b-8b31-0ab2358f1df4"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bleed Air Position"; 
+                         
+                    }  
+                    interface '6857e0e2-511b-4c96-9042-358138b39e2e' : FunctionalExchange 
+                        connect source ::> 'Channel Fan Air to Turbine'.'FOP 6'
+                        to target ::> 'Channel Bleed Air'.'FIP 3' { 
+                        @CapellaID { eid = "6857e0e2-511b-4c96-9042-358138b39e2e"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Bleed Air"; 
+                         
+                    }  
+                    interface '49b68c29-d119-472e-aa4a-d64a0cae24bc' : FunctionalExchange 
+                        connect source ::> 'Contribut to Compession'.'FOP 2'
+                        to target ::> 'Sense HP Stator Vane Position'.'FIP 1' { 
+                        @CapellaID { eid = "49b68c29-d119-472e-aa4a-d64a0cae24bc"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Vane Position"; 
+                         
+                    }  
+                    interface '4668a416-3451-46ce-9b7f-89f129783786' : FunctionalExchange 
+                        connect source ::> 'Sense HP Stator Vane Position'.'FOP 1'
+                        to target ::> 'Control Engine'.'FIP 16' { 
+                        @CapellaID { eid = "4668a416-3451-46ce-9b7f-89f129783786"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "HP Vane Position"; 
+                         
+                    }  
+                    interface '22ebf707-0b92-4a61-8955-9957c90751d6' : FunctionalExchange 
+                        connect source ::> 'Tranfer Torque'.'FOP 3'
+                        to target ::> 'Deliver HP Shaft Thrust'.'FIP 1' { 
+                        @CapellaID { eid = "22ebf707-0b92-4a61-8955-9957c90751d6"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    interface '6558b95b-b05b-4544-960d-ee21871e89ff' : FunctionalExchange 
+                        connect source ::> 'Deliver HP Shaft Thrust'.'FOP 1'
+                        to target ::> 'Provide Support Transfer Thrust'.'FIP 1' { 
+                        @CapellaID { eid = "6558b95b-b05b-4544-960d-ee21871e89ff"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    interface '901a4898-9193-4dab-a301-b81033da56c0' : FunctionalExchange 
+                        connect source ::> 'Provide Support Transfer Thrust'.'FOP 1'
+                        to target ::> 'Receive Engine Cowling Thrust'.'FIP 1' { 
+                        @CapellaID { eid = "901a4898-9193-4dab-a301-b81033da56c0"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    interface 'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0' : FunctionalExchange 
+                        connect source ::> 'Receive Engine Cowling Thrust'.'FOP 1'
+                        to target ::> 'Receive Thrust'.'FIP 2' { 
+                        @CapellaID { eid = "a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    interface '0ceb62c4-2a70-4da9-8dd1-b7b50bb85a94' : FunctionalExchange 
+                        connect source ::> 'Rotate Fan and LP Compressor'.'FOP 5'
+                        to target ::> 'Deliver LP Fan Shaft Thrust '.'FIP 1' { 
+                        @CapellaID { eid = "0ceb62c4-2a70-4da9-8dd1-b7b50bb85a94"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    interface '3b3090ba-d017-4073-b7f5-95f953d89083' : FunctionalExchange 
+                        connect source ::> 'Deliver LP Fan Shaft Thrust '.'FOP 1'
+                        to target ::> 'Provide Support Transfer Thrust'.'FIP 2' { 
+                        @CapellaID { eid = "3b3090ba-d017-4073-b7f5-95f953d89083"; } 
+                        attribute :>> isMulticast = false; 
+                        attribute :>> isMultireceive = false; 
+                        attribute :>> kindOfRate = RateKind::Unspecified; 
+                        attribute :>> interfaceName = "Thrust"; 
+                         
+                    }  
+                    action 'Receive Air Chain' : FunctionalChain  { 
+                        @CapellaID { eid = "81c7f931-541b-4651-b409-6d6cbf352092"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '99d1f64c-832a-4c21-8674-a798e165c2cb' : FunctionalChainInvolvementLink 
+                            connect source ::> 'e95b26db-bdda-4071-bde3-62312f3213fa'
+                            to  target ::> '107b1113-0e86-45dc-904f-3ecd8bbb6303' {
+
+                                ref :>> involved = '0257347a-2a89-4fe4-a302-10cae2f02bb3';
+
+                            } 
+                        ref action '107b1113-0e86-45dc-904f-3ecd8bbb6303' = 'Receive Air'; 
+                        ref action 'e95b26db-bdda-4071-bde3-62312f3213fa' = 'Provide Air'; 
+                         
+                    }  
+                    action 'Monitor Tubine Air' : FunctionalChain  { 
+                        @CapellaID { eid = "7c01a44e-8ecd-4fac-9cd1-c5ed0e811fab"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '5a31a7dd-c946-4b61-ac17-1957da549e67' : FunctionalChainInvolvementLink 
+                            connect source ::> '342f2381-7e1b-4008-a74a-9be257bd8228'
+                            to  target ::> 'df5c657e-8650-47b2-a9a2-01e44c27e521' {
+
+                                ref :>> involved = 'de38cdd4-0239-4048-a299-4e04d836de71';
+
+                            } 
+                        ref action 'df5c657e-8650-47b2-a9a2-01e44c27e521' = 'Control Engine'; 
+                        ref action '342f2381-7e1b-4008-a74a-9be257bd8228' = 'Measure inlet Temperature (T2)'; 
+                         
+                    }  
+                    action 'Deliver Engine Thrust' : FunctionalChain  { 
+                        @CapellaID { eid = "2112bde6-e777-4e85-8332-c0ec69c99eb3"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'c35ccf85-edca-4796-9407-4f040bd8f13e' : FunctionalChainInvolvementLink 
+                            connect source ::> 'd8d31990-4f35-42d7-8bc0-6850dea28d46'
+                            to  target ::> 'c0da7805-9ef3-4790-af3f-ad4858854549' {
+
+                                ref :>> involved = 'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a';
+
+                            } 
+                        ref action 'c0da7805-9ef3-4790-af3f-ad4858854549' = 'Receive Thrust'; 
+                        ref action 'd8d31990-4f35-42d7-8bc0-6850dea28d46' = 'Receive Nozzle Thrust'; 
+                         
+                    }  
+                    action 'Monitor Inlet Air' : FunctionalChain  { 
+                        @CapellaID { eid = "ef61b2e6-08ea-4eed-94e2-85045189a02a"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '46b213f6-e3fd-4968-a34c-cb081fae2d00' : FunctionalChainInvolvementLink 
+                            connect source ::> 'e2be0b6d-a6fc-4810-b12a-0f8022b4afe5'
+                            to  target ::> 'a5504e1e-1e9f-4c93-a798-d7cded9b13b8' {
+
+                                ref :>> involved = 'fb11d111-28b9-4d9c-af3f-49b71330c27c';
+
+                            } 
+                        ref action 'a5504e1e-1e9f-4c93-a798-d7cded9b13b8' = 'Control Engine'; 
+                        ref action 'e2be0b6d-a6fc-4810-b12a-0f8022b4afe5' = 'Measure Inlet Air Temperatur'; 
+                        connection '25560de4-f173-440d-9b22-a4f05f20cdc5' : FunctionalChainInvolvementLink 
+                            connect source ::> '2eb297c5-0d9d-4f9d-920c-e1c629556e67'
+                            to  target ::> 'e2be0b6d-a6fc-4810-b12a-0f8022b4afe5' {
+
+                                ref :>> involved = '8f5f029f-85d0-4510-bc67-9743b358b61b';
+
+                            } 
+                        ref action '2eb297c5-0d9d-4f9d-920c-e1c629556e67' = 'Receive Air'; 
+                         
+                    }  
+                    action 'Deliver Fan Thrust' : FunctionalChain  { 
+                        @CapellaID { eid = "64e512ff-f6f1-42f1-a92c-1d65e8b9b4fd"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'de45aec8-7527-4bb2-bf31-a9cc0cd19d6d' : FunctionalChainInvolvementLink 
+                            connect source ::> '8a681d6b-9fd7-44f1-98d7-4cf368d24e23'
+                            to  target ::> '451db0fd-64fe-465e-a9fc-5b8c28ba91b7' {
+
+                                ref :>> involved = 'b2c0a7ca-077d-40b0-8327-082c60c037e2';
+
+                            } 
+                        ref action '451db0fd-64fe-465e-a9fc-5b8c28ba91b7' = 'Increase Air Mass Flow'; 
+                        connection '3c95dc3d-7449-4dec-bf25-d989c171a7a6' : FunctionalChainInvolvementLink 
+                            connect source ::> '451db0fd-64fe-465e-a9fc-5b8c28ba91b7'
+                            to  target ::> 'd2e31ff5-b018-42f2-b11f-365613a55da3' {
+
+                                ref :>> involved = '39e80b06-d704-4398-ae5b-fa73cd902189';
+
+                            } 
+                        ref action 'd2e31ff5-b018-42f2-b11f-365613a55da3' = 'Expel Bypass AIr'; 
+                        connection 'd65534d3-216f-49df-937b-7c76943969ed' : FunctionalChainInvolvementLink 
+                            connect source ::> '9cbb486b-15ef-4e75-9a27-ad33bae3b062'
+                            to  target ::> '451db0fd-64fe-465e-a9fc-5b8c28ba91b7' {
+
+                                ref :>> involved = 'b3b42c74-f43e-478c-bed4-03ae1cfb8c83';
+
+                            } 
+                        ref action '9cbb486b-15ef-4e75-9a27-ad33bae3b062' = 'Receive Air'; 
+                        connection '056b083c-f774-4cce-9721-10acab58851a' : FunctionalChainInvolvementLink 
+                            connect source ::> 'd2e31ff5-b018-42f2-b11f-365613a55da3'
+                            to  target ::> '21451783-7785-4d24-acaa-f398658fb8cf' {
+
+                                ref :>> involved = 'ac24a803-17bc-4a51-9c74-d28fb15ead21';
+
+                            } 
+                        ref action '21451783-7785-4d24-acaa-f398658fb8cf' = 'Receive Nozzle Thrust'; 
+                        connection '35fb6444-c4be-4410-a817-005ab6f7a760' : FunctionalChainInvolvementLink 
+                            connect source ::> '21451783-7785-4d24-acaa-f398658fb8cf'
+                            to  target ::> 'e774ecf0-ded1-4b5d-91d8-d6809fdf17d9' {
+
+                                ref :>> involved = 'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a';
+
+                            } 
+                        ref action 'e774ecf0-ded1-4b5d-91d8-d6809fdf17d9' = 'Receive Thrust'; 
+                        ref action '8a681d6b-9fd7-44f1-98d7-4cf368d24e23' = 'Rotate Fan and LP Compressor'; 
+                         
+                    }  
+                    action 'Monitor Inlet Pressure' : FunctionalChain  { 
+                        @CapellaID { eid = "56460e13-55e2-4cb4-b691-f9dd472bc596"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        ref action '1a72c2c3-f0f8-42bf-97e6-3656825584ca' = 'Measure inlet Temperature (T2)'; 
+                        ref action 'a71b69a5-a695-4161-8736-a2cade4a5685' = 'Channel Fan Air to Turbine'; 
+                        connection '8f5534c1-7a8d-474e-8211-033371ab809d' : FunctionalChainInvolvementLink 
+                            connect source ::> 'a71b69a5-a695-4161-8736-a2cade4a5685'
+                            to  target ::> '1a72c2c3-f0f8-42bf-97e6-3656825584ca' {
+
+                                ref :>> involved = '889c3cce-7981-46d7-b082-24ab331e258b';
+
+                            } 
+                         
+                    }  
+                    action 'Monitor LPC Discharge Pressure' : FunctionalChain  { 
+                        @CapellaID { eid = "cfeeeab8-35e7-4d10-b347-f6365c4e8f99"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'c61dbd34-84d1-400f-86f1-30ad209b34b0' : FunctionalChainInvolvementLink 
+                            connect source ::> '7ae9b310-12b0-403c-92ac-498cf2e768f1'
+                            to  target ::> '3b42e767-cd7f-465c-a55c-5b04462285d3' {
+
+                                ref :>> involved = '58f3ee77-c282-4022-b314-625d96c1de1e';
+
+                            } 
+                        ref action '3b42e767-cd7f-465c-a55c-5b04462285d3' = 'Meassure LP DIscharge Pressure'; 
+                        ref action '7ae9b310-12b0-403c-92ac-498cf2e768f1' = 'Channel Air to HPC'; 
+                        connection '578a037c-2ae1-483a-89c5-b926de6f2e63' : FunctionalChainInvolvementLink 
+                            connect source ::> '3b42e767-cd7f-465c-a55c-5b04462285d3'
+                            to  target ::> '9289c2f0-f82b-4693-9807-2032154eb32f' {
+
+                                ref :>> involved = '5e745df4-0070-44fc-85ab-67d1a9189d7b';
+
+                            } 
+                        ref action '9289c2f0-f82b-4693-9807-2032154eb32f' = 'Control Engine'; 
+                         
+                    }  
+                    action 'Monitor HPC Discharge Pressure' : FunctionalChain  { 
+                        @CapellaID { eid = "2eb72a0a-89e7-4f9e-8d86-eed638abaf44"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'b453b57a-2da8-4808-9d75-167ce6068f3b' : FunctionalChainInvolvementLink 
+                            connect source ::> '970d7b27-53ad-4b57-bc7d-64dbb4da6cfc'
+                            to  target ::> '11a22d40-6067-43d9-b43c-38f59ddcf6b0' {
+
+                                ref :>> involved = 'afcd9a36-9fab-4606-82b4-17c26ab5ac58';
+
+                            } 
+                        ref action '11a22d40-6067-43d9-b43c-38f59ddcf6b0' = 'Control Engine'; 
+                        ref action '970d7b27-53ad-4b57-bc7d-64dbb4da6cfc' = 'Measure HP Outlet Pressure'; 
+                        connection '370b55f6-5a59-438a-b720-efd38719e5a4' : FunctionalChainInvolvementLink 
+                            connect source ::> '1092e769-74f8-4572-b4a2-35555ea5b016'
+                            to  target ::> '970d7b27-53ad-4b57-bc7d-64dbb4da6cfc' {
+
+                                ref :>> involved = '7e2199b0-d113-4057-9de3-d8e5a5394846';
+
+                            } 
+                        ref action '1092e769-74f8-4572-b4a2-35555ea5b016' = 'Channel HP Outlet Air'; 
+                         
+                    }  
+                    action 'Actuate LP Stator Vanes' : FunctionalChain  { 
+                        @CapellaID { eid = "b7d8db78-5f21-4e73-b860-0930de24e9a5"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'cbc25c66-a2ee-4da8-ad7a-1722dead8e24' : FunctionalChainInvolvementLink 
+                            connect source ::> 'c64ac656-985f-446e-aaef-24a08a39d3e9'
+                            to  target ::> 'a85127aa-8bd6-4931-bf6c-ca88401db40c' {
+
+                                ref :>> involved = '15f03c3f-00f1-4fb8-9834-2965148500c9';
+
+                            } 
+                        ref action 'a85127aa-8bd6-4931-bf6c-ca88401db40c' = 'Move LP Stator Vanes'; 
+                        ref action 'c64ac656-985f-446e-aaef-24a08a39d3e9' = 'Control Engine'; 
+                        connection '874e307b-845c-4d53-8906-3b51e19c8999' : FunctionalChainInvolvementLink 
+                            connect source ::> 'a85127aa-8bd6-4931-bf6c-ca88401db40c'
+                            to  target ::> '5f5853c7-eeb2-4288-9b59-3107ffa28d5a' {
+
+                                ref :>> involved = '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85';
+
+                            } 
+                        ref action '5f5853c7-eeb2-4288-9b59-3107ffa28d5a' = 'Contribut to LP Compression'; 
+                         
+                    }  
+                    action 'Actuate HP Stator Vanes' : FunctionalChain  { 
+                        @CapellaID { eid = "af913d40-f26b-41fb-bc29-160f78e1523c"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'b21e9751-cb4e-41d7-ac14-3a6f375e0008' : FunctionalChainInvolvementLink 
+                            connect source ::> 'cf52e960-b506-4fe8-a4a4-6a8aa07ccc1b'
+                            to  target ::> '83d0916d-c6a7-4194-ac40-8d36428983a5' {
+
+                                ref :>> involved = '4a7ad229-da53-499f-be20-f1c323e7e6a2';
+
+                            } 
+                        ref action '83d0916d-c6a7-4194-ac40-8d36428983a5' = 'Adjust Vanes'; 
+                        ref action 'cf52e960-b506-4fe8-a4a4-6a8aa07ccc1b' = 'Control Engine'; 
+                        connection '1bfe106f-eb6c-4c5f-bbff-ac72546f39a2' : FunctionalChainInvolvementLink 
+                            connect source ::> '83d0916d-c6a7-4194-ac40-8d36428983a5'
+                            to  target ::> 'edb11306-f196-4582-8504-0cd1cbb4eb6a' {
+
+                                ref :>> involved = '8ee986d5-18b6-46ad-82f3-d02fb3c78258';
+
+                            } 
+                        ref action 'edb11306-f196-4582-8504-0cd1cbb4eb6a' = 'Contribut to Compession'; 
+                         
+                    }  
+                    action 'Control Fuel' : FunctionalChain  { 
+                        @CapellaID { eid = "a7b36c2d-8304-46b6-9ff4-af3318b75b17"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '80a7f390-e973-4d39-80a1-496e75350510' : FunctionalChainInvolvementLink 
+                            connect source ::> '5d4b2b67-fd18-4064-adac-32ad85b7defa'
+                            to  target ::> 'f65cc6c9-ef3a-43b3-ba47-c603556c8692' {
+
+                                ref :>> involved = '95d003e7-80b2-4bd4-be5c-c4197934f717';
+
+                            } 
+                        ref action 'f65cc6c9-ef3a-43b3-ba47-c603556c8692' = 'Control Fuel Flow'; 
+                        ref action '5d4b2b67-fd18-4064-adac-32ad85b7defa' = 'Control Engine'; 
+                        connection '1c955fc6-4b53-4a14-8d64-ecb86b49f385' : FunctionalChainInvolvementLink 
+                            connect source ::> 'f65cc6c9-ef3a-43b3-ba47-c603556c8692'
+                            to  target ::> 'e0e0ab8c-45dc-40f8-b97d-146a26567217' {
+
+                                ref :>> involved = '66c98476-f91d-4d49-8070-75f81cfed404';
+
+                            } 
+                        ref action 'e0e0ab8c-45dc-40f8-b97d-146a26567217' = 'Burn Fuel'; 
+                         
+                    }  
+                    action 'Combust Fuel' : FunctionalChain  { 
+                        @CapellaID { eid = "63932112-45ff-4be2-976e-257aab331867"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'd27dbcdc-4868-4edf-afb7-42ac80ff9c62' : FunctionalChainInvolvementLink 
+                            connect source ::> '8ccb9e42-0853-4a87-85d1-34ebbbfaeeb9'
+                            to  target ::> '4b660a49-2523-4ce6-9da5-b35c05401355' {
+
+                                ref :>> involved = 'dd59f184-65e3-42c3-b022-1e9429e7b06e';
+
+                            } 
+                        ref action '4b660a49-2523-4ce6-9da5-b35c05401355' = 'Burn Fuel'; 
+                        ref action '8ccb9e42-0853-4a87-85d1-34ebbbfaeeb9' = 'Channel HP Outlet Air'; 
+                        connection '00927c04-21fb-4740-a0fa-7985e91021b5' : FunctionalChainInvolvementLink 
+                            connect source ::> '4b660a49-2523-4ce6-9da5-b35c05401355'
+                            to  target ::> '796c1b58-3c2a-477c-8985-2763b40a8822' {
+
+                                ref :>> involved = '02c9527d-8024-43d3-b24c-2fa00aa04cc0';
+
+                            } 
+                        ref action '796c1b58-3c2a-477c-8985-2763b40a8822' = 'Direct Hot Gas to Turbine'; 
+                         
+                    }  
+                    action 'Perform LP Compression' : FunctionalChain  { 
+                        @CapellaID { eid = "39e26f5f-9e35-41aa-a19e-f74570fada58"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '9f372e1b-59de-4826-9e91-ba82231b124f' : FunctionalChainInvolvementLink 
+                            connect source ::> '1342f2a5-508f-41db-ae05-43b0a73e81a4'
+                            to  target ::> 'e7d66a07-2e26-4dda-b07f-a95318354ffc' {
+
+                                ref :>> involved = 'eaa4c472-d34a-46ae-a8bc-f1a33de39bda';
+
+                            } 
+                        ref action 'e7d66a07-2e26-4dda-b07f-a95318354ffc' = 'Contribut to LP Compression'; 
+                        ref action '1342f2a5-508f-41db-ae05-43b0a73e81a4' = 'Channel Fan Air to Turbine'; 
+                        connection '49b0ef60-13f9-4d6b-8e0d-54c91917697e' : FunctionalChainInvolvementLink 
+                            connect source ::> 'e7d66a07-2e26-4dda-b07f-a95318354ffc'
+                            to  target ::> '5e1c2043-9ba1-4749-b367-66288750701c' {
+
+                                ref :>> involved = '99bf85cd-8d72-4c44-acb8-0c06db11ddeb';
+
+                            } 
+                        ref action '5e1c2043-9ba1-4749-b367-66288750701c' = 'Compress Air'; 
+                        ref action 'b5bc0a3e-6e33-4724-8e51-188bac0a871c' = 'Rotate Fan and LP Compressor'; 
+                        connection 'cee44ca1-f07b-4582-9027-1663f81244df' : FunctionalChainInvolvementLink 
+                            connect source ::> 'b5bc0a3e-6e33-4724-8e51-188bac0a871c'
+                            to  target ::> '5e1c2043-9ba1-4749-b367-66288750701c' {
+
+                                ref :>> involved = '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c';
+
+                            } 
+                        connection 'f6829cc5-eb55-46a2-8e0d-0f59caa505bd' : FunctionalChainInvolvementLink 
+                            connect source ::> '1342f2a5-508f-41db-ae05-43b0a73e81a4'
+                            to  target ::> '5e1c2043-9ba1-4749-b367-66288750701c' {
+
+                                ref :>> involved = '046a8771-7d28-4d6b-93c2-1b0b53cddbe3';
+
+                            } 
+                         
+                    }  
+                    action 'Perform HP Compression' : FunctionalChain  { 
+                        @CapellaID { eid = "7a3c1a20-c7ff-43d6-bb52-8d26483898df"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'ce2f8422-6b96-43a4-80f4-f59c688b2d3c' : FunctionalChainInvolvementLink 
+                            connect source ::> '47b4575d-8429-4478-a772-37e8bc38a05a'
+                            to  target ::> 'f96f5d63-a330-4fd5-9707-2a055a35b5e0' {
+
+                                ref :>> involved = '152a6432-3c81-426b-948e-89e8ccd8ee15';
+
+                            } 
+                        ref action 'f96f5d63-a330-4fd5-9707-2a055a35b5e0' = 'Channel Air to HPC'; 
+                        ref action '47b4575d-8429-4478-a772-37e8bc38a05a' = 'Compress Air'; 
+                        connection '6a77dfb4-bfab-4ee5-8c49-d69d54310844' : FunctionalChainInvolvementLink 
+                            connect source ::> 'f96f5d63-a330-4fd5-9707-2a055a35b5e0'
+                            to  target ::> '6088eb7c-7177-4a7d-a02e-daf55c7e26d2' {
+
+                                ref :>> involved = '4c27511b-2046-4491-900f-442a530e9d34';
+
+                            } 
+                        ref action '6088eb7c-7177-4a7d-a02e-daf55c7e26d2' = 'Compress LP Air'; 
+                        connection '349daa25-0f47-4ac3-a8aa-14b48637208c' : FunctionalChainInvolvementLink 
+                            connect source ::> 'f96f5d63-a330-4fd5-9707-2a055a35b5e0'
+                            to  target ::> '3fcb6d8b-d4a4-401f-a4e0-77242a8b8838' {
+
+                                ref :>> involved = '1a6b2da4-d217-40da-88f4-109ab788c26b';
+
+                            } 
+                        ref action '3fcb6d8b-d4a4-401f-a4e0-77242a8b8838' = 'Contribut to Compession'; 
+                        connection '5390a3a1-ca7f-4f9b-a910-628fcad4c741' : FunctionalChainInvolvementLink 
+                            connect source ::> '3fcb6d8b-d4a4-401f-a4e0-77242a8b8838'
+                            to  target ::> '6088eb7c-7177-4a7d-a02e-daf55c7e26d2' {
+
+                                ref :>> involved = '47892821-ae1a-40f8-bf93-bca460a27e2e';
+
+                            } 
+                        connection '6399e3b9-7f49-440d-afc6-5d7e6f1eb8f6' : FunctionalChainInvolvementLink 
+                            connect source ::> '6088eb7c-7177-4a7d-a02e-daf55c7e26d2'
+                            to  target ::> 'd7ae65e1-ada7-433f-9cd5-2ecfb0a96709' {
+
+                                ref :>> involved = '90ecbd9b-1814-4a3e-a99c-6589ade50a87';
+
+                            } 
+                        ref action 'd7ae65e1-ada7-433f-9cd5-2ecfb0a96709' = 'Channel HP Outlet Air'; 
+                         
+                    }  
+                    action 'Monitor Combustion Chamber Pressue' : FunctionalChain  { 
+                        @CapellaID { eid = "b2669099-4f46-42c5-8cb0-9334a0627ebb"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '5aeeada1-d91a-420f-ab4b-3dd330467eb3' : FunctionalChainInvolvementLink 
+                            connect source ::> '3048502e-2134-4350-b28c-c0bfd55bfcf5'
+                            to  target ::> '37b05050-c764-4733-8d7a-83e25c4a538a' {
+
+                                ref :>> involved = 'ee95b174-e67a-446d-acab-7b7421029ab9';
+
+                            } 
+                        ref action '37b05050-c764-4733-8d7a-83e25c4a538a' = 'Control Engine'; 
+                        ref action '3048502e-2134-4350-b28c-c0bfd55bfcf5' = 'Measure Pressure'; 
+                        connection 'b6f76cf0-3242-47d2-80f0-6b1594b0395a' : FunctionalChainInvolvementLink 
+                            connect source ::> '28438e64-dd4e-4491-8ae6-dba4f66138a3'
+                            to  target ::> '3048502e-2134-4350-b28c-c0bfd55bfcf5' {
+
+                                ref :>> involved = '98e62ed6-4223-4839-ad5a-3e5b725d65d7';
+
+                            } 
+                        ref action '28438e64-dd4e-4491-8ae6-dba4f66138a3' = 'Burn Fuel'; 
+                         
+                    }  
+                    action 'Extract HP Turbine Energy' : FunctionalChain  { 
+                        @CapellaID { eid = "781670cd-b6db-4de7-b687-f275241fa71d"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '2f479fee-1503-4e81-a294-2e0ad814b317' : FunctionalChainInvolvementLink 
+                            connect source ::> '34f572a8-d246-413c-91be-6fc02afc3788'
+                            to  target ::> '80cd6bca-6ed0-48bc-87ab-430306f65fbf' {
+
+                                ref :>> involved = '5f417526-62bc-4e73-9783-ff32914c3b88';
+
+                            } 
+                        ref action '80cd6bca-6ed0-48bc-87ab-430306f65fbf' = 'Extract Energy'; 
+                        ref action '34f572a8-d246-413c-91be-6fc02afc3788' = 'Direct Hot Gas to Turbine'; 
+                        connection '691eeaeb-36ab-4da4-b463-b0035c2fc620' : FunctionalChainInvolvementLink 
+                            connect source ::> '80cd6bca-6ed0-48bc-87ab-430306f65fbf'
+                            to  target ::> '273e1236-0631-4719-a742-3d079ecb8dba' {
+
+                                ref :>> involved = 'af04101a-93b0-4ad3-a428-f70688268dd9';
+
+                            } 
+                        ref action '273e1236-0631-4719-a742-3d079ecb8dba' = 'Tranfer Torque'; 
+                         
+                    }  
+                    action 'Monitor N2' : FunctionalChain  { 
+                        @CapellaID { eid = "f5b04367-19ca-4833-9799-c76f4969c97e"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'd1759cb9-a170-4616-8fc1-5f50b6c6dbe7' : FunctionalChainInvolvementLink 
+                            connect source ::> 'd3785023-4837-4897-9371-80d05db8e44b'
+                            to  target ::> 'cb056e54-d0b8-46a6-a5f6-85f192d088ce' {
+
+                                ref :>> involved = 'f356e536-ed67-40b1-aae6-c16e17a4dbfc';
+
+                            } 
+                        ref action 'cb056e54-d0b8-46a6-a5f6-85f192d088ce' = 'Control Engine'; 
+                        ref action 'd3785023-4837-4897-9371-80d05db8e44b' = 'Measure N2'; 
+                        connection 'ae5a62dd-d878-4fb7-8624-ab975a9e78bd' : FunctionalChainInvolvementLink 
+                            connect source ::> '4929dd54-9def-484e-a3a3-1711abd66320'
+                            to  target ::> 'd3785023-4837-4897-9371-80d05db8e44b' {
+
+                                ref :>> involved = 'f5dd6000-d95d-4add-8222-c8094dcaf515';
+
+                            } 
+                        ref action '4929dd54-9def-484e-a3a3-1711abd66320' = 'Tranfer Torque'; 
+                         
+                    }  
+                    action 'Monitor HPT Outlet Pressure' : FunctionalChain  { 
+                        @CapellaID { eid = "30f93f3f-4a07-4708-8036-0b598c918a2f"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '18d6c633-3d10-4e35-9138-9e299d8d05e9' : FunctionalChainInvolvementLink 
+                            connect source ::> 'd13d0344-a8b7-4310-8262-2e54908e396a'
+                            to  target ::> 'a2d8f5a8-d187-46ff-8674-996cfe6845fa' {
+
+                                ref :>> involved = 'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0';
+
+                            } 
+                        ref action 'a2d8f5a8-d187-46ff-8674-996cfe6845fa' = 'Control Engine'; 
+                        ref action 'd13d0344-a8b7-4310-8262-2e54908e396a' = 'Measure Turbine Outlet Pressure'; 
+                        connection 'ec10a7cf-cfa8-4c22-9853-188c418ce6b9' : FunctionalChainInvolvementLink 
+                            connect source ::> '5c00a9c6-c54a-43d0-88f1-17d21c228290'
+                            to  target ::> 'd13d0344-a8b7-4310-8262-2e54908e396a' {
+
+                                ref :>> involved = 'd32877de-8f90-4c97-8528-1358ce28b3d9';
+
+                            } 
+                        ref action '5c00a9c6-c54a-43d0-88f1-17d21c228290' = 'Channel to LP Turbine'; 
+                         
+                    }  
+                    action 'Monitor EGT' : FunctionalChain  { 
+                        @CapellaID { eid = "8c2a6a0c-276d-4d4c-ac85-ba37704b45c4"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '0f3db2e3-6cce-4ae6-9245-d35d2343a867' : FunctionalChainInvolvementLink 
+                            connect source ::> '73a96de7-a630-45d7-9b3e-c7039985697e'
+                            to  target ::> 'f91fa7aa-5b31-4cf4-ad9f-8a0ff01a89b5' {
+
+                                ref :>> involved = '2e5af410-7699-45db-a3cd-d1c97fa52a38';
+
+                            } 
+                        ref action 'f91fa7aa-5b31-4cf4-ad9f-8a0ff01a89b5' = 'Control Engine'; 
+                        ref action '73a96de7-a630-45d7-9b3e-c7039985697e' = 'Measure  Exhaust Gas Temp'; 
+                        connection '57d6c0d1-caae-4b67-afcb-f9f682ee529b' : FunctionalChainInvolvementLink 
+                            connect source ::> 'eb7450f3-8aab-4aaa-989e-5ce4768410b0'
+                            to  target ::> '73a96de7-a630-45d7-9b3e-c7039985697e' {
+
+                                ref :>> involved = '672503df-1b75-4d68-96ec-673e24f7e635';
+
+                            } 
+                        ref action 'eb7450f3-8aab-4aaa-989e-5ce4768410b0' = 'Direct Turbine Exhaust'; 
+                         
+                    }  
+                    action 'LP Turbine to Shaft' : FunctionalChain  { 
+                        @CapellaID { eid = "80746594-cb46-4ee9-918d-963bd7bd5668"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        ref action '0ca7a54e-6fc7-487c-ac08-537e393bc9a9' = 'Channel to LP Turbine'; 
+                        connection 'e0f1cf3d-256a-4aed-96f0-9acad72e0e18' : FunctionalChainInvolvementLink 
+                            connect source ::> '0ca7a54e-6fc7-487c-ac08-537e393bc9a9'
+                            to  target ::> '11b71d82-6928-4bbd-b0cf-3aae044d6d9f' {
+
+                                ref :>> involved = '7a0ed679-84af-4fa0-b50e-40966b05814a';
+
+                            } 
+                        ref action '11b71d82-6928-4bbd-b0cf-3aae044d6d9f' = 'Drive Fan and LP Compressor'; 
+                        ref action 'e39a2926-ade9-482d-ade3-7c45c1b2d34b' = 'Rotate Fan and LP Compressor'; 
+                        connection '59fd8f05-4185-49b3-a5ba-4485ba45f752' : FunctionalChainInvolvementLink 
+                            connect source ::> '11b71d82-6928-4bbd-b0cf-3aae044d6d9f'
+                            to  target ::> 'e39a2926-ade9-482d-ade3-7c45c1b2d34b' {
+
+                                ref :>> involved = 'bbb5bc36-287f-4037-89dd-577c222bec86';
+
+                            } 
+                        ref action '6a2bdab7-da7a-4cd4-9e71-77f516a75e68' = 'Compress Air'; 
+                        connection '07b45d24-af6d-4db4-a3da-3333d4be1fd3' : FunctionalChainInvolvementLink 
+                            connect source ::> 'e39a2926-ade9-482d-ade3-7c45c1b2d34b'
+                            to  target ::> '6a2bdab7-da7a-4cd4-9e71-77f516a75e68' {
+
+                                ref :>> involved = '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c';
+
+                            } 
+                         
+                    }  
+                    action 'Monitor HP Pressure' : FunctionalChain  { 
+                        @CapellaID { eid = "4d3e5b56-9212-46b9-bb5f-a7cff9d9ea78"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '92c0d708-364e-4485-a9b8-9b8a6aaad8ad' : FunctionalChainInvolvementLink 
+                            connect source ::> 'b3439023-c695-43fb-bde1-b2836ebd3cd1'
+                            to  target ::> '5d1125cc-435b-4023-9c6e-89d16ead28de' {
+
+                                ref :>> involved = 'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0';
+
+                            } 
+                        ref action '5d1125cc-435b-4023-9c6e-89d16ead28de' = 'Control Engine'; 
+                        ref action 'b3439023-c695-43fb-bde1-b2836ebd3cd1' = 'Measure Turbine Outlet Pressure'; 
+                        connection 'a0f13c45-330a-4ba7-b6df-a25738888e8f' : FunctionalChainInvolvementLink 
+                            connect source ::> 'c92e8be5-8e4b-46a4-936c-1a82c1bdac5e'
+                            to  target ::> 'b3439023-c695-43fb-bde1-b2836ebd3cd1' {
+
+                                ref :>> involved = 'd32877de-8f90-4c97-8528-1358ce28b3d9';
+
+                            } 
+                        ref action 'c92e8be5-8e4b-46a4-936c-1a82c1bdac5e' = 'Channel to LP Turbine'; 
+                         
+                    }  
+                    action 'Monitor N1' : FunctionalChain  { 
+                        @CapellaID { eid = "2e195f49-8fc9-4f6d-be09-cd665657e276"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '4e9b2520-e52b-4253-b624-7af267a4ae89' : FunctionalChainInvolvementLink 
+                            connect source ::> '0d42ee52-004d-4af3-9247-42d1879636f6'
+                            to  target ::> 'c51490df-d486-4d50-bba6-1f92a3cacd21' {
+
+                                ref :>> involved = '8ecfee11-7429-49c2-ba2b-0cc2814959db';
+
+                            } 
+                        ref action 'c51490df-d486-4d50-bba6-1f92a3cacd21' = 'Control Engine'; 
+                        ref action '0d42ee52-004d-4af3-9247-42d1879636f6' = 'Measure N1 Speed'; 
+                        connection '86814035-9a42-4113-a80f-ee562c197cee' : FunctionalChainInvolvementLink 
+                            connect source ::> '50aecd22-3f72-4599-b363-d72292023634'
+                            to  target ::> '0d42ee52-004d-4af3-9247-42d1879636f6' {
+
+                                ref :>> involved = '07237295-f3a8-46de-b4eb-445004270f04';
+
+                            } 
+                        ref action '50aecd22-3f72-4599-b363-d72292023634' = 'Rotate Fan and LP Compressor'; 
+                         
+                    }  
+                    action 'Measure FMV Position' : FunctionalChain  { 
+                        @CapellaID { eid = "4b5cc4c8-6af6-410a-a1b6-e76d3be3f549"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection 'a8982c51-e3a1-41da-9202-f68625f55204' : FunctionalChainInvolvementLink 
+                            connect source ::> '72317377-c4aa-4f62-903d-7ff060c31fa0'
+                            to  target ::> '7689e8e0-88fa-44ea-9a6f-33b3e58c24e0' {
+
+                                ref :>> involved = 'ec00c7e2-2bf0-4d75-8470-dd08fae8fb24';
+
+                            } 
+                        ref action '7689e8e0-88fa-44ea-9a6f-33b3e58c24e0' = 'Sense Position'; 
+                        ref action '72317377-c4aa-4f62-903d-7ff060c31fa0' = 'Control Fuel Flow'; 
+                        connection 'fc836911-2f8e-4660-86d6-ef9d8c830e8d' : FunctionalChainInvolvementLink 
+                            connect source ::> '7689e8e0-88fa-44ea-9a6f-33b3e58c24e0'
+                            to  target ::> '183e50cd-b4aa-4b3c-aee1-a3fce7994747' {
+
+                                ref :>> involved = 'a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c';
+
+                            } 
+                        ref action '183e50cd-b4aa-4b3c-aee1-a3fce7994747' = 'Control Engine'; 
+                         
+                    }  
+                    action 'Deliver Thrust Chain' : FunctionalChain  { 
+                        @CapellaID { eid = "a878bccb-fdd5-4d79-b711-3a84e4395f87"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        ref action '91bfb57e-e01b-4ec8-a2ba-2856fb735539' = 'Receive Air Chain'; 
+                        ref action '4a2c1ac2-5cae-4d39-a3ae-83a7f6815f56' = 'Deliver Engine Thrust'; 
+                        ref action '4b662b1f-a934-44fb-87f0-2a02b21ed278' = 'Perform LP Compression'; 
+                        ref action 'fe7a56dd-6c54-4821-9b6a-9d4bbbdec7f2' = 'Deliver Fan Thrust'; 
+                        connection '5a11b16f-ca5a-41b9-8ea6-15e2464aad60' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Receive Air Chain'.'107b1113-0e86-45dc-904f-3ecd8bbb6303'
+                            to  target ::> 'Deliver Fan Thrust'.'451db0fd-64fe-465e-a9fc-5b8c28ba91b7' {
+
+                                ref :>> involved = 'b3b42c74-f43e-478c-bed4-03ae1cfb8c83';
+
+                            } 
+                        connection 'b8fbf741-4e99-4075-b5af-4ed9b60ca1f3' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Deliver Fan Thrust'.'451db0fd-64fe-465e-a9fc-5b8c28ba91b7'
+                            to  target ::> 'Perform LP Compression'.'1342f2a5-508f-41db-ae05-43b0a73e81a4' {
+
+                                ref :>> involved = '41f1bde3-03c4-4332-870f-19f32b9009e5';
+
+                            } 
+                        ref action '11f2bf18-2ee4-4b40-bdca-894824117b24' = 'Perform HP Compression'; 
+                        connection 'dbe35148-ea16-4c6c-a8ef-b046ab4e80ba' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Perform LP Compression'.'5e1c2043-9ba1-4749-b367-66288750701c'
+                            to  target ::> 'Perform HP Compression'.'f96f5d63-a330-4fd5-9707-2a055a35b5e0' {
+
+                                ref :>> involved = '152a6432-3c81-426b-948e-89e8ccd8ee15';
+
+                            } 
+                        ref action 'eff60f71-70bb-4543-8c6c-6f7be1c63d81' = 'Combust Fuel'; 
+                        connection '9530e986-cc66-4dc8-a2d6-971abf7a13d9' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Perform HP Compression'.'d7ae65e1-ada7-433f-9cd5-2ecfb0a96709'
+                            to  target ::> 'Combust Fuel'.'4b660a49-2523-4ce6-9da5-b35c05401355' {
+
+                                ref :>> involved = 'dd59f184-65e3-42c3-b022-1e9429e7b06e';
+
+                            } 
+                        ref action 'b70d4436-4521-44a7-99d8-2d179a8f815f' = 'Extract HP Turbine Energy'; 
+                        connection '9bb5bfef-1873-46ef-bdaa-cc6f38f1e3a4' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Combust Fuel'.'796c1b58-3c2a-477c-8985-2763b40a8822'
+                            to  target ::> 'Extract HP Turbine Energy'.'80cd6bca-6ed0-48bc-87ab-430306f65fbf' {
+
+                                ref :>> involved = '5f417526-62bc-4e73-9783-ff32914c3b88';
+
+                            } 
+                        ref action 'ca41f8ee-6650-48b4-a5f4-8be630c5cdab' = 'LP Turbine to Shaft'; 
+                        connection 'f526a6f4-0eba-4d67-ad95-f123a26260f8' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Extract HP Turbine Energy'.'80cd6bca-6ed0-48bc-87ab-430306f65fbf'
+                            to  target ::> 'LP Turbine to Shaft'.'0ca7a54e-6fc7-487c-ac08-537e393bc9a9' {
+
+                                ref :>> involved = 'f36e68fd-3dba-451f-acb8-af210ae6d0c7';
+
+                            } 
+                        ref action '92b89357-fa3f-44a4-8b44-ed82f31feb2d' = 'Direct Turbine Exhaust'; 
+                        connection 'b86b1e2f-0a5d-4c2e-8a60-d8935ee0ddff' : FunctionalChainInvolvementLink 
+                            connect source ::> 'LP Turbine to Shaft'.'11b71d82-6928-4bbd-b0cf-3aae044d6d9f'
+                            to  target ::> '92b89357-fa3f-44a4-8b44-ed82f31feb2d' {
+
+                                ref :>> involved = 'e4ef588d-9824-4310-a97d-da082f4902aa';
+
+                            } 
+                        connection 'adaa3496-06b1-4a8a-8795-b3ac81f06c8c' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Deliver Fan Thrust'.'d2e31ff5-b018-42f2-b11f-365613a55da3'
+                            to  target ::> 'Deliver Engine Thrust'.'d8d31990-4f35-42d7-8bc0-6850dea28d46' {
+
+                                ref :>> involved = 'ac24a803-17bc-4a51-9c74-d28fb15ead21';
+
+                            } 
+                        ref action '402ef529-4a3e-4eaf-b4dd-98ac5c208b29' = 'Monitor TLA'; 
+                        connection 'df04fc10-194e-4bb6-8241-18d27870e158' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Monitor TLA'.'b6a81a47-7294-45a3-9e25-882d70be138b'
+                            to  target ::> 'Perform HP Compression'.'3fcb6d8b-d4a4-401f-a4e0-77242a8b8838' {
+
+                                ref :>> involved = '8ee986d5-18b6-46ad-82f3-d02fb3c78258';
+
+                            } 
+                        connection 'c9789bac-0367-4667-98ea-50802b44a90b' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Monitor TLA'.'ad97574a-2c56-4296-a7b6-cfe13d3eb4fc'
+                            to  target ::> 'Combust Fuel'.'4b660a49-2523-4ce6-9da5-b35c05401355' {
+
+                                ref :>> involved = '66c98476-f91d-4d49-8070-75f81cfed404';
+
+                            } 
+                        connection '45ec8579-a2a7-4665-94e6-a65cbf5524e2' : FunctionalChainInvolvementLink 
+                            connect source ::> 'Monitor TLA'.'0ba8fd3d-a761-4e3a-9090-1ebc74d1837a'
+                            to  target ::> 'Perform LP Compression'.'e7d66a07-2e26-4dda-b07f-a95318354ffc' {
+
+                                ref :>> involved = '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85';
+
+                            } 
+                        ref :>> appliedPropertyValueGroups =  ('SMW Properties'::'Parameters'::'Quito Airport High Altitude',
+                        'SMW Properties'::'Parameters'::'Quito Airport Scenario Temp'); 
+                         
+                    }  
+                    action 'Control Bleed Air Valve' : FunctionalChain  { 
+                        @CapellaID { eid = "110faf01-6814-42df-87fb-6291f075bbc9"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '7633b23c-1e02-4753-82ae-a6235caebbbd' : FunctionalChainInvolvementLink 
+                            connect source ::> '321ae6ac-629c-4634-be5e-816752a28871'
+                            to  target ::> 'a324030a-d8d4-41d3-b0ba-cab3ad3a34a8' {
+
+                                ref :>> involved = 'fddba676-404f-4ad5-b6c6-32a72a100584';
+
+                            } 
+                        ref action 'a324030a-d8d4-41d3-b0ba-cab3ad3a34a8' = 'Set Bleed Air Postion'; 
+                        ref action '321ae6ac-629c-4634-be5e-816752a28871' = 'Control Engine'; 
+                        connection '3df72793-5670-4042-a148-d7c2cbe3d2a9' : FunctionalChainInvolvementLink 
+                            connect source ::> 'a324030a-d8d4-41d3-b0ba-cab3ad3a34a8'
+                            to  target ::> 'c5ff7017-0197-4f50-af32-dddd35e8ee7a' {
+
+                                ref :>> involved = '5f715b20-4600-4a0b-993f-ff7e07a56328';
+
+                            } 
+                        ref action 'c5ff7017-0197-4f50-af32-dddd35e8ee7a' = 'Channel Bleed Air'; 
+                         
+                    }  
+                    action 'Monitor LP Stator Vanes' : FunctionalChain  { 
+                        @CapellaID { eid = "7bbbca5b-8957-496d-b090-4abda5528d01"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '187b2e85-cf68-4402-9e5c-6db9a31a94d9' : FunctionalChainInvolvementLink 
+                            connect source ::> '927eec83-b607-41c6-83ed-84923972c256'
+                            to  target ::> 'd8548cc6-0500-4392-a035-bb22a53fe1ee' {
+
+                                ref :>> involved = 'fc852416-3199-4415-8c3f-1bbc2fb84deb';
+
+                            } 
+                        ref action 'd8548cc6-0500-4392-a035-bb22a53fe1ee' = 'Control Engine'; 
+                        ref action '927eec83-b607-41c6-83ed-84923972c256' = 'Measure Position'; 
+                        connection '7d95a4a4-2d13-4468-8fe9-f017760e54ca' : FunctionalChainInvolvementLink 
+                            connect source ::> 'cf068ca3-6789-42b5-8ecb-7a542f7f660e'
+                            to  target ::> '927eec83-b607-41c6-83ed-84923972c256' {
+
+                                ref :>> involved = 'c9809ac2-550a-452c-969f-843ae5c659d2';
+
+                            } 
+                        ref action 'cf068ca3-6789-42b5-8ecb-7a542f7f660e' = 'Contribut to LP Compression'; 
+                         
+                    }  
+                    action 'Monitor HP Stator Vane Position' : FunctionalChain  { 
+                        @CapellaID { eid = "c315a7cd-5c39-43a4-87d7-591d38adc07a"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '0c10dab9-ba81-4d4e-b9c4-64b501015b82' : FunctionalChainInvolvementLink 
+                            connect source ::> 'a6b9dc47-0f20-489d-925f-5ab99b9c7c8b'
+                            to  target ::> '445e59d7-a6ac-49c4-baba-a7dcaf69f9c4' {
+
+                                ref :>> involved = '4668a416-3451-46ce-9b7f-89f129783786';
+
+                            } 
+                        ref action '445e59d7-a6ac-49c4-baba-a7dcaf69f9c4' = 'Control Engine'; 
+                        ref action 'a6b9dc47-0f20-489d-925f-5ab99b9c7c8b' = 'Sense HP Stator Vane Position'; 
+                        connection 'f5a3e15a-c737-442f-94c1-c5a0dc9ba7dd' : FunctionalChainInvolvementLink 
+                            connect source ::> '5ea547c4-8990-434f-96a5-f1e912652dc9'
+                            to  target ::> 'a6b9dc47-0f20-489d-925f-5ab99b9c7c8b' {
+
+                                ref :>> involved = '49b68c29-d119-472e-aa4a-d64a0cae24bc';
+
+                            } 
+                        ref action '5ea547c4-8990-434f-96a5-f1e912652dc9' = 'Contribut to Compession'; 
+                         
+                    }  
+                    action 'Engine to Aiframe' : FunctionalChain  { 
+                        @CapellaID { eid = "47b4d5a7-fda5-4fbf-b397-33b6f3922eb3"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '9e2b4bc6-ba07-4066-9e3e-c24795cfcf3c' : FunctionalChainInvolvementLink 
+                            connect source ::> '9b1ca436-5905-4e37-acb9-6f44039dd872'
+                            to  target ::> '372ddd61-8d05-4c80-b69b-8107e708d684' {
+
+                                ref :>> involved = 'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0';
+
+                            } 
+                        ref action '372ddd61-8d05-4c80-b69b-8107e708d684' = 'Receive Thrust'; 
+                        ref action '9b1ca436-5905-4e37-acb9-6f44039dd872' = 'Receive Engine Cowling Thrust'; 
+                        connection 'd0cbbdaa-c351-48a2-9330-33bbb0cff489' : FunctionalChainInvolvementLink 
+                            connect source ::> 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32'
+                            to  target ::> '9b1ca436-5905-4e37-acb9-6f44039dd872' {
+
+                                ref :>> involved = '901a4898-9193-4dab-a301-b81033da56c0';
+
+                            } 
+                        ref action 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32' = 'Provide Support Transfer Thrust'; 
+                        connection 'a5d8287b-b3fd-447f-a64d-07de568d5066' : FunctionalChainInvolvementLink 
+                            connect source ::> '637788e0-872c-45ab-bf95-a9aa5f638620'
+                            to  target ::> 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32' {
+
+                                ref :>> involved = '3b3090ba-d017-4073-b7f5-95f953d89083';
+
+                            } 
+                        ref action '637788e0-872c-45ab-bf95-a9aa5f638620' = 'Deliver LP Fan Shaft Thrust '; 
+                        connection 'dc25269f-7243-4e9c-89f9-70d875a1bd3b' : FunctionalChainInvolvementLink 
+                            connect source ::> '241d7983-5f0e-4c79-bc23-4aa4d273be68'
+                            to  target ::> 'f8f9adf0-16b7-4fcf-9d14-a0edeabf2e32' {
+
+                                ref :>> involved = '6558b95b-b05b-4544-960d-ee21871e89ff';
+
+                            } 
+                        ref action '241d7983-5f0e-4c79-bc23-4aa4d273be68' = 'Deliver HP Shaft Thrust'; 
+                         
+                    }  
+                    action 'Monitor TLA' : FunctionalChain  { 
+                        @CapellaID { eid = "4e3e87c8-a6ab-40e8-ac60-035788c64da7"; } 
+                        attribute :>> kind = FunctionalChainKind::SIMPLE; 
+                        connection '4b248ef5-c2f4-45fc-903c-e677c77c570b' : FunctionalChainInvolvementLink 
+                            connect source ::> 'd56c9fa4-f954-477a-9bad-e60aff71997e'
+                            to  target ::> 'ea775d23-7304-4fa9-8da4-2c2000230216' {
+
+                                ref :>> involved = 'ac4e3bb3-dd39-40b0-a637-51cbf229520b';
+
+                            } 
+                        ref action 'ea775d23-7304-4fa9-8da4-2c2000230216' = 'Accept TLA'; 
+                        ref action 'd56c9fa4-f954-477a-9bad-e60aff71997e' = 'Provide Throttle Input'; 
+                        connection '396fb709-46ce-4666-ad50-07a4ec8be432' : FunctionalChainInvolvementLink 
+                            connect source ::> 'ea775d23-7304-4fa9-8da4-2c2000230216'
+                            to  target ::> 'be5afec1-878e-45db-b56c-7a64a9645678' {
+
+                                ref :>> involved = 'd761a29d-75a8-4067-a921-836986c40dd2';
+
+                            } 
+                        ref action 'be5afec1-878e-45db-b56c-7a64a9645678' = 'Control Engine'; 
+                        ref action '0c9c4762-60dc-492f-b5f7-d0af2e384565' = 'Set Bleed Air Postion'; 
+                        connection '5a988f74-90ff-49f7-ba95-2f8168ae2db3' : FunctionalChainInvolvementLink 
+                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
+                            to  target ::> '0c9c4762-60dc-492f-b5f7-d0af2e384565' {
+
+                                ref :>> involved = 'fddba676-404f-4ad5-b6c6-32a72a100584';
+
+                            } 
+                        ref action '0ba8fd3d-a761-4e3a-9090-1ebc74d1837a' = 'Move LP Stator Vanes'; 
+                        connection '7ec0ce61-6dd8-4e82-bac6-1ba8783c1681' : FunctionalChainInvolvementLink 
+                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
+                            to  target ::> '0ba8fd3d-a761-4e3a-9090-1ebc74d1837a' {
+
+                                ref :>> involved = '15f03c3f-00f1-4fb8-9834-2965148500c9';
+
+                            } 
+                        ref action 'ad97574a-2c56-4296-a7b6-cfe13d3eb4fc' = 'Control Fuel Flow'; 
+                        connection '60333ff5-363b-4434-87b3-1e78e0ae39c3' : FunctionalChainInvolvementLink 
+                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
+                            to  target ::> 'ad97574a-2c56-4296-a7b6-cfe13d3eb4fc' {
+
+                                ref :>> involved = '95d003e7-80b2-4bd4-be5c-c4197934f717';
+
+                            } 
+                        ref action 'b6a81a47-7294-45a3-9e25-882d70be138b' = 'Adjust Vanes'; 
+                        connection '78b5ef6d-ee58-405f-a033-ac55d62cf821' : FunctionalChainInvolvementLink 
+                            connect source ::> 'be5afec1-878e-45db-b56c-7a64a9645678'
+                            to  target ::> 'b6a81a47-7294-45a3-9e25-882d70be138b' {
+
+                                ref :>> involved = '4a7ad229-da53-499f-be20-f1c323e7e6a2';
+
+                            } 
+                         
+                    }  
+                    ref :>> ownedFunctions =  ('Generate Thrust',
+                    'Provide Air',
+                    'Receive Air',
+                    'Increase Air Mass Flow',
+                    'Expel Bypass AIr',
+                    'Receive Thrust',
+                    'Receive Bypass Air',
+                    'Drive Fan and LP Compressor',
+                    'Receive Nozzle Thrust',
+                    'Compress Air',
+                    'Compress LP Air',
+                    'Burn Fuel',
+                    'Extract Energy',
+                    'Measure inlet Temperature (T2)',
+                    'Control Engine',
+                    'Measure Inlet Air Temperatur',
+                    'Channel Fan Air to Turbine',
+                    'Channel Air to HPC',
+                    'Meassure LP DIscharge Pressure',
+                    'Channel HP Outlet Air',
+                    'Measure HP Outlet Pressure',
+                    'Contribut to Compession',
+                    'Adjust Vanes',
+                    'Contribut to LP Compression',
+                    'Move LP Stator Vanes',
+                    'Direct Hot Gas to Turbine',
+                    'Measure Exhaust Gas Temperature',
+                    'Suppy Fuel',
+                    'Control Fuel Flow',
+                    'Measure Turbine Outlet Pressure',
+                    'Channel to LP Turbine',
+                    'Rotate Fan and LP Compressor',
+                    'Tranfer Torque',
+                    'Measure Pressure',
+                    'Direct Turbine Exhaust',
+                    'Measure  Exhaust Gas Temp',
+                    'Measure N2',
+                    'Measure N1 Speed',
+                    'Sense Position',
+                    'Accept TLA',
+                    'Provide Throttle Input',
+                    'Consume Air',
+                    'Set Bleed Air Postion',
+                    'Measure Position',
+                    'Measure Bleed Air Valve Poistion',
+                    'Channel Bleed Air',
+                    'Sense HP Stator Vane Position',
+                    'Receive Engine Cowling Thrust',
+                    'Provide Support Transfer Thrust',
+                    'Deliver HP Shaft Thrust',
+                    'Deliver LP Fan Shaft Thrust '); 
+                     
+                    ref :>> ownedFunctionalExchanges =  ('0257347a-2a89-4fe4-a302-10cae2f02bb3',
+                    'b3b42c74-f43e-478c-bed4-03ae1cfb8c83',
+                    'ac24a803-17bc-4a51-9c74-d28fb15ead21',
+                    '3ffa0f67-64fd-45ee-9d3c-dda9a8b32a49',
+                    '39e80b06-d704-4398-ae5b-fa73cd902189',
+                    'b2c0a7ca-077d-40b0-8327-082c60c037e2',
+                    'e0aaacee-6083-4c4f-9a41-0f4a3ad19b1a',
+                    '41f1bde3-03c4-4332-870f-19f32b9009e5',
+                    '152a6432-3c81-426b-948e-89e8ccd8ee15',
+                    '90ecbd9b-1814-4a3e-a99c-6589ade50a87',
+                    'af04101a-93b0-4ad3-a428-f70688268dd9',
+                    'de38cdd4-0239-4048-a299-4e04d836de71',
+                    '8f5f029f-85d0-4510-bc67-9743b358b61b',
+                    'fb11d111-28b9-4d9c-af3f-49b71330c27c',
+                    '046a8771-7d28-4d6b-93c2-1b0b53cddbe3',
+                    '889c3cce-7981-46d7-b082-24ab331e258b',
+                    '58f3ee77-c282-4022-b314-625d96c1de1e',
+                    '5e745df4-0070-44fc-85ab-67d1a9189d7b',
+                    'dd59f184-65e3-42c3-b022-1e9429e7b06e',
+                    '7e2199b0-d113-4057-9de3-d8e5a5394846',
+                    'afcd9a36-9fab-4606-82b4-17c26ab5ac58',
+                    '1a6b2da4-d217-40da-88f4-109ab788c26b',
+                    '47892821-ae1a-40f8-bf93-bca460a27e2e',
+                    '4a7ad229-da53-499f-be20-f1c323e7e6a2',
+                    '8ee986d5-18b6-46ad-82f3-d02fb3c78258',
+                    '99bf85cd-8d72-4c44-acb8-0c06db11ddeb',
+                    '15f03c3f-00f1-4fb8-9834-2965148500c9',
+                    '46a8f61a-3a35-4b8b-8dcc-bafcab55fa85',
+                    'eaa4c472-d34a-46ae-a8bc-f1a33de39bda',
+                    '95d003e7-80b2-4bd4-be5c-c4197934f717',
+                    '8e028087-9961-44d5-8c33-02ef922a7ff6',
+                    '66c98476-f91d-4d49-8070-75f81cfed404',
+                    '02c9527d-8024-43d3-b24c-2fa00aa04cc0',
+                    '5f417526-62bc-4e73-9783-ff32914c3b88',
+                    'f36e68fd-3dba-451f-acb8-af210ae6d0c7',
+                    'd32877de-8f90-4c97-8528-1358ce28b3d9',
+                    'd2bb457c-8b54-42c3-bf56-1cd0a8f700b0',
+                    '7a0ed679-84af-4fa0-b50e-40966b05814a',
+                    'bbb5bc36-287f-4037-89dd-577c222bec86',
+                    'd0181a94-0d0b-4f21-a111-a70a6915f5a0',
+                    '98e62ed6-4223-4839-ad5a-3e5b725d65d7',
+                    'ee95b174-e67a-446d-acab-7b7421029ab9',
+                    '672503df-1b75-4d68-96ec-673e24f7e635',
+                    'e4ef588d-9824-4310-a97d-da082f4902aa',
+                    '2e5af410-7699-45db-a3cd-d1c97fa52a38',
+                    '4c27511b-2046-4491-900f-442a530e9d34',
+                    'f356e536-ed67-40b1-aae6-c16e17a4dbfc',
+                    'f5dd6000-d95d-4add-8222-c8094dcaf515',
+                    '07237295-f3a8-46de-b4eb-445004270f04',
+                    '8ecfee11-7429-49c2-ba2b-0cc2814959db',
+                    '8a8b37a6-1e68-4b99-91f7-c95bcd207a6c',
+                    'ec00c7e2-2bf0-4d75-8470-dd08fae8fb24',
+                    'a44888e2-dbe7-44a5-8c2e-9ef7a2346c6c',
+                    'ac4e3bb3-dd39-40b0-a637-51cbf229520b',
+                    'd761a29d-75a8-4067-a921-836986c40dd2',
+                    '707d4125-6bc1-49cf-b9b0-e97cd34b798a',
+                    'fddba676-404f-4ad5-b6c6-32a72a100584',
+                    '5f715b20-4600-4a0b-993f-ff7e07a56328',
+                    'c9809ac2-550a-452c-969f-843ae5c659d2',
+                    'fc852416-3199-4415-8c3f-1bbc2fb84deb',
+                    '486601ad-a608-4815-b409-38481daf99e6',
+                    '36d037d1-f577-4c8b-8b31-0ab2358f1df4',
+                    '6857e0e2-511b-4c96-9042-358138b39e2e',
+                    '49b68c29-d119-472e-aa4a-d64a0cae24bc',
+                    '4668a416-3451-46ce-9b7f-89f129783786',
+                    '22ebf707-0b92-4a61-8955-9957c90751d6',
+                    '6558b95b-b05b-4544-960d-ee21871e89ff',
+                    '901a4898-9193-4dab-a301-b81033da56c0',
+                    'a2b4cf50-1e5d-4bfc-82b9-bac7fb2667d0',
+                    '0ceb62c4-2a70-4da9-8dd1-b7b50bb85a94',
+                    '3b3090ba-d017-4073-b7f5-95f953d89083'); 
+                     
+                }  
+            } 
+            package 'Interfaces' {
+                @PackageMeta {
+                    type = "InterfacePkg";
+                } 
+                @CapellaID { eid = "6599dadc-f7d4-4b97-be98-525169abb94f"; } 
+            } 
+            package 'Data' {
+                @PackageMeta {
+                    type = "DataPkg";
+                } 
+                @CapellaID { eid = "4fed7f90-ed70-4e9a-9cf9-62bbf888d951"; } 
+            } 
         } 
         package 'Physical Architecture' {
             @PackageMeta {
                 type = "PhysicalArchitecture";
             } 
             @CapellaID { eid = "0ee573c4-65bd-4b8f-9b06-d1014b09be45"; } 
+            package 'Capabilities' {
+                @PackageMeta {
+                    type = "CapabilityRealizationPkg";
+                } 
+                @CapellaID { eid = "35c8fa92-75c4-4d9e-b565-b693c8b99d85"; } 
+            } 
             package 'Physical Functions' {
                 @PackageMeta {
                     type = "PhysicalFunctionPkg";
@@ -9190,6 +9199,15 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     type = "PhysicalComponentPkg";
                 } 
                 @CapellaID { eid = "7a7722f8-999d-4c02-a1dd-8874bd4029ee"; } 
+                part 'Physical System' : PhysicalComponent { 
+                    @CapellaID { eid = "7c3ffa39-0ba9-4a17-96b1-1dda923280f1"; } 
+                    attribute :>> isAbstract = false; 
+                    attribute :>> isActor = false; 
+                    attribute :>> isHuman = false; 
+                    attribute :>> kind = PhysicalComponentKind::UNSET; 
+                    attribute :>> nature = PhysicalComponentNature::UNSET; 
+                     
+                }  
                 part '256b2ee3-dd59-4574-bfd6-d46fb35600db' : CPart :> 'Physical System'  { 
                     @CapellaID { eid = "256b2ee3-dd59-4574-bfd6-d46fb35600db"; } 
                     attribute :>> aggregationKind = AggregationKind::UNSET; 
@@ -9204,21 +9222,6 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     attribute :>> isOrdered = false; 
                     attribute :>> isUnique = false; 
                 }  
-                part 'Physical System' : PhysicalComponent { 
-                    @CapellaID { eid = "7c3ffa39-0ba9-4a17-96b1-1dda923280f1"; } 
-                    attribute :>> isAbstract = false; 
-                    attribute :>> isActor = false; 
-                    attribute :>> isHuman = false; 
-                    attribute :>> kind = PhysicalComponentKind::UNSET; 
-                    attribute :>> nature = PhysicalComponentNature::UNSET; 
-                     
-                }  
-            } 
-            package 'Capabilities' {
-                @PackageMeta {
-                    type = "CapabilityRealizationPkg";
-                } 
-                @CapellaID { eid = "35c8fa92-75c4-4d9e-b565-b693c8b99d85"; } 
             } 
         } 
         package 'PLM Data' {
@@ -9246,7 +9249,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     */ 
                     @CapellaID { eid = "2932132b-b72c-43c1-bcd2-772afb6a5598"; } 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Receive Air Capability'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Receive Air'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Receive Air Chain'; 
                      
                 }  
                 requirement <'REQ-164137/A'> 'Deliver Engine Thrust Capability' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9264,7 +9267,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     */ 
                     @CapellaID { eid = "9f0aedd5-63ed-49d6-94f4-3ea5e9366489"; } 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Deliver Thrust Capability'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164140/A'> 'Monitor Turbine Air Capability' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9342,7 +9345,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Quito Airport High Altitude'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Quito Airport High Altitude'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164197/A'> 'Mumbai Airport Monsoon Climate' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9353,7 +9356,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Mumbai Airport Monsoon Climate'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Mumbai Airport Monsoon Climate'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164129/A'> 'Antarctica Airport Low Temperature' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9364,7 +9367,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Antarctica Airport Low Temperature'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Antarctica Airport Low Temperature'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164176/A'> 'Dubai Airport High Temperature' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9375,7 +9378,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Dubai Airport High Temperature'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Dubai Airport High Temperature'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164183/A'> 'La Paz Airport Extreme Altitude' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9386,7 +9389,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'La Paz Airport Extreme Altitude'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'La Paz Airport Extreme Altitude'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164153/A'> 'Madrid Airport High Temperature' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9397,7 +9400,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Madrid Airport High Temperature'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Madrid Airport High Temperature'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164180/A'> 'Buenos Aires Buenos Aires Airport Variable Climate' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9408,7 +9411,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Buenos Aires Buenos Aires Airport Variable Climate'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Buenos Aires Buenos Aires Airport Variable Climate'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164150/A'> 'Zurich Airport Cold Weather' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9419,7 +9422,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Zurich Airport Cold Weather'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Zurich Airport Cold Weather'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164155/A'> 'Denver Airport Elevated Altitude' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9430,7 +9433,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Denver Airport Elevated Altitude'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Denver Airport Elevated Altitude'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164196/A'> 'Singapore Changi Tropical Climate' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9441,7 +9444,7 @@ library package 'High_Bypass_Turbo_Fan Library' {
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Singapore Changi Tropical Climate'  by
                         'Logical Architecture'::'Structure'; 
                     satisfy 'High_Bypass_Turbo_Fan Library'::'High Bypass Turbo Fan'::'PLM Data'::'PLM Requirements'.'Singapore Changi Tropical Climate'  by
-                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust'; 
+                        'Logical Architecture'::'Logical Functions'::'Root Logical Function'.'Deliver Thrust Chain'; 
                      
                 }  
                 requirement <'REQ-164201/A'> 'Minimize Noise Levels' : 'PLM Requirement Types'::'PlmRequirement'  { 
@@ -9845,9 +9848,6 @@ library package 'High_Bypass_Turbo_Fan Library' {
             }  
         } 
     } 
-    item '8d18d604-2bfb-4fe9-9892-2451514f8f1a' : ModelInformation  { 
-        @CapellaID { eid = "8d18d604-2bfb-4fe9-9892-2451514f8f1a"; } 
-    }  
     enum def 'ProgressStatus' :> EnumerationPropertyType  { 
         enum 'DRAFT'; 
         enum 'TO_BE_REVIEWED'; 

@@ -1161,7 +1161,7 @@
               tcuid="wghhKfYWJ_cL6A" stableTcId="Q0phKfYWJ_cL6A" occTcuid="ScqhKfYWJ_cL6A"
               itemId="037070" revisionId="A"/>
           <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
-              id="81c7f931-541b-4651-b409-6d6cbf352092" name="Receive Air">
+              id="81c7f931-541b-4651-b409-6d6cbf352092" name="Receive Air Chain">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="6a0cfab4-ca46-481c-8c18-92ef31cd44f9"
                 tcuid="wUhhKfYWJ_cL6A" stableTcId="QophKfYWJ_cL6A" occTcuid="EfihKfYWJ_cL6A"
                 itemId="037026" revisionId="A"/>
@@ -1596,7 +1596,8 @@
                 id="183e50cd-b4aa-4b3c-aee1-a3fce7994747" involved="#c884dbd9-4225-4a33-b867-9e103760b107"/>
           </ownedFunctionalChains>
           <ownedFunctionalChains xsi:type="org.polarsys.capella.core.data.fa:FunctionalChain"
-              id="a878bccb-fdd5-4d79-b711-3a84e4395f87" name="Deliver Thrust" appliedPropertyValueGroups="#27754fad-a8c1-40d4-a0b0-5eaf5c783822 #da35a2f8-b040-492e-b4a6-99d331ede167">
+              id="a878bccb-fdd5-4d79-b711-3a84e4395f87" name="Deliver Thrust Chain"
+              appliedPropertyValueGroups="#27754fad-a8c1-40d4-a0b0-5eaf5c783822 #da35a2f8-b040-492e-b4a6-99d331ede167">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="d75de63a-1069-46c9-97e6-20fc7c4cc596"
                 tcuid="AcpharnIJ_cL6A" stableTcId="AclharnIJ_cL6A" occTcuid="QQqharnIJ_cL6A"
                 itemId="037249" revisionId="A"/>
@@ -1961,7 +1962,7 @@
             </outputs>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
-              id="40fa74ad-4ca5-444a-bd46-7fc1e820169c" name="Compres LP Air">
+              id="40fa74ad-4ca5-444a-bd46-7fc1e820169c" name="Compress LP Air">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="dd3ee54a-405f-4cc8-b667-0bce13e20f85"
                 tcuid="wQrhKfYWJ_cL6A" stableTcId="QojhKfYWJ_cL6A" occTcuid="j$ihKfYWJ_cL6A"
                 itemId="037059" revisionId="A"/>
@@ -1976,7 +1977,7 @@
                   tcuid="QXrhKfYWJ_cL6A" occTcuid="C4vhKfYWJ_cL6A"/>
             </inputs>
             <inputs xsi:type="org.polarsys.capella.core.data.fa:FunctionInputPort"
-                id="ca2907b7-0575-46d4-b878-4cc4ce4aa3ec" name="FIP 2">
+                id="ca2907b7-0575-46d4-b878-4cc4ce4aa3ec" name="FIP 4">
               <ownedExtensions xsi:type="smw:TcItemRevision" id="6a02011e-117c-48f1-a63a-3c63e565ce4d"
                   tcuid="QHthKfYWJ_cL6A" occTcuid="C8lhKfYWJ_cL6A"/>
             </inputs>
@@ -2771,7 +2772,7 @@
             </outputs>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
-              id="f6892691-c0dc-4ebc-8ddb-ef77e43d1dd3" name="Deliver Thrust">
+              id="f6892691-c0dc-4ebc-8ddb-ef77e43d1dd3" name="Deliver HP Shaft Thrust">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="288c7df3-7aa7-41a7-a2cd-a0de57d2a0c0"
                 tcuid="g2vh6DHDJ_cL6A" stableTcId="gynh6DHDJ_cL6A" occTcuid="Bovh6DHDJ_cL6A"
                 itemId="037308" revisionId="A"/>
@@ -2787,7 +2788,7 @@
             </outputs>
           </ownedFunctions>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.la:LogicalFunction"
-              id="05a6b951-a1db-4708-95b0-dd0af4dee556" name="Deliver Thrust">
+              id="05a6b951-a1db-4708-95b0-dd0af4dee556" name="Deliver LP Fan Shaft Thrust ">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="cf00de6e-6e51-4c9f-bc56-dbbad3e601a7"
                 tcuid="g6lh6DHDJ_cL6A" stableTcId="gyth6DHDJ_cL6A" occTcuid="wXvh6DHDJ_cL6A"
                 itemId="037310" revisionId="A"/>

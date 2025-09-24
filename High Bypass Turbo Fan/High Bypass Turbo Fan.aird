@@ -106,7 +106,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.la:LogicalComponentPkg" href="High%20Bypass%20Turbo%20Fan.capella#30b925ff-a187-4c6a-8837-ba2787d7b67a"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_pvkfkHOzEfCeeNdhvzlsDg" name="[LAB] Stage 2  - LP Compression Stage" repPath="#_pvjRcXOzEfCeeNdhvzlsDg" changeId="1757077239945">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_pvkfkHOzEfCeeNdhvzlsDg" name="[LAB] Stage 2  - LP Compression Stage" repPath="#_pvjRcXOzEfCeeNdhvzlsDg" changeId="1758730452504">
         <eAnnotations xmi:type="description:DAnnotation" uid="_pvjRcHOzEfCeeNdhvzlsDg" source="https://www.polarsys.org/capella/dannotation/DesactivatedFilters">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pvpYEHOzEfCeeNdhvzlsDg" key="hide.computed.component.exchanges.filter" value="true"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pvpYEXOzEfCeeNdhvzlsDg" key="hide.computed.physical.links.filter" value="true"/>
@@ -114,7 +114,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.la:LogicalComponentPkg" href="High%20Bypass%20Turbo%20Fan.capella#30b925ff-a187-4c6a-8837-ba2787d7b67a"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iNeWIHRuEfCqnNPawYxtew" documentation="&lt;p>This diagram represents the ARCADIA model&amp;nbsp;elements for stage 3 of a High Bypass Turbo Fan Engine.&lt;/p>&#xA;" name="[LAB] Stage 3  - HP Compression Stage" repPath="#_iNb54HRuEfCqnNPawYxtew" changeId="1758125616667">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_iNeWIHRuEfCqnNPawYxtew" documentation="&lt;p>This diagram represents the ARCADIA model&amp;nbsp;elements for stage 3 of a High Bypass Turbo Fan Engine.&lt;/p>&#xA;" name="[LAB] Stage 3  - HP Compression Stage" repPath="#_iNb54HRuEfCqnNPawYxtew" changeId="1758730452504">
         <eAnnotations xmi:type="description:DAnnotation" uid="_iNbS0HRuEfCqnNPawYxtew" source="https://www.polarsys.org/capella/dannotation/DesactivatedFilters">
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iNmR8HRuEfCqnNPawYxtew" key="hide.computed.component.exchanges.filter" value="true"/>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iNmR8XRuEfCqnNPawYxtew" key="hide.computed.physical.links.filter" value="true"/>
@@ -12209,7 +12209,7 @@
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BnmrsnO0EfCeeNdhvzlsDg"/>
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_BndhwXO0EfCeeNdhvzlsDg" fontName="Segoe UI" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BndhwnO0EfCeeNdhvzlsDg" x="73" y="33" width="10" height="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BndhwnO0EfCeeNdhvzlsDg" x="83" y="33" width="10" height="10"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_Q2EQUHRsEfCqnNPawYxtew" type="3001" element="_Q1ir5HRsEfCqnNPawYxtew">
                 <children xmi:type="notation:Node" xmi:id="_Q2EQU3RsEfCqnNPawYxtew" visible="false" type="5001">
@@ -12242,10 +12242,10 @@
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nKCQEn0cEfCylMioUSe-fQ"/>
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_nJwjQX0cEfCylMioUSe-fQ" fontName="Segoe UI" fontHeight="8"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nJwjQn0cEfCylMioUSe-fQ" x="73" y="20" width="10" height="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nJwjQn0cEfCylMioUSe-fQ" x="83" y="20" width="10" height="10"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_3-dAIXOzEfCeeNdhvzlsDg" fontColor="3038217" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-dAInOzEfCeeNdhvzlsDg" x="15" y="27" width="81" height="44"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-dAInOzEfCeeNdhvzlsDg" x="15" y="27" width="91" height="51"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_pvkf8nOzEfCeeNdhvzlsDg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_pvkf83OzEfCeeNdhvzlsDg"/>
@@ -16575,7 +16575,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="__rVzUHOzEfCeeNdhvzlsDg" name="Compres LP Air" visible="false" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="__rVzUHOzEfCeeNdhvzlsDg" name="Compress LP Air" visible="false" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="org.polarsys.capella.core.data.la:LogicalFunction" href="High%20Bypass%20Turbo%20Fan.capella#40fa74ad-4ca5-444a-bd46-7fc1e820169c"/>
         <semanticElements xmi:type="org.polarsys.capella.core.data.la:LogicalFunction" href="High%20Bypass%20Turbo%20Fan.capella#40fa74ad-4ca5-444a-bd46-7fc1e820169c"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" uid="_F_B-8HO0EfCeeNdhvzlsDg" name="FOP 1" visible="false" incomingEdges="_aj3vVHbZEfCqnNPawYxtew" width="1" height="1">
@@ -16605,7 +16605,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']/@borderedNodeMappings[name='LAB%20Flow%20Port%20on%20Logical%20Function']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_DmY_8nzxEfChO_yNEkVPeQ" name="FIP 2" visible="false" width="1" height="1">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_DmY_8nzxEfChO_yNEkVPeQ" name="FIP 4" visible="false" width="1" height="1">
           <target xmi:type="org.polarsys.capella.core.data.fa:FunctionInputPort" href="High%20Bypass%20Turbo%20Fan.capella#ca2907b7-0575-46d4-b878-4cc4ce4aa3ec"/>
           <semanticElements xmi:type="org.polarsys.capella.core.data.fa:FunctionInputPort" href="High%20Bypass%20Turbo%20Fan.capella#ca2907b7-0575-46d4-b878-4cc4ce4aa3ec"/>
           <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_DmY_9XzxEfChO_yNEkVPeQ"/>
@@ -17922,7 +17922,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@nodeMappings[name='LAB_FunctionalChainEnd']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_kM93MIKcEfCGoeqTLxuWzQ" name="Deliver Thrust" width="2" height="2" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_kM93MIKcEfCGoeqTLxuWzQ" name="Deliver Thrust Chain" width="2" height="2" resizeKind="NSEW">
       <target xmi:type="org.polarsys.capella.core.data.fa:FunctionalChain" href="High%20Bypass%20Turbo%20Fan.capella#a878bccb-fdd5-4d79-b711-3a84e4395f87"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.fa:FunctionalChain" href="High%20Bypass%20Turbo%20Fan.capella#a878bccb-fdd5-4d79-b711-3a84e4395f87"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -24199,7 +24199,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" uid="_iNdINnRuEfCqnNPawYxtew" name="Compres LP Air" width="5" height="5" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" uid="_iNdINnRuEfCqnNPawYxtew" name="Compress LP Air" width="5" height="5" resizeKind="NSEW">
         <target xmi:type="org.polarsys.capella.core.data.la:LogicalFunction" href="High%20Bypass%20Turbo%20Fan.capella#40fa74ad-4ca5-444a-bd46-7fc1e820169c"/>
         <semanticElements xmi:type="org.polarsys.capella.core.data.la:LogicalFunction" href="High%20Bypass%20Turbo%20Fan.capella#40fa74ad-4ca5-444a-bd46-7fc1e820169c"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" uid="_iNdIOnRuEfCqnNPawYxtew" name="FOP 1" outgoingEdges="_iNdI33RuEfCqnNPawYxtew" incomingEdges="_ajn3tHbZEfCqnNPawYxtew _FvYkoHxgEfChO_yNEkVPeQ _FvZLsHxgEfChO_yNEkVPeQ" width="1" height="1">
@@ -24229,7 +24229,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@containerMappings[name='LAB%20Logical%20Component']/@subNodeMappings[name='LAB%20Logical%20Function']/@borderedNodeMappings[name='LAB%20Flow%20Port%20on%20Logical%20Function']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_n9UKpHbbEfCqnNPawYxtew" name="FIP 2" outgoingEdges="_FvYkoHxgEfChO_yNEkVPeQ" incomingEdges="_n9UKqHbbEfCqnNPawYxtew" width="1" height="1">
+        <ownedBorderedNodes xmi:type="diagram:DNode" uid="_n9UKpHbbEfCqnNPawYxtew" name="FIP 4" outgoingEdges="_FvYkoHxgEfChO_yNEkVPeQ" incomingEdges="_n9UKqHbbEfCqnNPawYxtew" width="1" height="1">
           <target xmi:type="org.polarsys.capella.core.data.fa:FunctionInputPort" href="High%20Bypass%20Turbo%20Fan.capella#ca2907b7-0575-46d4-b878-4cc4ce4aa3ec"/>
           <semanticElements xmi:type="org.polarsys.capella.core.data.fa:FunctionInputPort" href="High%20Bypass%20Turbo%20Fan.capella#ca2907b7-0575-46d4-b878-4cc4ce4aa3ec"/>
           <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_n9UKp3bbEfCqnNPawYxtew"/>
@@ -25378,7 +25378,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/logical.odesign#//@ownedViewpoints[name='Logical%20Architecture']/@ownedRepresentations[name='Logical%20Architecture%20Blank']/@defaultLayer/@nodeMappings[name='LAB_FunctionalChainEnd']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_0npg8IKcEfCGoeqTLxuWzQ" name="Deliver Thrust" width="2" height="2" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_0npg8IKcEfCGoeqTLxuWzQ" name="Deliver Thrust Chain" width="2" height="2" resizeKind="NSEW">
       <target xmi:type="org.polarsys.capella.core.data.fa:FunctionalChain" href="High%20Bypass%20Turbo%20Fan.capella#a878bccb-fdd5-4d79-b711-3a84e4395f87"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.fa:FunctionalChain" href="High%20Bypass%20Turbo%20Fan.capella#a878bccb-fdd5-4d79-b711-3a84e4395f87"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
