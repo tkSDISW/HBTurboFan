@@ -6021,10 +6021,16 @@
             </ownedFeatures>
           </ownedLogicalComponents>
           <ownedLogicalComponents xsi:type="org.polarsys.capella.core.data.la:LogicalComponent"
-              id="cc733789-f9ba-4b61-8290-e2bb2f37948b" name="Throttle Lever Angle">
+              id="cc733789-f9ba-4b61-8290-e2bb2f37948b" name="Throttle Lever Angle"
+              appliedPropertyValueGroups="#269dbac8-736e-43f3-a83d-8d7467c46efd">
             <ownedExtensions xsi:type="smw:TcItemRevision" id="f8daea2c-c21b-44d6-ae3b-04d1d7daca72"
                 tcuid="QMlhqvK1J_cL6A" stableTcId="A4phqvK1J_cL6A" itemId="037266"
                 revisionId="A"/>
+            <ownedPropertyValueGroups xsi:type="org.polarsys.capella.core.data.capellacore:PropertyValueGroup"
+                id="269dbac8-736e-43f3-a83d-8d7467c46efd" name="PropertyValueGroup 1">
+              <ownedPropertyValues xsi:type="org.polarsys.capella.core.data.capellacore:FloatPropertyValue"
+                  id="73cd8bb4-8b3e-42c9-aa3b-dadc8f25d2d1" name="FloatPropertyValue 1"/>
+            </ownedPropertyValueGroups>
             <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
                 id="e8bb43e7-55aa-43ce-bf23-f93f5da401a0" targetElement="#15d8942e-73d2-488a-afd2-f1a5d76bceb6"
                 sourceElement="#cc733789-f9ba-4b61-8290-e2bb2f37948b">
